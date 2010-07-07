@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  job_type: MyString
+  company_name: MyString
+  location: MyString
+  url: MyString
+  description: MyText
+  apply_information: MyText
+  deadline: 2010-07-07
+
+two:
+  title: MyString
+  job_type: MyString
+  company_name: MyString
+  location: MyString
+  url: MyString
+  description: MyText
+  apply_information: MyText
+  deadline: 2010-07-07

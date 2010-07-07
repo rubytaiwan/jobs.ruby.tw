@@ -1,0 +1,54 @@
+<%= form_for @job do |f| %>
+
+<% if @job.errors.any? %>
+<div id="errorExplanation">
+  <h2><%= pluralize(@job.errors.count, "error") %> prohibited this person from being saved:</h2>
+  <ul>
+  <% @job.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+	<p>
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+	</p>
+	
+	<p>
+	<%= f.label :company_name, "Company Name" %>
+	<%= f.text_field :company_name %>
+	</p>
+	
+	<p>
+	<%= f.label :url, "URL" %>
+	<%= f.text_field :url %>
+	</p>
+	
+	<p>
+	<%= f.label :job_type, "Job Type" %>
+		<%= f.radio_button :job_type, "Full-time" %> Full-Time
+		<%= f.radio_button :job_type, "Part-time" %> Part-Time
+		<%= f.radio_button :job_type, "Contract" %> Contract
+	</p>
+	
+	<p>
+	<%= f.label :location, "Location" %>
+	<%= f.text_field :location %>
+	</p>
+	
+	<p>
+	<%= f.label :description, "Description" %>
+	<%= f.text_area :description %>
+	</p>
+	
+	<p>
+	<%= f.label :apply_information, "Apply Information" %>
+	<%= f.text_area :apply_information %>
+	</p>
+	
+	<p>
+	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+	</p>
+<% end %>

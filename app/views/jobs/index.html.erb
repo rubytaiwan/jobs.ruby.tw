@@ -1,0 +1,9 @@
+<p><%= link_to 'Post a new job', new_job_path %></p>
+
+<ul>
+<% @jobs.each do |job| %>
+
+	<li><%= link_to job.title, job_path(job) %> at <%= job.location %></li>
+	
+<% end %>
+</ul>

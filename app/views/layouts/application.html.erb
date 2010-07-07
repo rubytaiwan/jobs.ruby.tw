@@ -7,8 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<h1>Job board for Ruby and Rails developers in Taiwan</h1>
+
+<p><%= link_to 'Signup', '#' %> | <%= link_to 'Login', '#' %></p>
 
 <%= yield %>
+
+<div id="footer">
+	A free service by <a href="http://ruby.tw">Ruby Taiwan</a>
+</div>
 
 </body>
 </html>
