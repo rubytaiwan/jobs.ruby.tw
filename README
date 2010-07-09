@@ -3,10 +3,12 @@ A free service by Ruby Taiwan http://ruby.tw
 
 == User Stories
 
-[] Signup as an employer
-[] Post a job
-[] Search jobs
-[] RSS feed
+* Signup as an employer
+* Post a job
+* List my jobs
+* Edit my job
+* Search jobs
+* RSS feed
 
 == Employer profile
 
