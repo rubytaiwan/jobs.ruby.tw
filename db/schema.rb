@@ -20,9 +20,12 @@ ActiveRecord::Schema.define(:version => 20100709132224) do
     t.text     "description"
     t.text     "apply_information"
     t.date     "deadline"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
