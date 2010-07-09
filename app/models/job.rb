@@ -10,4 +10,6 @@ class Job < ActiveRecord::Base
   
   validates_inclusion_of :job_type, :in => JOB_TYPE 
    
+  belongs_to :user
+  
 end

@@ -7,9 +7,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<h1>Job board for Ruby and Rails developers in Taiwan</h1>
+<h1><a href="/">Job board for Ruby and Rails developers in Taiwan</a></h1>
 
-<p><%= link_to 'Signup', '#' %> | <%= link_to 'Login', '#' %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<p>
+<% if user_signed_in? %>
+Hi, <%= current_user.email %> 
+<%= link_to "Logout", destroy_user_session_path %>
+<% else %>
+	<%= link_to "Sign up", new_registration_path(:user) %> | 
+	<%= link_to "Login", new_session_path(:user) %>
+<% end %>
+</p>
 
 <%= yield %>
 

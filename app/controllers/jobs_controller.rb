@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
   
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+   
   def index
     @jobs = Job.order("id desc")
   end
@@ -9,11 +11,11 @@ class JobsController < ApplicationController
   end
   
   def new
-    @job = Job.new
+    @job = current_user.jobs.build
   end
   
   def create
-    @job = Job.new(params[:job])
+    @job = current_user.jobs.build(params[:job])
     
     if @job.save
       redirect_to job_path(@job)
