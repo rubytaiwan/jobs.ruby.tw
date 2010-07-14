@@ -8,8 +8,10 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] List my jobs
 [v] Edit my job
 [v] Search jobs
+[ ] Employer can close job
+[ ] Not display jobs which is closed or overdue
 [ ] RSS feed
-[ ] Social link: Tweet this job, Facebook it
+[ ] Social link: Tweet this job, Facebook it, Plurk it.
 
 == Employer profile
 
@@ -45,3 +47,8 @@ A free service by Ruby Taiwan http://ruby.tw
 * http://www.workingwithrails.com/browse/jobs/recent
 * http://jobs.37signals.com/
 * http://jobs.rubynow.com/
+
+== License
+
+* The code is licensed under the MIT: http://www.opensource.org/licenses/mit-license.php
+* The Stylesheets and Images (any files inside /public/stylesheets and /public/images) are copyright.
