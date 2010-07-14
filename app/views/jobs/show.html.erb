@@ -1,6 +1,53 @@
 <h2><%= @job.title %></h2>
 
-<p><%= @job.description %></p>
+<table border="1">
+	<tr>
+		<th>Job Title</th>
+		<td><%= @job.title %></td>
+	</tr>
+
+	<tr>
+		<th>Job Type</th>
+		<td><%= @job.job_type %></td>
+	</tr>
+	
+	<tr>
+		<th>Job Occupation</th>
+		<td><%= @job.occupation %></td>
+	</tr>
+		
+	<tr>
+		<th>Job Location</th>
+		<td><%= @job.location %></td>
+	</tr>
+	
+	<tr>
+		<th>Company Name</th>
+		<td><%= @job.company_name %></td>
+	</tr>
+	
+	<% unless @job.url.blank? %>
+	<tr>
+		<th>URL</th>
+		<td><%= link_to @job.url, @job.url %></td>
+	</tr>
+	<% end %>
+	
+	<tr>
+		<th>Description</th>
+		<td><%= @job.description %></td>
+	</tr>
+	
+	<tr>
+		<th>Apply Information</th>
+		<td><%= @job.apply_information %></td>
+	</tr>
+	
+	<tr>
+		<th>Posted</th>
+		<td><%= @job.created_at %></td>
+	</tr>
+</table>
 
 <%= render :partial => "owner_buttons", :locals => { :job => @job } %>
 

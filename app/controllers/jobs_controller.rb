@@ -5,6 +5,8 @@ class JobsController < ApplicationController
   def index
     if params[:user_id]
       @jobs = User.find(params[:user_id]).jobs.order("id desc")
+    elsif params[:keyword]
+      @jobs = Job.search(params[:keyword])
     else
       @jobs = Job.order("id desc")
     end

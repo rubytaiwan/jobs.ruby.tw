@@ -1,11 +1,17 @@
 class Job < ActiveRecord::Base
   
+  extend Searchable
+  searchable_by :title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information
+  
   validates_presence_of :title
   validates_presence_of :job_type
+  validates_presence_of :company_name
+  validates_presence_of :occupation
   validates_presence_of :location
   validates_presence_of :description
   validates_presence_of :apply_information
-   
+  
+  
   JOB_TYPE = %w[Part-time Full-time Contract Internship]
   OCCUPATION = %w[Back-end Web-Design QA/Testing Other]
   

@@ -1,14 +1,27 @@
+
+<%= form_tag jobs_path, :method => :get do %>
+	<%= label_tag :keyword, "Search" %>
+	<%= text_field_tag :keyword %>
+	<%= submit_tag "Submit", :disable_with => 'Submiting...' %>
+<% end %>
+
 <p><%= link_to 'Post a new job', new_job_path %></p>
 
-<ul>
+<table border="1">
+	<tr>
+		<th>Posted</th>
+		<th>Job Title</th>
+		<th>Company</th>
+		<th>Location</th>
+	</tr>
 <% @jobs.each do |job| %>
 
-	<li>
-		<%= link_to job.title, job_path(job) %> at <%= job.location %>
-		
-		<%= render :partial => "owner_buttons", :locals => { :job => job } %>
-		
-	</li>
+	<tr>
+		<td><%= job.created_at.to_date %></td>
+		<td><%= link_to job.title, job_path(job) %></td>
+		<td><%= job.company_name %></td>
+		<td><%= job.location %></td>
+	</tr>
 	
 <% end %>
-</ul>
+</table>
