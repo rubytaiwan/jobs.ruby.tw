@@ -14,8 +14,9 @@
 
 <p>
 <% if user_signed_in? %>
-Hi, <%= current_user.email %> 
-<%= link_to "Logout", destroy_user_session_path %>
+	Hi, <%= current_user.email %> 
+	<%= link_to "List my posting", user_jobs_path( current_user ) %>
+	<%= link_to "Logout", destroy_user_session_path %>
 <% else %>
 	<%= link_to "Sign up", new_registration_path(:user) %> | 
 	<%= link_to "Login", new_session_path(:user) %>

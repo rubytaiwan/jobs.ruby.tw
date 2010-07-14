@@ -28,11 +28,18 @@
 	
 	<p>
 	<%= f.label :job_type, "Job Type" %>
-		<%= f.radio_button :job_type, "Full-time" %> Full-Time
-		<%= f.radio_button :job_type, "Part-time" %> Part-Time
-		<%= f.radio_button :job_type, "Contract" %> Contract
+		<% Job::JOB_TYPE.each do |t| %>
+			<%= f.radio_button :job_type, t %> <%= t %>
+		<% end %>
 	</p>
 	
+	<p>
+	<%= f.label :joccupation, "Occupation" %>
+		<% Job::OCCUPATION.each do |o| %>
+			<%= f.radio_button :occupation, o %> <%= o %>
+		<% end %>
+	</p>
+		
 	<p>
 	<%= f.label :location, "Location" %>
 	<%= f.text_field :location %>
@@ -46,6 +53,11 @@
 	<p>
 	<%= f.label :apply_information, "Apply Information" %>
 	<%= f.text_area :apply_information %>
+	</p>
+	
+	<p>
+		<%= f.label :deadline, "Deadline" %>
+		<%= f.select :deadline, [["Forever", ""], ["1 month", "30"], ["2 months", "30"], ["3 months", "60"], ["6 months", "180"] ] %>
 	</p>
 	
 	<p>

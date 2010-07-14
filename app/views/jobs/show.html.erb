@@ -2,4 +2,6 @@
 
 <p><%= @job.description %></p>
 
+<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
+
 <p><%= link_to "Back to job board", root_path %></p>

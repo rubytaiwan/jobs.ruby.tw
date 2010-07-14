@@ -1,9 +1,14 @@
 class JobsController < ApplicationController
   
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-   
+  
   def index
-    @jobs = Job.order("id desc")
+    if params[:user_id]
+      @jobs = User.find(params[:user_id]).jobs.order("id desc")
+    else
+      @jobs = Job.order("id desc")
+    end
+    
   end
   
   def show
@@ -22,7 +27,27 @@ class JobsController < ApplicationController
     else
       render :action => :new
     end
+  end
+  
+  def edit
+    @job = current_user.jobs.find(params[:id])
+  end
+  
+  def update
+    @job = current_user.jobs.find(params[:id])
     
+    if @job.update_attributes(params[:job])
+      redirect_to job_path(@job)
+    else
+      render :action => :edit
+    end    
+  end
+  
+  def destroy
+    @job = current_user.jobs.find(params[:id])
+    @job.destroy
+    
+    redirect_to jobs_path
   end
   
 end

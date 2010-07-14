@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20100709132224) do
   create_table "jobs", :force => true do |t|
     t.string   "title"
     t.string   "job_type"
+    t.string   "occupation"
     t.string   "company_name"
     t.string   "location"
     t.string   "url"

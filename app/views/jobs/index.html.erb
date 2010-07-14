@@ -3,7 +3,12 @@
 <ul>
 <% @jobs.each do |job| %>
 
-	<li><%= link_to job.title, job_path(job) %> at <%= job.location %></li>
+	<li>
+		<%= link_to job.title, job_path(job) %> at <%= job.location %>
+		
+		<%= render :partial => "owner_buttons", :locals => { :job => job } %>
+		
+	</li>
 	
 <% end %>
 </ul>

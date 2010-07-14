@@ -1,6 +1,11 @@
 JobsRubyTw::Application.routes.draw do |map|
   
   devise_for :users
+  
+  resources :users do
+    resources :jobs
+  end
+  
   resources :jobs
   
   # The priority is based upon order of creation:
