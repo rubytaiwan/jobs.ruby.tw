@@ -12,7 +12,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :apply_information
   
   
-  JOB_TYPE = %w[Part-time Full-time Contract Internship]
+  JOB_TYPE = %w[Part-time Full-time Contract Internship Other]
   OCCUPATION = %w[Back-end Web-Design QA/Testing Other]
   
   validates_inclusion_of :job_type, :in => JOB_TYPE 
