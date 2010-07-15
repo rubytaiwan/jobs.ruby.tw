@@ -20,4 +20,12 @@ class Job < ActiveRecord::Base
   
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
   
+  include AASM
+
+  aasm_initial_state :draft
+  aasm_state :draft
+  aasm_state :published
+  aasm_state :closed
+  
+  
 end
