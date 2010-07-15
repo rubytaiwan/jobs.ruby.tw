@@ -19,5 +19,17 @@ class Job < ActiveRecord::Base
   validates_inclusion_of :occupation, :in => OCCUPATION
   
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
+
+  scope :published , where(:aasm_state => "published")
+  scope :online, published.where("deadline > ?", Date.today )
+  
+  include AASM
+
+  aasm_initial_state :draft
+  aasm_state :draft
+  aasm_state :published
+  aasm_state :closed
+  
+  
   
 end

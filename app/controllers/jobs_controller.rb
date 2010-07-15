@@ -8,7 +8,7 @@ class JobsController < ApplicationController
     elsif params[:keyword]
       @jobs = Job.search(params[:keyword])
     else
-      @jobs = Job.order("id desc")
+      @jobs = Job.online.order("id desc")
     end
     
   end

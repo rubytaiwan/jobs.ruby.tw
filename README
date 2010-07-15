@@ -9,7 +9,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Edit my job
 [v] Search jobs
 [ ] Employer can close job
-[ ] Not display jobs which is closed or overdue
+[v] Not display jobs which is closed or overdue
 [ ] RSS feed
 [ ] Social link: Tweet this job, Facebook it, Plurk it.
 
