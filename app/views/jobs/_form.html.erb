@@ -12,12 +12,12 @@
 <% end %>
 
 	<p>
-	<%= f.label :title, "Title" %>
+	<%= f.label :title, t("job.title") %>
 	<%= f.text_field :title %>
 	</p>
 	
 	<p>
-	<%= f.label :company_name, "Company Name" %>
+	<%= f.label :company_name, t("job.company_name") %>
 	<%= f.text_field :company_name %>
 	</p>
 	
@@ -27,40 +27,40 @@
 	</p>
 	
 	<p>
-	<%= f.label :job_type, "Job Type" %>
+	<%= f.label :job_type, t("job.type") %>
 		<% Job::JOB_TYPE.each do |t| %>
 			<%= f.radio_button :job_type, t %> <%= t %>
 		<% end %>
 	</p>
 	
 	<p>
-	<%= f.label :joccupation, "Occupation" %>
+	<%= f.label :joccupation, t("job.occupation") %>
 		<% Job::OCCUPATION.each do |o| %>
 			<%= f.radio_button :occupation, o %> <%= o %>
 		<% end %>
 	</p>
 		
 	<p>
-	<%= f.label :location, "Location" %>
+	<%= f.label :location, t("job.location") %>
 	<%= f.text_field :location %>
 	</p>
 	
 	<p>
-	<%= f.label :description, "Description" %>
+	<%= f.label :description, t("job.description") %>
 	<%= f.text_area :description %>
 	</p>
 	
 	<p>
-	<%= f.label :apply_information, "Apply Information" %>
+	<%= f.label :apply_information, t("job.apply_information") %>
 	<%= f.text_area :apply_information %>
 	</p>
 	
 	<p>
-		<%= f.label :deadline, "Deadline" %>
+		<%= f.label :deadline, t("job.deadline") %>
 		<%= f.select :deadline, [["Forever", ""], ["1 month", "30"], ["2 months", "30"], ["3 months", "60"], ["6 months", "180"] ] %>
 	</p>
 	
 	<p>
-	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+	<%= f.submit t(:submit), :disable_with => t(:submiting) %>
 	</p>
 <% end %>

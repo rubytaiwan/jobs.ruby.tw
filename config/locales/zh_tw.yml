@@ -1,0 +1,32 @@
+zh_tw:
+  submit: 送出
+  submiting: 送出中...
+  search: 搜尋
+  
+  logout: 登出
+  signup: 註冊
+  login: 登入
+    
+  edit: 編輯
+  delete: 刪除
+  open: 公開這份工作
+  close: 關閉這份工作
+  are_you_sure: 你確定嗎?
+      
+  post_a_new_job: 張貼新工作
+  list_my_posting: 列出我張貼的工作
+    
+  faq: 常見問題
+  rss_feed: Subscribe to the RSS feed
+  twitter: follow @RubyTaiwan on Twitter
+  
+  job:
+    posted: 張貼日期
+    title: 工作職稱
+    company_name: 公司名稱
+    type: 工作類型
+    occupation: 工作分類
+    location: 工作地點
+    description: 工作描述
+    apply_information: 如何應徵
+    deadline: 截止日期

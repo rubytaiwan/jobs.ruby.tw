@@ -15,11 +15,11 @@
 <p>
 <% if user_signed_in? %>
 	Hi, <%= current_user.email %> 
-	<%= link_to "List my posting", user_jobs_path( current_user ) %>
-	<%= link_to "Logout", destroy_user_session_path %>
+	<%= link_to t(:list_my_posting), user_jobs_path( current_user ) %>
+	<%= link_to t(:logout), destroy_user_session_path %>
 <% else %>
-	<%= link_to "Sign up", new_registration_path(:user) %> | 
-	<%= link_to "Login", new_session_path(:user) %>
+	<%= link_to t(:signup), new_registration_path(:user) %> | 
+	<%= link_to t(:login), new_session_path(:user) %>
 <% end %>
 </p>
 
@@ -30,7 +30,12 @@
 <p>	The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a>.</p>
 
 <p>
-	<%= link_to "FAQ", about_path %> | <a href="#">Subscribe to the RSS feed</a> | <a href="http://twitter.com/rubytaiwan">follow @RubyTaiwan on Twitter</a>
+	<%= link_to t(:faq), about_path %> | <%= link_to t(:rss_feed), "#" %> | <%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %><br>
+	Choose your language: 
+	<%= link_to "English", :controller => controller.controller_name, 
+			         :action => controller.action_name, :locale => "en" %>
+	<%= link_to "繁體中文", :controller => controller.controller_name, 
+			         :action => controller.action_name, :locale => "zh_tw" %>
 </p>
 	
 </div>

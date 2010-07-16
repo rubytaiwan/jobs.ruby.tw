@@ -1,5 +1,32 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  submit: Submit
+  submiting: Submiting...
+  search: Search
+  
+  logout: logout
+  signup: Sign up
+  login: Login
+  
+  edit: Edit
+  delete: Delete
+  open: Open the job
+  close: Close the job
+  are_you_sure: Are you sure?
+  
+  post_a_new_job: Post a new job
+  list_my_posting: List my posting
+  
+  faq: FAQ
+  rss_feed: Subscribe to the RSS feed
+  twitter: follow @RubyTaiwan on Twitter
+  
+  job:
+    posted: Posted
+    title: Title
+    company_name: Company Name
+    type: Job Type
+    occupation: Occupation
+    location: Location
+    description: Description
+    apply_information: Apply Information
+    deadline: Deadline

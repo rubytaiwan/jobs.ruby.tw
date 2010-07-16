@@ -1,4 +1,7 @@
 <h2><%= @job.title %></h2>
+<h3><%= t("job.posted") %>: <%= @job.created_at.to_date %></h3>
+
+<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
 
 <p>
 	<a href="#">Tweet this job!</a> | 
@@ -6,29 +9,25 @@
 	<a href="#">Plurk it</a>
 </p>
 
+
 <table border="1">
 	<tr>
-		<th>Job Title</th>
-		<td><%= @job.title %></td>
-	</tr>
-
-	<tr>
-		<th>Job Type</th>
+		<th><%= t("job.type") %></th>
 		<td><%= @job.job_type %></td>
 	</tr>
 	
 	<tr>
-		<th>Job Occupation</th>
+		<th><%= t("job.occupation") %></th>
 		<td><%= @job.occupation %></td>
 	</tr>
 		
 	<tr>
-		<th>Job Location</th>
+		<th><%= t("job.location") %></th>
 		<td><%= @job.location %></td>
 	</tr>
 	
 	<tr>
-		<th>Company Name</th>
+		<th><%= t("job.company_name") %></th>
 		<td><%= @job.company_name %></td>
 	</tr>
 	
@@ -40,21 +39,15 @@
 	<% end %>
 	
 	<tr>
-		<th>Description</th>
+		<th><%= t("job.description") %></th>
 		<td><%= @job.description %></td>
 	</tr>
 	
 	<tr>
-		<th>Apply Information</th>
+		<th><%= t("job.apply_information") %></th>
 		<td><%= @job.apply_information %></td>
 	</tr>
-	
-	<tr>
-		<th>Posted</th>
-		<td><%= @job.created_at %></td>
-	</tr>
+
 </table>
 
-<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
-
-<p><%= link_to "Back to job board", root_path %></p>
+<p><%= link_to "Back to the job board", root_path %></p>
