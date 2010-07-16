@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20100715071050) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
-    t.datetime "published_at"
   end
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"

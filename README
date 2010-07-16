@@ -8,8 +8,9 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] List my jobs
 [v] Edit my job
 [v] Search jobs
-[ ] Employer can close job
+[v] Employer can close job
 [v] Not display jobs which is closed or overdue
+[ ] Employer can preview job posting
 [ ] RSS feed
 [ ] Social link: Tweet this job, Facebook it, Plurk it.
 

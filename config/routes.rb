@@ -8,7 +8,12 @@ JobsRubyTw::Application.routes.draw do |map|
     resources :jobs
   end
   
-  resources :jobs
+  resources :jobs do
+    member do
+      put :open
+      put :close
+    end
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

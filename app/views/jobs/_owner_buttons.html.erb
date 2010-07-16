@@ -1,4 +1,12 @@
 <% if job.owner == current_user  %>
-	<%= link_to '(Edit)', edit_job_path(job) %>
-	<%= link_to '(Delete)', job_path(job), :confirm => "Are you sure?", :method => :delete %>
+	<%= link_to 'Edit', edit_job_path(job) %>
+	
+	<% if job.closed? %>
+		<%= link_to 'Publish', open_job_path(job), :confirm => "Are you sure?", :method => :put %>
+	<% else %>
+		<%= link_to 'Close', close_job_path(job), :confirm => "Are you sure?", :method => :put %>
+	<% end %>
+	
+	<%= link_to 'Delete', job_path(job), :confirm => "Are you sure?", :method => :delete %>
+	
 <% end %>
