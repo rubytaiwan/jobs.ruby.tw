@@ -1,26 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
-  </div>
-</body>
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Ruby Jobs in Taiwan</title> 
+  <link rel="shortcut icon" href="/favicon.ico"> 
+  <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+</head> 
+<body> 
+<div id="wrapper"> 
+    <div id="header"> 
+        <h1><a href="/">RubyJobs</a></h1> 
+        <div class="right"> 
+            <p class="member"> 
+					<a href="/users/sign_up">Sign up</a> | 
+					<a href="/users/sign_in">Login</a> 
+            </p>
+			<form action="/jobs" class="search" id="search-form" method="get"> 
+				<input class="text" id="keyword" name="keyword" title="Search" type="text" value="" /> 
+				<input class="search-submit" data-disable-with="Submiting..." name="commit" type="submit" value="Search" /> 
+</form>        </div> 
+    </div> 
+    <div id="container"> 
+        <div id="container-inner"> 
+		<h2 class="pagetitle">Something went wrong!</h2> 
+ 
+<p>There was a problem serving the requested page. Now you're wondering, "what can I do about it!?!". Well...<br> 
+You can try refreshing the page, the problem may be temporary If you entered the URL in by hand, double check that it is correct.<br> 
+We've been notified of the problem and will do our best to make sure it doesn't happen again!</p> 
+ 
+<object width="300"><param name="movie" value="http://www.youtube.com/v/qObzgUfCl28&amp;hl=en_US&amp;fs=1&amp;"> 
+<param name="allowFullScreen" value="true"> 
+<param name="allowscriptaccess" value="always"> 
+<embed src="http://www.youtube.com/v/qObzgUfCl28&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="360"></embed></object> 
+        </div> 
+    </div> 
+    <div id="footer"> 
+        <ul class="menu clearfix"> 
+            <li><a href="/about">FAQ</a></li> 
+            <li><a href="/"><a href="http://feeds.feedburner.com/rubytaiwan">Subscribe to the RSS feed</a></li> 
+            <li class="twitter"><a href="http://twitter.com/rubytaiwan">follow @RubyTaiwan on Twitter</a></li> 
+        </ul> 
+        <p class="language">Choose your language: 
+			<a href="/?locale=en">English</a> 
+			<a href="/?locale=zh_tw">繁體中文</a> 
+	    </p> 
+        <address>The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a>.</address> 
+    </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-145330-14']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+</body> 
 </html>
