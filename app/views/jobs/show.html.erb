@@ -35,13 +35,6 @@
                     </div>
                 </li>
 				<% end %>
-
-				<% if @job.owner == current_user  %>
-					<li>
-						<div class="field">
-						<label><%= t("job.deadline") %></label> <%= @job.deadline || t("job.deadline_forever") %>
-					</li>
-				<% end %>
 								
                 <li class="last">
                     <div class="field">

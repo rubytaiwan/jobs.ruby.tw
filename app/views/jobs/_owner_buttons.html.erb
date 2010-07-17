@@ -1,4 +1,7 @@
 <% if job.owner == current_user  %>
+
+<%= t("job.deadline") %>: <%= @job.deadline || t("job.deadline_forever") %>
+						
 <span class="manage">
 <%= link_to t(:edit), edit_job_path(job), :class => "edit" %>	
 <% if job.closed? %>
