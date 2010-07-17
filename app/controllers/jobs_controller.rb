@@ -20,6 +20,7 @@ class JobsController < ApplicationController
   
   def new
     @job = current_user.jobs.build
+    @job.deadline = Time.zone.now + 90.days
   end
   
   def create

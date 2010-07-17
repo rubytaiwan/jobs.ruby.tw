@@ -1,5 +1,7 @@
 class Job < ActiveRecord::Base
   
+  attr_accessor :deadline_forever
+  
   extend Searchable
   searchable_by :title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information
   
@@ -20,6 +22,8 @@ class Job < ActiveRecord::Base
   
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
 
+  before_validation :set_deadline
+  
   scope :published , where(:aasm_state => "published")
   scope :online, published.where("deadline is NULL or deadline > ?", Date.today )
   
@@ -36,5 +40,9 @@ class Job < ActiveRecord::Base
   aasm_event :open do
     transitions :to => :published, :from => [:closed]
   end
-      
+   
+  def set_deadline
+    self.deadline = nil if self.deadline_forever == "1"
+  end
+     
 end

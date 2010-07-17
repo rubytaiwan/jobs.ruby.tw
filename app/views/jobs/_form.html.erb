@@ -57,7 +57,8 @@
 	
 	<p>
 		<%= f.label :deadline, t("job.deadline") %>
-		<%= f.select :deadline, [["Forever", ""], ["1 month", "30"], ["2 months", "30"], ["3 months", "60"], ["6 months", "180"] ] %>
+		<%= f.date_select :deadline %>
+		<%= f.check_box :deadline_forever %><%= t("job.deadline_forever") %>
 	</p>
 	
 	<p>

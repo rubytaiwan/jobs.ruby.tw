@@ -48,6 +48,12 @@
 		<td><%= @job.apply_information %></td>
 	</tr>
 
+	<% if @job.owner == current_user  %>
+		<tr>
+			<th><%= t("job.deadline") %></th>
+			<td><%= @job.deadline || t("job.deadline_forever") %></td>
+		</tr>
+	<% end %>
 </table>
 
 <p><%= link_to "Back to the job board", root_path %></p>

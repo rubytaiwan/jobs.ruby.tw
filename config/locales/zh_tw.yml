@@ -29,4 +29,5 @@ zh_tw:
     location: 工作地點
     description: 工作描述
     apply_information: 如何應徵
-    deadline: 截止日期
+    deadline: 有效期限
+    deadline_forever: 永久有效

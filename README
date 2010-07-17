@@ -10,6 +10,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Search jobs
 [v] Employer can close job
 [v] Not display jobs which is closed or overdue
+[v] Employer can select deadline date or click forever checkbox
 [ ] Employer can preview job posting
 [ ] RSS feed
 [ ] Social link: Tweet this job, Facebook it, Plurk it.
