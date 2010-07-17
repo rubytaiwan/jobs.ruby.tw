@@ -40,7 +40,11 @@ class Job < ActiveRecord::Base
   aasm_event :open do
     transitions :to => :published, :from => [:closed]
   end
-   
+  
+  def deadline_forever
+    @deadline_forever ||= !self.deadline
+  end
+      
   def set_deadline
     self.deadline = nil if self.deadline_forever == "1"
   end
