@@ -2,7 +2,7 @@
 <%= form_for @job do |f| %>
 
 	<% if @job.errors.any? %>
-	<div id="errorExplanation">
+	<div id="error_explanation">
   		<h2><%= pluralize(@job.errors.count, "error") %> prohibited this person from being saved:</h2>
   		<ul>
   			<% @job.errors.full_messages.each do |msg| %>
@@ -59,7 +59,7 @@
 	<div class="field reset">
 		<%= f.label :deadline, t("job.deadline") %>
 		<span id="deadline_fields"><%= f.date_select :deadline %></span>
-		<%= f.check_box :deadline_forever %><label for="job_deadline_forever"><%= t("job.deadline_forever") %></label>
+		<%= f.check_box :deadline_forever %><label for="job_deadline_forever" class="inner"><%= t("job.deadline_forever") %></label>
 	</div>
 	
 	<div class="field">

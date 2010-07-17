@@ -41,6 +41,20 @@
             <h2 class="pagetitle">Post a new job</h2>
             <div class="form">
                 <form>
+                    <div id="errorExplanation">
+                        <h2>9 errors prohibited this person from being saved:</h2>
+                        <ul>
+                            <li>Title can't be blank</li>
+                            <li>Job type can't be blank</li>
+                            <li>Job type is not included in the list</li>
+                            <li>Company name can't be blank</li>
+                            <li>Occupation can't be blank</li>
+                            <li>Occupation is not included in the list</li>
+                            <li>Location can't be blank</li>
+                            <li>Description can't be blank</li>
+                            <li>Apply information can't be blank</li>
+                        </ul>
+                    </div>
                     <div class="field">
                         <label>Title</label>
                         <input type="text" class="text">
@@ -91,7 +105,8 @@
                         <select>
                             <option>15</option>
                         </select>
-                        <input type="checkbox"> Forever
+                        <input type="checkbox"> 
+                        <label class="inner">Forever</label>
                     </div>
                     <div class="field">
                         <input type="submit" class="submit button" value="Submit">

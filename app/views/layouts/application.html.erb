@@ -42,9 +42,13 @@
     </div>
     <div id="container">
         <div id="container-inner">
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
-			<%= yield %>
+		<% if flash[:notice] %>
+			<div class="message notice"><%= flash[:notice] %></div>
+		<% end %>
+		<% if flash[:warning] %>
+			<div class="message alert"><%= flash[:alert] %></div>
+		<% end %>
+		<%= yield %>
         </div>
     </div>
     <div id="footer">

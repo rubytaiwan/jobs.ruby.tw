@@ -265,7 +265,7 @@ a:hover, a:active {
     height: 31px;
     position: absolute;
     left: -14px;
-    top: 40px;
+    top: 60px;
 }
 
 .post-job a {
@@ -369,6 +369,10 @@ a:hover, a:active {
 
 .problem .receive {
     background: url(../images/sprite.png) 0 -620px no-repeat;
+}
+
+label.inner {
+    position: static;
 }
 
 /* Job Content
@@ -554,4 +558,41 @@ a:hover, a:active {
 
 #footer address a, .faq a {
     text-decoration: underline;
+}
+
+/* Message
+-----------------------------------------------------------------------------*/
+
+.message {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-weight: bold;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.alert {
+    background: #fef6f6;
+    border: 1px solid #ba1318;
+}
+
+.notice {
+    background: #fbfef6;
+    border: 1px solid #85ba13;
+}
+
+#error_explanation {
+    background: #fef6f6;
+    border: 1px solid #ba1318;
+    margin-bottom: 20px;
+    padding: 10px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#error_explanation {
+    width: 600px;
 }
