@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Ruby Jobs in Taiwan</title>
+  <link rel="shortcut icon" href="favicon.ico">
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
-  <%= javascript_include_tag "rails" %>
+  <%= javascript_include_tag "rails", "jquery.formLabels1.0.js" %>
+<script type="text/javascript">
+	$(function(){
+		$.fn.formLabels();
+		$("#search-form").submit(function(){
+			var formVal = $("form").serialize();
+			parent.$("#default div.results").html(formVal);
+		})
+	});
+</script>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<h1><a href="/">Job board for Ruby and Rails developers in Taiwan</a></h1>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<p>
-<% if user_signed_in? %>
-	Hi, <%= current_user.email %> 
-	<%= link_to t(:list_my_posting), user_jobs_path( current_user ) %>
-	<%= link_to t(:logout), destroy_user_session_path %>
-<% else %>
-	<%= link_to t(:signup), new_registration_path(:user) %> | 
-	<%= link_to t(:login), new_session_path(:user) %>
-<% end %>
-</p>
-
-<%= yield %>
-
-<div id="footer">
-	
-<p>	The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a>.</p>
-
-<p>
-	<%= link_to t(:faq), about_path %> | <%= link_to t(:rss_feed), "#" %> | <%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %><br>
-	Choose your language: 
-	<%= link_to "English", :controller => controller.controller_name, 
-			         :action => controller.action_name, :locale => "en" %>
-	<%= link_to "繁體中文", :controller => controller.controller_name, 
-			         :action => controller.action_name, :locale => "zh_tw" %>
-</p>
-	
+<div id="wrapper">
+    <div id="header">
+        <h1><a href="/">RubyJobs</a></h1>
+        <div class="right">
+            <p class="member">
+				<% if user_signed_in? %>
+					Hi, <%= current_user.email %> 
+					<%= link_to t(:list_my_posting), jobs_path(current_user, :user_id => current_user) %> | 
+					<%= link_to t(:settings), edit_user_registration_path %> |
+					<%= link_to t(:logout), destroy_user_session_path %>
+				<% else %>
+					<%= link_to t(:signup), new_registration_path(:user) %> | 
+					<%= link_to t(:login), new_session_path(:user) %>
+				<% end %>
+            </p>
+			<%= form_tag jobs_path, :id => "search-form", :class => "search", :method => :get do %>
+				<%= text_field_tag :keyword, "", :title => "Search", :class => "text" %>
+				<%= submit_tag t(:search), :disable_with => t(:submiting), :class => "search-submit" %>
+			<% end %>
+        </div>
+    </div>
+    <div id="container">
+        <div id="container-inner">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+			<%= yield %>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="menu clearfix">
+            <li><%= link_to t(:faq), about_path %></li>
+            <li><a href="/"><%= link_to t(:rss_feed), "http://feeds.feedburner.com/rubytaiwan" %></li>
+            <li class="twitter"><%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %></li>
+        </ul>
+        <p class="language">Choose your language: 
+			<%= link_to "English", :controller => controller.controller_name, 
+					         :action => controller.action_name, :locale => "en" %>
+			<%= link_to "繁體中文", :controller => controller.controller_name, 
+					         :action => controller.action_name, :locale => "zh_tw" %>
+	    </p>
+        <address>The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a>.</address>
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -54,6 +76,5 @@
   })();
 
 </script>
-
 </body>
 </html>

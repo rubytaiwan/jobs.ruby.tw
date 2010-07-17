@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="javascripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.formLabels1.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.fn.formLabels();
+		$("form").submit(function(){
+			var formVal = $("form").serialize();
+			parent.$("#default div.results").html(formVal);
+			return false
+		})
+	});
+</script>
+<title>Ruby Jobs - Job board for Ruby and Rails developers in Taiwan</title>
+
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="header">
+        <h1><a href="/">RubyJobs</a></h1>
+        <div class="right">
+            <p class="member">
+                <span>Hi, underfire9@gmail.com</span>
+                <a href="/">List my posting</a> | 
+                <a href="/">logout</a>
+            </p>
+            <form class="search">
+                <input type="text" class="text" title="Search">
+                <input type="submit" class="search-submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div id="container">
+        <div id="container-inner">
+            <div class="job-content">
+                <h1 class="jobtitle">Ruby on Rails Systems Developer</h1>
+                <p class="date">Posted: 2010-07-16 
+                    <span class="manage">
+                        <a href="/" class="edit">Edit</a>
+                        <a href="/" class="delete">Delete</a>
+                        <a href="/" class="open">Open</a>
+                        <a href="/" class="close">Close</a>
+                    </span>
+                </p>
+                <p class="social">
+                    <a href="/" class="twitter" title="Tweet this job!">Tweet this job!</a>
+                    <a href="/" class="facebook" title="Facebook it">Facebook it</a>
+                    <a href="/" class="plurk" title="Plurk it">Plurk it</a>
+                </p>
+                <ul class="job-info form menu">
+                    <li class="double clearfix">
+                        <div class="field">
+                            <label>Job Type</label> Part-time
+                        </div>
+                        <div class="field">
+                            <label>Occupation</label> Web-Design
+                        </div>
+                    </li>
+                    <li class="double clearfix">
+                        <div class="field">
+                            <label>Company Name</label> Kforce Technology Staffing
+                        </div>
+                        <div class="field">
+                            <label>Location</label> San Francisco, California
+                        </div>
+                    </li>
+                    <li>
+                        <div class="field">
+                            <label>URL</label> <a href="http://ruby.tw/" target="_blank">http://ruby.tw/</a>
+                        </div>
+                    </li>
+                    <li class="last">
+                        <div class="field">
+                            <label>Description</label>
+                            <div class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="apply-information">
+                    <h2>Apply Information</h2>
+                    <div class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of <a href="/">sentences fly into</a> your mouth.</div>
+                </div>
+                <a href="/" class="backto">Back to job board</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="menu clearfix">
+            <li><a href="/">FAQ</a></li>
+            <li><a href="/">Subscribe to the RSS feed</a></li>
+            <li class="twitter"><a href="/">follow @RubyTaiwan on Twitter</a></li>
+        </ul>
+        <p class="language">Choose your language: <a href="/">English</a> | <a href="/">繁體中文</a></p>
+        <address>The job board is a free service by <a href="/">Ruby Taiwan</a>.</address>
+    </div>
+</div>
+
+</body>
+</html>

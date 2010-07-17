@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="javascripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.formLabels1.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.fn.formLabels();
+		$("form").submit(function(){
+			var formVal = $("form").serialize();
+			parent.$("#default div.results").html(formVal);
+			return false
+		})
+	});
+</script>
+<title>Ruby Jobs - Job board for Ruby and Rails developers in Taiwan</title>
+
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="header">
+        <h1><a href="/">RubyJobs</a></h1>
+        <div class="right">
+            <p class="member">
+                <a href="/">Sign up</a> | 
+                <a href="/">Login</a>
+            </p>
+            <form class="search">
+                <input type="text" class="text" title="Search">
+                <input type="submit" class="search-submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div id="container">
+        <div id="container-inner">
+            <p class="post-job clearfix"><a href="/" title="Post a new job">Post a new job</a></p>
+            <table cellspacing="0" class="joblist">
+                <thead>
+                    <tr>
+                        <th>Posted</th>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2010-07-16</td>
+                        <td><a href="/">Ruby on Rails Systems Developer</a></td>
+                        <td>Kforce Technology Staffing</td>
+                        <td>San Francisco, California</td>
+                    </tr>
+                    <tr>
+                        <td>2010-07-14</td>
+                        <td><a href="/">Ruby Developer</a></td>
+                        <td>Ruby Taiean</td>
+                        <td>Taipei, Taiwan</td>
+                    </tr>
+                    <tr>
+                        <td>2010-07-13</td>
+                        <td><a href="/">Ruby on Rails Systems Developer</a></td>
+                        <td>Kforce Technology Staffing</td>
+                        <td>San Francisco, California</td>
+                    </tr>
+                    <tr>
+                        <td>2010-07-02</td>
+                        <td><a href="/">Ruby Developer</a></td>
+                        <td>Ruby Taiean</td>
+                        <td>Taipei, Taiwan</td>
+                    </tr>
+                    <tr>
+                        <td>2010-06-28</td>
+                        <td><a href="/">Ruby on Rails Systems Developer</a></td>
+                        <td>Kforce Technology Staffing</td>
+                        <td>San Francisco, California</td>
+                    </tr>
+                    <tr>
+                        <td>2010-06-05</td>
+                        <td><a href="/">Ruby Developer</a></td>
+                        <td>Ruby Taiean</td>
+                        <td>Taipei, Taiwan</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="paperclip"></span>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="menu clearfix">
+            <li><a href="/">FAQ</a></li>
+            <li><a href="/">Subscribe to the RSS feed</a></li>
+            <li class="twitter"><a href="/">follow @RubyTaiwan on Twitter</a></li>
+        </ul>
+        <p class="language">Choose your language: <a href="/">English</a> | <a href="/">繁體中文</a></p>
+        <address>The job board is a free service by <a href="/">Ruby Taiwan</a>.</address>
+    </div>
+</div>
+
+</body>
+</html>

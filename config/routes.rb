@@ -3,11 +3,7 @@ JobsRubyTw::Application.routes.draw do |map|
   match '/about' => 'pages#about', :as => "about"
   
   devise_for :users
-  
-  resources :users do
-    resources :jobs
-  end
-  
+    
   resources :jobs do
     member do
       put :open

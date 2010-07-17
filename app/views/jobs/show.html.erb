@@ -1,59 +1,59 @@
-<h2><%= @job.title %></h2>
-<h3><%= t("job.posted") %>: <%= @job.created_at.to_date %></h3>
-
-<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
-
-<p>
-	<a href="#">Tweet this job!</a> | 
-	<a href="#">Facebook it</a> | 
-	<a href="#">Plurk it</a>
+<div class="job-content">
+<h1 class="jobtitle"><%= @job.title %></h1>
+<p class="date"><%= t("job.posted") %>: <%= @job.created_at.to_date %>
+	<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
 </p>
 
+<p class="social">
+    <a href="/" class="twitter" title="Tweet this job!">Tweet this job!</a>
+    <a href="/" class="facebook" title="Facebook it">Facebook it</a>
+    <a href="/" class="plurk" title="Plurk it">Plurk it</a>
+</p>
 
-<table border="1">
-	<tr>
-		<th><%= t("job.type") %></th>
-		<td><%= @job.job_type %></td>
-	</tr>
-	
-	<tr>
-		<th><%= t("job.occupation") %></th>
-		<td><%= @job.occupation %></td>
-	</tr>
-		
-	<tr>
-		<th><%= t("job.location") %></th>
-		<td><%= @job.location %></td>
-	</tr>
-	
-	<tr>
-		<th><%= t("job.company_name") %></th>
-		<td><%= @job.company_name %></td>
-	</tr>
-	
-	<% unless @job.url.blank? %>
-	<tr>
-		<th>URL</th>
-		<td><%= link_to @job.url, @job.url %></td>
-	</tr>
-	<% end %>
-	
-	<tr>
-		<th><%= t("job.description") %></th>
-		<td><%= @job.description %></td>
-	</tr>
-	
-	<tr>
-		<th><%= t("job.apply_information") %></th>
-		<td><%= @job.apply_information %></td>
-	</tr>
+          <ul class="job-info form menu">
+                <li class="double clearfix">
+                    <div class="field">
+                        <label><%= t("job.type") %></label> <%= @job.job_type %>
+                    </div>
+                    <div class="field">
+                        <label><%= t("job.occupation") %></label> <%= @job.occupation %>
+                    </div>
+                </li>
+                <li class="double clearfix">
+                    <div class="field">
+                        <label><%= t("job.company_name") %></label> <%= @job.company_name %>
+                    </div>
+                    <div class="field">
+                        <label><%= t("job.location") %></label> <%= @job.location %>
+                    </div>
+                </li>
 
-	<% if @job.owner == current_user  %>
-		<tr>
-			<th><%= t("job.deadline") %></th>
-			<td><%= @job.deadline || t("job.deadline_forever") %></td>
-		</tr>
-	<% end %>
-</table>
+				<% unless @job.url.blank? %>
+                <li>
+                    <div class="field">
+                        <label>URL</label> <%= link_to @job.url, @job.url, :target => "_blank" %>
+                    </div>
+                </li>
+				<% end %>
 
-<p><%= link_to "Back to the job board", root_path %></p>
+				<% if @job.owner == current_user  %>
+					<li>
+						<div class="field">
+						<label><%= t("job.deadline") %></label> <%= @job.deadline || t("job.deadline_forever") %>
+					</li>
+				<% end %>
+								
+                <li class="last">
+                    <div class="field">
+                        <label><%= t("job.description") %></label>
+                        <div class="description"><%= simple_format @job.description %></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="apply-information">
+                <h2><%= t("job.apply_information") %></h2>
+                <div class="description"><%= simple_format @job.apply_information %></div>
+            </div>
+
+<a href="/" class="backto">Back to job board</a>
+</div>

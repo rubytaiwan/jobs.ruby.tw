@@ -1,12 +1,19 @@
-<h2>Resend confirmation instructions</h2>
-
+<h2 class="pagetitle">Resend confirmation instructions</h2>
+<div class="form">
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
-
-  <p><%= f.submit "Resend confirmation instructions" %></p>
+  <div class="field">
+  	<%= f.label :email %>
+  	<%= f.text_field :email, :class => "text" %>
+  </div>
+  <div class="field">
+		<%= f.submit "Resend confirmation instructions", :class => "button" %>
+  </div>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<p class="problem">
+  	<%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot" %>
+  	<%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), :class => "receive" %>
+</p>
+</div>

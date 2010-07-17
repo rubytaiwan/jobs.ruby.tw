@@ -6,6 +6,7 @@ en:
   logout: logout
   signup: Sign up
   login: Login
+  settings: Settings
   
   edit: Edit
   delete: Delete
@@ -22,7 +23,7 @@ en:
   
   job:
     posted: Posted
-    title: Title
+    title: Job Title
     company_name: Company Name
     type: Job Type
     occupation: Occupation
