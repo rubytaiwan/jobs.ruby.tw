@@ -1,7 +1,22 @@
 <div class="job-content">
 <h1 class="jobtitle"><%= @job.title %></h1>
-<p class="date"><%= t("job.posted") %>: <%= @job.created_at.to_date %>
-	<%= render :partial => "owner_buttons", :locals => { :job => @job } %>
+<p class="date">
+ <%= t("job.posted") %>: <%= @job.created_at.to_date %>
+ 
+ <% if @job.owner == current_user  %>	
+ 	<%= t("job.deadline") %>: <%= @job.deadline || t("job.deadline_forever") %>
+ 	<span class="manage">
+ 	<%= link_to t(:edit), edit_job_path(@job), :class => "edit" %>	
+ 	<% if @job.closed? %>
+ 		<%= link_to t(:open), open_job_path(@job), :confirm => t(:are_you_sure), :method => :put, :class => "open" %>
+ 	<% else %>
+ 		<%= link_to t(:close), close_job_path(@job), :confirm => t(:are_you_sure), :method => :put, :class => "close" %>
+ 	<% end %>	
+ 	<%= link_to t(:delete), job_path(@job), :confirm => t(:are_you_sure), :method => :delete, :class => "delete" %>
+ 	</span>	
+ <% elsif @job.deadline %>
+ 	<%= t("job.deadline") %>: <%= @job.deadline %>
+ <% end %>
 </p>
 
 <p class="social">
