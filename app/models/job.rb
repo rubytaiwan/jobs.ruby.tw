@@ -14,7 +14,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :apply_information
   validates_presence_of :owner
   
-  JOB_TYPE = %w[Part-time Full-time Contract Internship Other]
+  JOB_TYPE = %w[Full-time Part-time Contract Internship Other]
   OCCUPATION = %w[Back-end Front-end Web-design QA/Testing Other]
   
   validates_inclusion_of :job_type, :in => JOB_TYPE 
