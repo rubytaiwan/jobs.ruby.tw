@@ -20,9 +20,10 @@
 </p>
 
 <p class="social">
-    <a href="/" class="twitter" title="Tweet this job!">Tweet this job!</a>
-    <a href="/" class="facebook" title="Facebook it">Facebook it</a>
-    <a href="/" class="plurk" title="Plurk it">Plurk it</a>
+
+	<%= link_to "Tweet this job!", "http://twitter.com?status=#{@job.social_link_content}", :class => "twitter", :title => "Tweet this job!" %>
+<%= link_to "Facebook this job!", "http://www.facebook.com/sharer.php?u=#{@job.social_link_url}&t=#{@job.social_link_title}", :class => "facebook", :title => "Facebook this job!" %>
+	<%= link_to "Plurk this job!", "http://plurk.com?status=#{@job.social_link_content}", :class => "plurk", :title => "Plurk this job" %>
 </p>
 
           <ul class="job-info form menu">

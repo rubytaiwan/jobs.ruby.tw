@@ -41,6 +41,18 @@ class Job < ActiveRecord::Base
     transitions :to => :published, :from => [:closed]
   end
   
+  def social_link_url
+    CGI::escape "http://jobs.ruby.tw/jobs/#{self.to_param}"
+  end
+  
+  def social_link_title
+    CGI::escape self.title
+  end
+  
+  def social_link_content
+    "#{social_link_title} #{social_link_url}"
+  end
+  
   def deadline_forever
     @deadline_forever ||= !self.deadline
   end
