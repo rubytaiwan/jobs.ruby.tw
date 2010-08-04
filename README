@@ -14,6 +14,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Social link: Tweet this job, Facebook it, Plurk it.
 [ ] Employer can preview job posting
 [ ] RSS feed
+[ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
 
 == Employer profile

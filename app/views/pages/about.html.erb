@@ -1,14 +1,29 @@
-<h2 class="pagetitle">About this job board</h2>
-<dl class="faq menu">
-<dl class="faq menu">
-    <dt>這項服務由誰提供?</dt>
-    <dd>由 <a href="http://ruby.tw/" target="_blank">Ruby Taiwan</a> 提供。</dd>
-    <dt>如何張貼，需要付費嗎?</dt>
-    <dd>只要註冊經過 E-mail 認證，就可以張貼了，不需要付費。但是請不要張貼與 Ruby/Rails 毫無任何關係的工作，我們會刪除掉。</dd>
-    <dt>這些工作好贊，我想要學 Ruby 跟 Rails，請問可以從哪裡開始?</dt>
-    <dd>您可以參考這個也是由我們整理的 <a href="http://guides.ruby.tw/" target="_blank">Ruby 學習文件</a>。</dd>
-    <dt>這個 Job Board 程式有開放原始碼嗎?</dt>
-    <dd>有的，程式碼放在 <a href="http://github.com/ihower/jobs.ruby.tw" target="_blank">GitHub</a>，採用 MIT 授權(除了 CSS 視覺設計)。</dd>
-    <dt>有任何問題，該如何聯絡你們?</dt>
-    <dd>請來信 <a href="mailto:ihower@gmail.com">ihower@gmail.com</a></dd>
-</dl>
+<% if I18n.locale == :zh_tw %>
+	<h2 class="pagetitle">常見問題</h2>
+	<dl class="faq menu">
+	    <dt>這項服務由誰提供?</dt>
+	    <dd>由 <a href="http://ruby.tw/" target="_blank">Ruby Taiwan</a> 提供。</dd>
+	    <dt>如何張貼，需要付費嗎?</dt>
+	    <dd>只要註冊經過 E-mail 認證，就可以張貼了，不需要付費。但是請不要張貼與 Ruby/Rails 毫無任何關係的工作，我們會刪除掉。</dd>
+	    <dt>這些工作好贊，我想要學 Ruby 跟 Rails，請問可以從哪裡開始?</dt>
+	    <dd>您可以參考這個也是由我們整理的 <a href="http://guides.ruby.tw/" target="_blank">Ruby 學習文件</a>。</dd>
+	    <dt>這個 Job Board 程式有開放原始碼嗎?</dt>
+	    <dd>有的，程式碼放在 <a href="http://github.com/ihower/jobs.ruby.tw" target="_blank">GitHub</a>，採用 MIT 授權(除了 CSS 視覺設計)。</dd>
+	    <dt>有任何問題，該如何聯絡你們?</dt>
+	    <dd>請來信 <a href="mailto:ihower@gmail.com">ihower@gmail.com</a></dd>
+	</dl>
+<% else  %>
+	<h2 class="pagetitle">FAQ</h2>
+	<dl class="faq menu">
+	    <dt>Who provide this service?</dt>
+	    <dd><a href="http://ruby.tw/" target="_blank">Ruby Taiwan</a> community.</dd>
+	    <dt>How to post? Need I pay for it?</dt>
+	    <dd>It's free. You only need to register and be confirmed by E-mail. Do not post irrelevant Ruby/Rails job, we will delete it. </dd>
+	    <dt>The jobs are awesome! I want to learn Ruby/Rails! Where am I getting started?</dt>
+	    <dd>You can visit <a href="http://guides.ruby.tw/" target="_blank">Ruby Taiwan Guides</a> which is maintained by us, too.</dd>
+	    <dt>Does this job board open source?</dt>
+	    <dd>Yes, the source code is at <a href="http://github.com/ihower/jobs.ruby.tw" target="_blank">GitHub</a>, which is licensed by MIT (except visual  design).</dd>
+	    <dt>If I have any question, how to contact you?</dt>
+	    <dd>E-mail to <a href="mailto:ihower@gmail.com">ihower@gmail.com</a></dd>
+	</dl>
+<% end %>
