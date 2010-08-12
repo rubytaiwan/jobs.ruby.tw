@@ -41,6 +41,10 @@ class Job < ActiveRecord::Base
     transitions :to => :published, :from => [:closed]
   end
   
+  def to_param
+    "#{self.id}-#{self.title} #{self.company_name}".to_slug.normalize.to_s
+  end
+  
   def social_link_url
     CGI::escape "http://jobs.ruby.tw/jobs/#{self.to_param}"
   end

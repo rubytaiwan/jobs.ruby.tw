@@ -36,6 +36,7 @@ GEM
     activesupport (3.0.0.rc)
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
+    babosa (0.1.1)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     devise (1.1.rc2)
@@ -85,6 +86,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm!
+  babosa
   devise (= 1.1.rc2)
   hoptoad_notifier
   mysql

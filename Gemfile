@@ -10,6 +10,7 @@ gem 'devise', '1.1.rc2'
 gem 'mysql'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "aasm", :git => "git://github.com/rubyist/aasm.git", :require => "aasm"
+gem "babosa"
 gem 'hoptoad_notifier'
 
 # Use unicorn as the web server
