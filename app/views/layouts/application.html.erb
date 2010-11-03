@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
   <%= javascript_include_tag "rails", "jquery.formLabels1.0.js" %>
+  <%= auto_discovery_link_tag(:rss, {:controller => "jobs", :action => "index", :format => "rss"}, :title => "Ruby Jobs in Taiwan RSS feed") %>
 <script type="text/javascript">
 	$(function(){
 		$.fn.formLabels();

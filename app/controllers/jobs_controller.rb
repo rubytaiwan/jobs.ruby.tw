@@ -11,7 +11,6 @@ class JobsController < ApplicationController
     else
       @jobs = Job.online.order("id desc")
     end
-    
   end
   
   def show
@@ -63,7 +62,7 @@ class JobsController < ApplicationController
     
     redirect_to job_path(@job)    
   end
-  
+
   protected
   
   def find_my_job
