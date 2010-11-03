@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
   <%= javascript_include_tag "rails", "jquery.formLabels1.0.js" %>
-  <%= auto_discovery_link_tag(:rss, {:controller => "jobs", :action => "index", :format => "rss"}, :title => "Ruby Jobs in Taiwan RSS feed") %>
+  <%= auto_discovery_link_tag(:rss, jobs_path(:rss), :title => "Ruby Jobs in Taiwan RSS feed") %>
 <script type="text/javascript">
 	$(function(){
 		$.fn.formLabels();
@@ -55,7 +55,7 @@
     <div id="footer">
         <ul class="menu clearfix">
             <li><%= link_to t(:faq), about_path %></li>
-            <li><a href="/"><%= link_to t(:rss_feed), "http://feeds.feedburner.com/rubytaiwan" %></li>
+            <li><%= link_to t(:rss_feed), "http://feeds.feedburner.com/rubytaiwan" %></li>
             <li class="twitter"><%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %></li>
         </ul>
         <p class="language">Choose your language: 
