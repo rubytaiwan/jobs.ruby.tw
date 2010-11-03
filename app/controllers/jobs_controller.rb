@@ -38,6 +38,7 @@ class JobsController < ApplicationController
   def preview
     @job = current_user.jobs.build(params[:job])
     @job.created_at = Time.now
+    @job.valid?
 
     render :layout => false
   end

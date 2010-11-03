@@ -1,11 +1,22 @@
+<% if @job.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@job.errors.count, "error") %> prohibited this person from being saved:</h2>
+	<ul>
+		<% @job.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% else %>
 <div class="job-content">
 <h1 class="jobtitle"><%= @job.title %></h1>
 <p class="date">
  <%= t("job.posted") %>: <%= @job.created_at.to_date %>
- <% if @job.deadline %>
+ <% if @job.deadline_forever == 0 %>
  	<%= t("job.deadline") %>: <%= @job.deadline %>
  <% end %>
 
 <%= render :partial => "job", :object => @job %>
 
 </div>
+<% end %>

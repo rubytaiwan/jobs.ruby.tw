@@ -11,6 +11,7 @@ JobsRubyTw::Application.routes.draw do |map|
     end
     collection do
       post :preview
+      put :preview
     end
   end
   
