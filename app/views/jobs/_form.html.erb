@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_for @job do |f| %>
+  <%= form_for @job do |f| %>
 
 	<% if @job.errors.any? %>
 	<div id="error_explanation">
@@ -62,9 +62,13 @@
 		<%= f.check_box :deadline_forever %><label for="job_deadline_forever" class="inner"><%= t("job.deadline_forever") %></label>
 	</div>
 	
-	<div class="field">
+	<div class="field actions">
+          <%= link_to(t(:preview), "#preview", :class => "preview") %>
 	<%= f.submit t(:submit), :class => "submit button",:disable_with => t(:submiting) %>
 	</div>
+        <div style='display:none'>
+        <div id="preview"></div>
+        </div>
 <% end %>
 </div>
 
@@ -75,4 +79,12 @@
 	$("#job_deadline_forever").click(function() {
     	$("#deadline_fields").toggle();
 	});
+    $("a.preview").colorbox( {
+        width: "960px",
+        height: "80%",
+        inline: true,
+        onLoad: function() {
+          $.post("/jobs/preview", $("form").serialize(), function(s){ $("#preview").html(s)});
+        }
+    } );
 </script>

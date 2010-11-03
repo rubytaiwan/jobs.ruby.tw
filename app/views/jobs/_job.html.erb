@@ -1,0 +1,37 @@
+          <ul class="job-info form menu">
+                <li class="double clearfix">
+                    <div class="field">
+                        <label><%= t("job.type") %></label> <%= job.job_type %>
+                    </div>
+                    <div class="field">
+                        <label><%= t("job.occupation") %></label> <%= job.occupation %>
+                    </div>
+                </li>
+                <li class="double clearfix">
+                    <div class="field">
+                        <label><%= t("job.company_name") %></label> <%= job.company_name %>
+                    </div>
+                    <div class="field">
+                        <label><%= t("job.location") %></label> <%= job.location %>
+                    </div>
+                </li>
+
+				<% unless job.url.blank? %>
+                <li>
+                    <div class="field">
+                        <label>URL</label> <%= link_to job.url, job.url, :target => "_blank" %>
+                    </div>
+                </li>
+				<% end %>
+								
+                <li class="last">
+                    <div class="field">
+                        <label><%= t("job.description") %></label>
+                        <div class="description"><%= simple_format job.description %></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="apply-information">
+                <h2><%= t("job.apply_information") %></h2>
+                <div class="description"><%= simple_format job.apply_information %></div>
+            </div>

@@ -1,0 +1,11 @@
+<div class="job-content">
+<h1 class="jobtitle"><%= @job.title %></h1>
+<p class="date">
+ <%= t("job.posted") %>: <%= @job.created_at.to_date %>
+ <% if @job.deadline %>
+ 	<%= t("job.deadline") %>: <%= @job.deadline %>
+ <% end %>
+
+<%= render :partial => "job", :object => @job %>
+
+</div>

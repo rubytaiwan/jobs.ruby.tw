@@ -325,6 +325,10 @@ a:hover, a:active {
     position: relative;
 }
 
+.form .field.actions {
+    padding: 0 0 40px 550px;
+}
+
 .form label {
     width: 150px;
     text-align: right;

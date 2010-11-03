@@ -34,6 +34,13 @@ class JobsController < ApplicationController
   
   def edit
   end
+
+  def preview
+    @job = current_user.jobs.build(params[:job])
+    @job.created_at = Time.now
+
+    render :layout => false
+  end
   
   def update    
     if @job.update_attributes(params[:job])

@@ -9,6 +9,9 @@ JobsRubyTw::Application.routes.draw do |map|
       put :open
       put :close
     end
+    collection do
+      post :preview
+    end
   end
   
   # The priority is based upon order of creation:
