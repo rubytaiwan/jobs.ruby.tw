@@ -333,6 +333,10 @@ a:hover, a:active {
     top: 6px;
 }
 
+.form label.inline {
+    position: static;
+}
+
 .reset label {
     top: 3px;
 }

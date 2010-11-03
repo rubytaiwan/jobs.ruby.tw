@@ -30,14 +30,14 @@
 	<div class="field reset">
 	<%= f.label :job_type, t("job.type") %>
 		<% Job::JOB_TYPE.each do |t| %>
-			<%= f.radio_button :job_type, t %> <%= t %>
+                        <%= f.radio_button :job_type, t %> <%= f.label :job_type, t, :value => t, :class => "inline" %>
 		<% end %>
 	</div>
 	
 	<div class="field reset">
 	<%= f.label :occupation, t("job.occupation") %>
 		<% Job::OCCUPATION.each do |o| %>
-			<%= f.radio_button :occupation, o %> <%= o %>
+                        <%= f.radio_button :occupation, o %> <%= f.label :occupation, o, :value => o, :class => "inline" %>
 		<% end %>
 	</div>
 		
