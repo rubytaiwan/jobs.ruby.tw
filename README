@@ -13,7 +13,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Employer can select deadline date or click forever checkbox
 [v] Social link: Tweet this job, Facebook it, Plurk it.
 [v] RSS feed
-[ ] Employer can preview job posting
+[v] Employer can preview job posting
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
 
