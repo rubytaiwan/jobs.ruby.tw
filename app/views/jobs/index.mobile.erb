@@ -1,0 +1,20 @@
+<div data-role="page" id="home">
+  <header data-role="header">
+    <h1>Ruby Jobs in Taiwan</h1>
+  </header>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @jobs.each do |job| %>
+      <li>
+        <%= link_to job.title, job_path(job), :rel => "external" %>
+      </li>
+      <% end %>
+    </ul>
+  </div><!-- content -->
+
+
+  <footer data-role="footer" data-position="fixed">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

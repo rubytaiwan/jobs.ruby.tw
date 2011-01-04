@@ -1,0 +1,37 @@
+<div data-role="page" id="home">
+  <header data-role="header">
+    <h1><%= @job.title %></h1>
+  </header>
+
+  <div data-role="content">
+    <dl title="job detail">
+      <dt><%= t("job.type") %></dt>
+      <dd><%= @job.job_type %></dd>
+
+      <dt><%= t("job.occupation") %></dt>
+      <dd><%= @job.occupation%></dd>
+
+      <dt><%= t("job.company_name") %></dt>
+      <dd><%= @job.company_name%></dd>
+
+      <dt><%= t("job.location") %></dt>
+      <dd><%= @job.location%></dd>
+
+      <% unless @job.url.blank? %>
+      <dt>URL</dt>
+      <dd><%= link_to @job.url, @job.url, :target => "_blank" %></dd>
+      <% end %>
+
+      <dt><%= t("job.description") %></dt>
+      <dd><%= simple_format @job.description %></dd>
+
+      <dt><%= t("job.apply_information") %></dt>
+      <dd><%= simple_format @job.apply_information %></dd>
+    </dl>
+  </div><!-- content -->
+
+
+  <footer data-role="footer" data-position="fixed">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  has_mobile_fu
   
   protect_from_forgery
   
@@ -19,5 +20,4 @@ class ApplicationController < ActionController::Base
   def render_not_found
     render :template => "pages/404", :status => 404
   end
-      
 end
