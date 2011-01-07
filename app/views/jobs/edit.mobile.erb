@@ -1,11 +1,12 @@
 <div data-role="page" id="job">
   <header data-role="header">
-    <h1><%= @job.title %></h1>
+    <h1><%= Edit t("post_a_new_job") %></h1>
   </header>
 
   <div data-role="content">
-    <%= render :partial => "job", :object => @job %>
+<%= render :partial => 'form' %>
   </div><!-- content -->
+
 
   <footer data-role="footer">
     <h4>Ruby.tw</h4>

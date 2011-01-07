@@ -7,14 +7,28 @@
     <ul data-role="listview">
       <% @jobs.each do |job| %>
       <li>
-        <%= link_to job.title, job_path(job), :rel => "external" %>
+        <h3><%= link_to job.title, job_path(job) %></h3>
+        <p><strong><%= job.company_name %></strong></p>
+        <p><%= job.location %></p>
+        <p class="ui-li-aside"><strong><%= job.created_at.to_date %></strong></p>
       </li>
       <% end %>
     </ul>
+    <div class="foot">
+      <p>The job board is a free service by <a href="http://ruby.tw/">Ruby Taiwan</a> and hosted by <a href="http://www.openfoundry.org/">OSSF</a></p>
+    <% unless user_signed_in? %>
+      <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><%= link_to 'Sign In', new_session_path(:user),      "data-role" => "button" %></div>
+        <div class="ui-block-b"><%= link_to 'Sign Up', new_registration_path(:user), "data-role" => "button" %></div>
+      </fieldset>
+    <% else %>
+        <%= link_to 'Sign Out', destroy_user_session_path, "class" => "ui-btn-right", :rel => "external" %>
+    <% end %>
+    </div>
   </div><!-- content -->
 
 
-  <footer data-role="footer" data-position="fixed">
+  <footer data-role="footer">
     <h4>Ruby.tw</h4>
   </footer>
 </div>
