@@ -1,0 +1,22 @@
+<div data-role="page" id="unlock-new">
+  <header data-role="header">
+    <h1>Resend unlock instructions</h1>
+  </header>
+
+  <div data-role="content">
+    <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <p>
+        <%= f.label :email %><br />
+        <%= f.text_field :email %>
+      </p>
+    
+      <p>
+        <%= f.submit "Resend unlock instructions" %>
+      </p>
+    <% end %>
+
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>
