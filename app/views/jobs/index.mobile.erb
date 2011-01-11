@@ -1,5 +1,5 @@
 <div data-role="page">
-  <header data-role="header">
+  <header data-role="header" data-noBackBtn=true>
     <h1>Ruby Jobs in Taiwan</h1>
     <% if user_signed_in? %>
     <%= link_to 'Add', new_job_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
