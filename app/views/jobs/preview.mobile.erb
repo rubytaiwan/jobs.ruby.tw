@@ -1,0 +1,31 @@
+<div data-role="page">
+  <header data-role="header">
+    <h1><%= @job.title %> Preview</h1>
+  </header>
+
+  <div data-role="content">
+    <% if @job.errors.any? %>
+      <div class="error_explanation">
+        <h2><%= pluralize(@job.errors.count, "error") %> prohibited this request from being processed:</h2>
+        <ul>
+          <% @job.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <p class="date">
+      <%= t("job.posted") %>: <%= @job.created_at.to_date %>
+      <% if @job.deadline_forever == 0 %>
+       	<%= t("job.deadline") %>: <%= @job.deadline %>
+      <% end %>
+      </p>
+      <%= render :partial => "job", :object => @job %>
+      <%= render "shared/foot" %>
+    <% end %>
+  </div><!-- content -->
+
+  <footer data-role="footer">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

@@ -1,10 +1,10 @@
-<div data-role="page" id="job">
+<div data-role="page">
   <header data-role="header">
     <h1><%= t("post_a_new_job") %></h1>
   </header>
 
   <div data-role="content">
-<%= render :partial => 'form' %>
+    <%= render :partial => 'form', :object => @job %>
   </div><!-- content -->
 
 

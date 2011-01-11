@@ -1,6 +1,9 @@
-<div data-role="page" id="home">
+<div data-role="page">
   <header data-role="header">
     <h1>Ruby Jobs in Taiwan</h1>
+    <% if user_signed_in? %>
+    <%= link_to 'Add', new_job_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+    <% end %>
   </header>
 
   <div data-role="content">
@@ -14,17 +17,7 @@
       </li>
       <% end %>
     </ul>
-    <div class="foot">
-      <p>The job board is a free service by <a href="http://ruby.tw/">Ruby Taiwan</a> and hosted by <a href="http://www.openfoundry.org/">OSSF</a></p>
-    <% unless user_signed_in? %>
-      <fieldset class="ui-grid-a">
-        <div class="ui-block-a"><%= link_to 'Sign In', new_session_path(:user),      "data-role" => "button" %></div>
-        <div class="ui-block-b"><%= link_to 'Sign Up', new_registration_path(:user), "data-role" => "button" %></div>
-      </fieldset>
-    <% else %>
-        <%= link_to 'Sign Out', destroy_user_session_path, "class" => "ui-btn-right", :rel => "external" %>
-    <% end %>
-    </div>
+    <%= render "shared/foot" %>
   </div><!-- content -->
 
 

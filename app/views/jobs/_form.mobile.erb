@@ -1,7 +1,7 @@
   <%= form_for @job do |f| %>
 
 	<% if @job.errors.any? %>
-	<div id="error_explanation">
+	<div class="error_explanation">
   		<h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
   		<ul>
   			<% @job.errors.full_messages.each do |msg| %>
@@ -57,32 +57,12 @@
 	
         <p>
           <%= f.label :deadline, t("job.deadline") %><br/>
-          <span id="deadline_fields"><%= f.date_select :deadline %></span>
+          <span class="deadline_fields"><%= f.date_select :deadline %></span>
           <%= f.check_box :deadline_forever %><label for="job_deadline_forever" class="inner"><%= t("job.deadline_forever") %></label>
         </p>
 	
         <p>
-          <%= link_to(t(:preview), "#preview", :class => "preview") %>
+          <%= link_to(t(:preview), "#", :class => "jobpreview") %>
 	  <%= f.submit t(:submit), :class => "submit button",:disable_with => t(:submiting) %>
         </p>
-        <div style='display:none'>
-        <div id="preview"></div>
-        </div>
 <% end %>
-
-<script type="text/javascript" charset="utf-8">
-//	if ( $("#job_deadline_forever").attr("checked") ) {
-//    	$("#deadline_fields").hide();
-//	}
-//	$("#job_deadline_forever").click(function() {
-//    	$("#deadline_fields").toggle();
-//	});
-//    $("a.preview").colorbox( {
-//        width: "960px",
-//        height: "80%",
-//        inline: true,
-//        onLoad: function() {
-//          $.post("/jobs/preview", $("form").serialize(), function(s){ $("#preview").html(s)});
-//        }
-//    } );
-</script>
