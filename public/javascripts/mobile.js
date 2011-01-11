@@ -1,3 +1,8 @@
+$(document).bind("mobileinit", function() {
+  $.mobile.ajaxLinksEnabled = false;
+  $.mobile.ajaxFormsEnabled = false;
+} );
+
 $(document).ready(function() {
   $("a.jobpreview").live("click.preview", function(event) {
     var $this = $(this);
