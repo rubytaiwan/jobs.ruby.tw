@@ -1,0 +1,5 @@
+<%- flash.each do |name, msg| -%>
+  <% content_tag :div, :class => "flash #{name}" do %>
+    <p><%= msg %></p>
+  <% end %>
+<%- end -%>
