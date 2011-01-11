@@ -1,4 +1,12 @@
 <dl title="job detail">
+  <dt><%= t("job.posted") %></dt>
+  <dd><%= job.created_at.to_date %></dd>
+
+  <% if job.deadline %>
+  <dt><%= t("job.deadline") %></dt>
+  <dd><%= job.deadline %></dd>
+  <% end %>
+
   <dt><%= t("job.type") %></dt>
   <dd><%= job.job_type %></dd>
 
