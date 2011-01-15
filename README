@@ -14,6 +14,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Social link: Tweet this job, Facebook it, Plurk it.
 [v] RSS feed
 [v] Employer can preview job posting
+[v] Mobile interface
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
 
@@ -52,7 +53,14 @@ A free service by Ruby Taiwan http://ruby.tw
 * http://jobs.37signals.com/
 * http://jobs.rubynow.com/
 
+== Contributors
+
+* ihower <ihower@gmail.com>
+* xdite <xuite.joke@gmail.com>
+* Lawrence Lin <deduce@gmail.com>
+* TaopaiC <pctao.git@pctao.org>
+
 == License
 
 * The code is licensed under the MIT: http://www.opensource.org/licenses/mit-license.php
-* The Stylesheets and Images (any files inside /public/stylesheets and /public/images) are copyright.
+* The images (any files inside /public/images) are copyright.
