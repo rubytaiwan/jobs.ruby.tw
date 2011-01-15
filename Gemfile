@@ -7,7 +7,7 @@ gem 'rails', '3.0.0'
 
 gem 'devise', '1.1.3'
 
-gem 'mysql'
+gem 'mysql2'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "aasm", :git => "git://github.com/rubyist/aasm.git", :require => "aasm"
 gem "babosa"
