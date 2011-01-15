@@ -1,0 +1,18 @@
+<div data-role="page">
+  <header data-role="header">
+    <h1><%= @job.title %></h1>
+    <%= link_to 'Jobs', root_path, "data-icon" => "arrow-l", "class" => "ui-btn-left" %>
+    <% if @job.owner == current_user %>
+    <%= link_to 'Edit', edit_job_path(@job), "data-icon" => "edit", "class" => "ui-btn-right" %>
+    <% end %>
+  </header>
+
+  <div data-role="content">
+    <%= render :partial => "job", :object => @job %>
+    <%= render "shared/foot" %>
+  </div><!-- content -->
+
+  <footer data-role="footer">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

@@ -1,0 +1,16 @@
+<div data-role="page">
+  <header data-role="header">
+    <h1><%= "Edit #{t("post_a_new_job")}" %></h1>
+    <%= link_to 'Back', job_path(@job), "data-icon" => "arrow-l", "class" => "ui-btn-left" %>
+    <%= link_to t(:delete), job_path(@job), :confirm => t(:are_you_sure), :method => :delete, "data-icon" => "delete", "class" => "ui-btn-right" %>
+  </header>
+
+  <div data-role="content">
+    <%= render :partial => 'form', :object => @job %>
+  </div><!-- content -->
+
+
+  <footer data-role="footer">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

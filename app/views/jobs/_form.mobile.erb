@@ -1,0 +1,68 @@
+  <%= form_for @job do |f| %>
+
+	<% if @job.errors.any? %>
+	<div class="error_explanation">
+  		<h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+  		<ul>
+  			<% @job.errors.full_messages.each do |msg| %>
+    		<li><%= msg %></li>
+  			<% end %>
+  		</ul>
+	</div>
+	<% end %>
+
+        <p>
+          <%= f.label :title, t("job.title") %><br/>
+	  <%= f.text_field :title, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :company_name, t("job.company_name") %><br/>
+	  <%= f.text_field :company_name, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :url, "URL" %><br/>
+	  <%= f.text_field :url, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :job_type, t("job.type") %><br/>
+		<% Job::JOB_TYPE.each do |t| %>
+                        <%= f.radio_button :job_type, t %> <%= f.label :job_type, t, :value => t, :class => "inline" %>
+		<% end %>
+        </p>
+	
+        <p>
+          <%= f.label :occupation, t("job.occupation") %><br/>
+		<% Job::OCCUPATION.each do |o| %>
+                        <%= f.radio_button :occupation, o %> <%= f.label :occupation, o, :value => o, :class => "inline" %>
+		<% end %>
+        </p>
+		
+        <p>
+          <%= f.label :location, t("job.location") %><br/>
+	  <%= f.text_field :location, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :description, t("job.description") %><br/>
+	  <%= f.text_area :description, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :apply_information, t("job.apply_information") %><br/>
+	  <%= f.text_area :apply_information, :class => "text" %>
+        </p>
+	
+        <p>
+          <%= f.label :deadline, t("job.deadline") %><br/>
+          <span class="deadline_fields"><%= f.date_select :deadline %></span>
+          <%= f.check_box :deadline_forever %><label for="job_deadline_forever" class="inner"><%= t("job.deadline_forever") %></label>
+        </p>
+	
+        <p>
+          <%= link_to(t(:preview), "#", :class => "jobpreview") %>
+	  <%= f.submit t(:submit), :class => "submit button",:disable_with => t(:submiting) %>
+        </p>
+<% end %>

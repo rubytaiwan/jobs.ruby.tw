@@ -1,0 +1,18 @@
+<div data-role="page">
+  <header data-role="header">
+    <h1>About</h1>
+    <%= link_to 'Jobs', root_path, "data-icon" => "arrow-l", "class" => "ui-btn-left" %>
+  </header>
+
+  <div data-role="content">
+<% if I18n.locale == :zh_tw %>
+  <%= render :partial => "about_zh_tw" %>
+<% else  %>
+  <%= render :partial => "about_default" %>
+<% end %>
+  </div><!-- content -->
+
+  <footer data-role="footer">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

@@ -1,0 +1,9 @@
+.foot {
+  clear: both;
+  margin: 20px 0 0;
+  border-top: 1px solid black;
+}
+
+.ui-content dd {
+  margin-bottom: 10px;
+}

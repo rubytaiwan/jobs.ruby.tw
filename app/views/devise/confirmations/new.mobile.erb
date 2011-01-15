@@ -1,0 +1,24 @@
+<div data-role="page" class="devise-confirmation-new">
+  <header data-role="header">
+    <h1>Resend confirmation instructions</h1>
+  </header>
+
+  <div data-role="content">
+    <%= render :partial => "devise/shared/flash", :object => flash %>
+
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <p>
+        <%= f.label :email %><br/>
+      	<%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= f.submit "Resend confirmation instructions" %>
+      </p>
+    <% end %>
+    
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>

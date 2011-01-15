@@ -1,0 +1,25 @@
+<div data-role="page" class="devise-password-new">
+  <header data-role="header">
+    <h1>Forgot your password?</h1>
+  </header>
+
+  <div data-role="content">
+    <%= render :partial => "devise/shared/flash", :object => flash %>
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <p>
+        <%= f.label :email %><br/>
+      	<%= f.text_field :email %>
+      </p>
+
+      <p>
+    	<%= f.submit "Send me reset password instructions" %>
+      </p>
+    
+    <% end %>
+    
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div data-role="page">
+  <header data-role="header" data-noBackBtn=true>
+    <h1>Ruby Jobs in Taiwan</h1>
+    <% if user_signed_in? %>
+    <%= link_to 'Add', new_job_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+    <% end %>
+  </header>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @jobs.each do |job| %>
+      <li>
+        <h3><%= link_to job.title, job_path(job) %></h3>
+        <p><strong><%= job.company_name %></strong></p>
+        <p><%= job.location %></p>
+        <p class="ui-li-aside"><strong><%= job.created_at.to_date %></strong></p>
+      </li>
+      <% end %>
+    </ul>
+    <%= render "shared/foot" %>
+  </div><!-- content -->
+
+
+  <footer data-role="footer">
+    <h4>Ruby.tw</h4>
+  </footer>
+</div>

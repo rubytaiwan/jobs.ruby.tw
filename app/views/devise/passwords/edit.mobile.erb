@@ -1,0 +1,31 @@
+<div data-role="page" class="devise-password-edit">
+  <header data-role="header">
+    <h1>Change your password</h1>
+  </header>
+
+  <div data-role="content">
+    <%= render :partial => "devise/shared/flash", :object => flash %>
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :reset_password_token %>
+    
+      <p>
+        <%= f.label :password %><br/>
+        <%= f.password_field :password %>
+      </p>
+    
+      <p>
+        <%= f.label :password_confirmation %><br/>
+      	<%= f.password_field :password_confirmation %>
+      </p>
+    
+      <p>
+    	<%= f.submit "Change my password" %>
+      </p>
+    
+    <% end %>
+
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>
