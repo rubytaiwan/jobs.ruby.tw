@@ -17,6 +17,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] Mobile interface
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
+[ ] Auto-deployment
 
 == Employer profile
 
