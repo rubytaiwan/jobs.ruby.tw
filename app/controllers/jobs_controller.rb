@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   
-  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-  before_filter :find_my_job, :only => [:edit, :update, :destroy, :open, :close]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :find_my_job, only: [:edit, :update, :destroy, :open, :close]
   
   def index
     if params[:user_id]
@@ -40,14 +40,14 @@ class JobsController < ApplicationController
     @job.created_at = Time.now
     @job.valid?
 
-    render :layout => false
+    render layout: false
   end
   
   def update    
     if @job.update_attributes(params[:job])
       redirect_to job_path(@job)
     else
-      render :action => :edit
+      render action: :edit
     end    
   end
   

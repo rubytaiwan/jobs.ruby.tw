@@ -8,7 +8,7 @@ module Searchable
   end
   
   def search(query, fields=nil, options={})
-    with_scope :find => { :conditions => search_conditions(query, fields) } do
+    with_scope find: { conditions: search_conditions(query, fields) } do
         find :all, options
       end
   end

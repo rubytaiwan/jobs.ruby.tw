@@ -4,14 +4,14 @@ require 'spec_helper'
 describe Job do
     
   before do
-    @user = User.new(:email => "admin@ruby.tw", :password => "rubytw", :password_confirmation => "rubytw")
+    @user = User.new(email: "admin@ruby.tw", password: "rubytw", password_confirmation: "rubytw")
     @user.skip_confirmation!
     @user.save!
     
-    @job = Job.create!( :title => "Rails developer", :url => "http://ruby.tw", :owner => @user,
-                        :company_name => "Ruby Taiwan", :job_type => "Full-time", :occupation => "Back-end",
-                        :location => "Taipei", :user_id => 1, :deadline => Date.parse("2011-06-28"),
-                        :description => "This is awesome job!<br>The salary is also great!", :apply_information => "Please email to me" )    
+    @job = Job.create!( title: "Rails developer", url: "http://ruby.tw", owner: @user,
+                        company_name: "Ruby Taiwan", job_type: "Full-time", occupation: "Back-end",
+                        location: "Taipei", user_id: 1, deadline: Date.parse("2011-06-28"),
+                        description: "This is awesome job!<br>The salary is also great!", apply_information: "Please email to me" )    
   end
 
   describe "#aasm_state" do

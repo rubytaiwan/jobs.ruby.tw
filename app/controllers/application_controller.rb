@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
   
   def render_not_found
-    render :template => "pages/404", :status => 404
+    render template: "pages/404", status: 404
   end
 end
