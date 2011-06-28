@@ -15,6 +15,7 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] RSS feed
 [v] Employer can preview job posting
 [v] Mobile interface
+[ ] Model JobType and Occupation
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
 [ ] Auto-deployment
