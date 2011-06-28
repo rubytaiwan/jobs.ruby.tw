@@ -22,23 +22,22 @@ class Job < ActiveRecord::Base
   
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
 
+  before_validation :set_aasm_state, :on => :create
   before_validation :set_deadline
   
   scope :published , where(:aasm_state => "published")
   scope :online, published.where("deadline is NULL or deadline > ?", Date.today )
   
-  include AASM
-
-  aasm_initial_state :published
-  aasm_state :published
-  aasm_state :closed
-  
-  aasm_event :close do
-    transitions :to => :closed, :from => [:published]
+  def open
+    self.aasm_state = "published"
   end
-
-  aasm_event :open do
-    transitions :to => :published, :from => [:closed]
+  
+  def close
+    self.aasm_state = "closed"
+  end
+  
+  def closed?
+    self.aasm_state == "closed"
   end
   
   def to_param
@@ -60,9 +59,15 @@ class Job < ActiveRecord::Base
   def deadline_forever
     @deadline_forever ||= !self.deadline
   end
-      
+  
+  private
+  
   def set_deadline
     self.deadline = nil if self.deadline_forever == "1"
   end
      
+  def set_aasm_state
+    self.aasm_state = "published"
+  end
+  
 end

@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/rubyist/aasm.git
-  revision: 2feec2a2ec842e6856f5682564464255bc50cb9b
-  specs:
-    aasm (2.2.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -149,7 +143,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aasm!
   babosa
   capistrano
   capybara

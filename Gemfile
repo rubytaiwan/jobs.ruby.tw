@@ -8,7 +8,6 @@ gem 'rails', '3.0.9'
 gem 'devise', '1.1.3'
 gem 'mysql2', '~>0.2.7'
 
-gem "aasm", :git => "git://github.com/rubyist/aasm.git", :require => "aasm"
 gem "babosa"
 gem 'hoptoad_notifier'
 
