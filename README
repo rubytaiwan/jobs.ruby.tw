@@ -8,6 +8,7 @@ A free service by Ruby Taiwan http://ruby.tw
 
 == How to get started?
 
+* cp config/database.yml.example config/database.yml
 * bundle
 * rake db:create:all
 * rake db:migrate
