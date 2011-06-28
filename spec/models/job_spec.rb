@@ -8,6 +8,12 @@ describe Job do
     @job = build_job( owner: @user )
   end
 
+  describe "#search" do
+    it "could be searched by keyword" do   
+      Job.search("ruby").should == [@job]
+    end
+  end
+  
   describe "#aasm_state" do
     it "should be published by default" do
       @job.aasm_state.should == "published"
