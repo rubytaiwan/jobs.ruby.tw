@@ -1,6 +1,23 @@
 Job board for Ruby and Rails developers in Taiwan
 A free service by Ruby Taiwan http://ruby.tw
 
+== Requirements
+
+* Ruby 1.9.2
+* Bundler
+
+== How to get started?
+
+* bundle
+* rake db:create:all
+* rake db:migrate
+* rake db:seed
+* rails server
+
+== How to run spec?
+
+* rake spec
+
 == User Stories
 
 [v] Signup as an employer
