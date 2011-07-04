@@ -19,5 +19,5 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem "rcov"
   gem "watchr"
-  # gem "capybara"
+  gem "capybara"
 end
