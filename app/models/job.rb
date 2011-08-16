@@ -15,8 +15,9 @@ class Job < ActiveRecord::Base
   validates_presence_of :owner
   
   JOB_TYPE = %w[Full-time Part-time Contract Internship Other]
-  OCCUPATION = %w[Back-end Front-end Web-design QA/Testing Other]
-  
+  OCCUPATION = ['Web back-end', 'Web front-end', 'Web-design',
+                'QA/Testing', 'Other']
+
   validates_inclusion_of :job_type, :in => JOB_TYPE 
   validates_inclusion_of :occupation, :in => OCCUPATION
   

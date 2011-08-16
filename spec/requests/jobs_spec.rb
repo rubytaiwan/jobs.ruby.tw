@@ -32,7 +32,7 @@ feature "View homepage" do
       fill_in "Company Name", :with => "foobar"
       fill_in "URL", :with => "http://ruby.tw"
       choose "Part-time"
-      choose "Front-end"
+      choose "Web front-end"
       fill_in "Location", :with => "hsinchu"
       fill_in "Description", :with => "description"
       fill_in "Apply Information", :with => "apply infor."
