@@ -13,4 +13,4 @@ user.save
 job = Job.create!( :title => "Rails developer", :url => "http://ruby.tw", 
                    :company_name => "Ruby Taiwan", :job_type => "Full-time", :occupation => "Back-end",
                    :location => "Taipei", :user_id => 1,
-                   :description => "This is awesome job!<br>The salary is also great!", :apply_information => "Please email to me" )
+                   :description => "This is awesome Ruby job!<br>The salary is also great!", :apply_information => "Please email to me" )
