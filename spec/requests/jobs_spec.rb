@@ -34,7 +34,7 @@ feature "View homepage" do
       choose "Part-time"
       choose "Web front-end"
       fill_in "Location", :with => "hsinchu"
-      fill_in "Description", :with => "description"
+      fill_in "Description", :with => "description Ruby"
       fill_in "Apply Information", :with => "apply infor."
       check "Forever"
     end
