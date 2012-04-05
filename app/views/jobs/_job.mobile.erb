@@ -21,7 +21,7 @@
 
   <% unless job.url.blank? %>
   <dt>URL</dt>
-  <dd><%= auto_link job.url, :target => "_blank" %></dd>
+  <dd><%= raw auto_link job.url, :target => "_blank" %></dd>
   <% end %>
 
   <dt><%= t("job.description") %></dt>

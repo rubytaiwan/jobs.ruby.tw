@@ -19,7 +19,7 @@
 				<% unless job.url.blank? %>
                 <li>
                     <div class="field">
-                        <label>URL</label> <%= auto_link job.url, :target => "_blank" %>
+                        <label>URL</label> <%= raw auto_link job.url, :target => "_blank" %>
                     </div>
                 </li>
 				<% end %>
