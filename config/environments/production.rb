@@ -49,3 +49,9 @@ JobsRubyTw::Application.configure do
     
   config.action_mailer.default_url_options = { :host => 'jobs.ruby.tw' }
 end
+
+JobsRubyTw::Application.config.middleware.use ExceptionNotifier,
+  :email_prefix => "[Ruby Taiwan Exception Notifier - Production] ",
+  :sender_address => %{"notifier" <ihower@gmail.com>},
+  :exception_recipients => %w{ihower@gmail.com}
+  

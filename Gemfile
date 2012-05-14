@@ -9,7 +9,7 @@ gem 'devise', '1.1.3'
 gem 'mysql2', '~>0.2.7'
 
 gem "babosa"
-gem 'hoptoad_notifier'
+gem 'exception_notification'
 
 gem 'capistrano'
 
