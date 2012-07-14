@@ -25,15 +25,8 @@
         <h1><a href="/">RubyJobs</a></h1>
         <div class="right">
             <p class="member">
-				<% if user_signed_in? %>
-					Hi, <%= current_user.email %> 
-					<%= link_to t(:list_my_posting), jobs_path(current_user, :user_id => current_user) %> | 
-					<%= link_to t(:settings), edit_user_registration_path %> |
-					<%= link_to t(:logout), destroy_user_session_path %>
-				<% else %>
-					<%= link_to t(:signup), new_registration_path(:user) %> | 
-					<%= link_to t(:login), new_session_path(:user) %>
-				<% end %>
+              <%= render :partial => "common/usernav" %>
+
             </p>
 			<%= form_tag jobs_path, :id => "search-form", :class => "search", :method => :get do %>
 				<%= text_field_tag :keyword, "", :title => "Search", :class => "text" %>
