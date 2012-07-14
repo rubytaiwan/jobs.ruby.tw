@@ -72,13 +72,15 @@
 <% end %>
 </div>
 
+<%= content_for :scripts do %>
+
 <script type="text/javascript" charset="utf-8">
-	if ( $("#job_deadline_forever").attr("checked") ) {
-    	$("#deadline_fields").hide();
-	}
-	$("#job_deadline_forever").click(function() {
-    	$("#deadline_fields").toggle();
-	});
+  if ( $("#job_deadline_forever").attr("checked") ) {
+      $("#deadline_fields").hide();
+  }
+  $("#job_deadline_forever").click(function() {
+      $("#deadline_fields").toggle();
+  });
     $("a.preview").colorbox( {
         width: "960px",
         height: "80%",
@@ -88,3 +90,6 @@
         }
     } );
 </script>
+
+<% end %>
+
