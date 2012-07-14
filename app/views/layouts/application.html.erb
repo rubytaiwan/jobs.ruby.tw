@@ -28,18 +28,13 @@
               <%= render :partial => "common/usernav" %>
             </p>
             <%= render :partial => "common/search_form" %>
-
         </div>
     </div>
     <div id="container">
         <div id="container-inner">
-		<% if flash[:notice] %>
-			<div class="message notice"><%= flash[:notice] %></div>
-		<% end %>
-		<% if flash[:warning] %>
-			<div class="message alert"><%= flash[:alert] %></div>
-		<% end %>
-		<%= yield %>
+          <%= render_notice %>
+          <%= render_warning %>
+          <%= yield %>
         </div>
     </div>
     <div id="footer">
