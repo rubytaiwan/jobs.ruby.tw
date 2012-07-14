@@ -13,9 +13,9 @@ version: 2.6.0
  * x-small is for IE6/7 quirks mode.
  */
 body {
-	font:13px/1.231 arial,helvetica,clean,sans-serif;
-	*font-size:small; /* for IE */
-	*font:x-small; /* for IE in quirks mode */
+  font:13px/1.231 arial,helvetica,clean,sans-serif;
+  *font-size:small; /* for IE */
+  *font:x-small; /* for IE in quirks mode */
 }
 
 /**
@@ -25,15 +25,15 @@ select,
 input,
 button,
 textarea {
-	font:99% arial,helvetica,clean,sans-serif;
+  font:99% arial,helvetica,clean,sans-serif;
 }
 
 /**
  * To help tables remember to inherit
  */
 table {
-	font-size:inherit;
-	font:100%;
+  font-size:inherit;
+  font:100%;
 }
 
 /**
@@ -44,9 +44,9 @@ code,
 kbd,
 samp,
 tt {
-	font-family:monospace;
-	*font-size:108%;
-	line-height:100%;
+  font-family:monospace;
+  *font-size:108%;
+  line-height:100%;
 }
 
 /*
