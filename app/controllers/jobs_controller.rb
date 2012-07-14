@@ -28,7 +28,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to job_path(@job)
     else
-      render :action => :new
+      render :new
     end
   end
   
@@ -47,7 +47,7 @@ class JobsController < ApplicationController
     if @job.update_attributes(params[:job])
       redirect_to job_path(@job)
     else
-      render action: :edit
+      render :edit
     end    
   end
   
