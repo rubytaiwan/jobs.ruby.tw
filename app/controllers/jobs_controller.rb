@@ -5,11 +5,11 @@ class JobsController < ApplicationController
   
   def index
     if params[:user_id]
-      @jobs = User.find(params[:user_id]).jobs.order("id desc")
+      @jobs = User.find(params[:user_id]).jobs.recent
     elsif params[:keyword]
       @jobs = Job.online.search(params[:keyword])
     else
-      @jobs = Job.online.order("id desc")
+      @jobs = Job.online.recent
     end
   end
   
