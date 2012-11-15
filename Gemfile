@@ -24,6 +24,8 @@ gem "rails_autolink"
 
 gem 'exception_notification'
 
+gem "mobile-fu"
+
 gem 'capistrano', :group => "development"
 
 group :test, :development do

@@ -88,6 +88,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
+    mobile-fu (1.1.0)
+      rack-mobile-detect
+      rails
     multi_json (1.3.7)
     multipart-post (1.1.5)
     mysql2 (0.3.11)
@@ -104,6 +107,8 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-mobile-detect (0.4.0)
+      rack
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.2)
@@ -204,6 +209,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   exception_notification
+  mobile-fu
   mysql2
   rails (= 3.2.9)
   rails_autolink
