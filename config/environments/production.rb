@@ -68,7 +68,7 @@ JobsRubyTw::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
    config.action_mailer.default_url_options = { :host => 'jobs.ruby.tw' }
 
-   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env]
+   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
 end
 
 JobsRubyTw::Application.config.middleware.use ExceptionNotifier,
