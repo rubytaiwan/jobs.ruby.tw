@@ -67,8 +67,9 @@ JobsRubyTw::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
    config.action_mailer.default_url_options = { :host => 'jobs.ruby.tw' }
-end
 
+   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env]
+end
 
 JobsRubyTw::Application.config.middleware.use ExceptionNotifier,
   :email_prefix => "[Ruby Taiwan Exception Notifier - Production] ",
