@@ -15,7 +15,7 @@ describe JobsController do
   
   describe "GET index" do    
     it "should render successful" do
-      Job.stub_chain(:online, :order).and_return([@job])
+      Job.stub_chain(:online, :recent).and_return([@job])
       get :index
       
       assigns[:jobs] == [@job]
@@ -38,8 +38,8 @@ describe JobsController do
     context "by user" do
       it "should render successful" do
         user = mock("user")
-        User.should_receive(:find).with(99).and_return(user)
-        user.stub_chain(:jobs, :order).and_return([@job])
+        User.should_receive(:find).with("99").and_return(user)
+        user.stub_chain(:jobs, :recent).and_return([@job])
         
         get :index, :user_id => 99
 
@@ -51,7 +51,7 @@ describe JobsController do
   
   describe "GET show" do
     it "should render successful" do
-      Job.should_receive(:find).with(123).and_return(@job)
+      Job.should_receive(:find).with("123").and_return(@job)
       get :show, :id => 123
       
       assigns[:job] == @job
@@ -88,7 +88,7 @@ describe JobsController do
   
   describe "GET edit" do
     it "should render successful" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       get :edit, :id => 123
       
       assigns[:job].should == @job
@@ -98,7 +98,7 @@ describe JobsController do
     
   describe "PUT update" do
     it "should save successful and redirect to show" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       @job.should_receive(:update_attributes).with( "title" => "abc" ).and_return(true)
       put :update, :id => 123, :job => { :title => "abc" }
       
@@ -106,7 +106,7 @@ describe JobsController do
     end
     
     it "should save failed and render new" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       put :update, :id => 123, :job => { :title => "" }
       
       response.should render_template(:edit)
@@ -116,7 +116,7 @@ describe JobsController do
   
   describe "DELETE destroy" do
     it "should delete successful" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       @job.should_receive(:destroy)
       delete :destroy, :id => 123
       response.should be_redirect
@@ -137,7 +137,7 @@ describe JobsController do
   
   describe "PUT open" do
     it "should open job" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       @job.should_receive(:open)
       @job.should_receive(:save!)
       
@@ -148,7 +148,7 @@ describe JobsController do
   
   describe "PUT close" do
     it "should open job" do
-      current_user.stub_chain(:jobs, :find).with(123).and_return(@job)
+      current_user.stub_chain(:jobs, :find).with("123").and_return(@job)
       @job.should_receive(:close)
       @job.should_receive(:save!)
       

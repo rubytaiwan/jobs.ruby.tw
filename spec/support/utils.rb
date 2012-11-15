@@ -1,6 +1,6 @@
 def login!
   visit "/users/sign_in"
-  within("#user_new") do
+  within("#new_user") do
     fill_in 'Email', :with => @user.email
     fill_in 'Password', :with => 'rubytw'
   end
