@@ -3,7 +3,7 @@ A free service by Ruby Taiwan http://ruby.tw
 
 == Requirements
 
-* Ruby 1.9.2
+* Ruby 1.9.3
 * Bundler
 
 == How to get started?
@@ -33,10 +33,10 @@ A free service by Ruby Taiwan http://ruby.tw
 [v] RSS feed
 [v] Employer can preview job posting
 [v] Mobile interface
+[v] Auto-deployment
 [ ] Model JobType and Occupation
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
-[ ] Auto-deployment
 
 == Employer profile
 
@@ -82,4 +82,4 @@ A free service by Ruby Taiwan http://ruby.tw
 == License
 
 * The code is licensed under the MIT: http://www.opensource.org/licenses/mit-license.php
-* The images (any files inside /public/images) are copyright.
+* The images (any files inside /app/assets/images) are copyright.

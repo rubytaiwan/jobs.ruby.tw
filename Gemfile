@@ -16,7 +16,7 @@ end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'devise', '~>1.5'
+gem 'devise'
 gem 'mysql2'
 
 gem "babosa"
