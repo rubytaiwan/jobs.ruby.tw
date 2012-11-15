@@ -13,9 +13,9 @@ version: 2.6.0
  * x-small is for IE6/7 quirks mode.
  */
 body {
-	font:13px/1.231 arial,helvetica,clean,sans-serif;
-	*font-size:small; /* for IE */
-	*font:x-small; /* for IE in quirks mode */
+  font:13px/1.231 arial,helvetica,clean,sans-serif;
+  *font-size:small; /* for IE */
+  *font:x-small; /* for IE in quirks mode */
 }
 
 /**
@@ -25,15 +25,15 @@ select,
 input,
 button,
 textarea {
-	font:99% arial,helvetica,clean,sans-serif;
+  font:99% arial,helvetica,clean,sans-serif;
 }
 
 /**
  * To help tables remember to inherit
  */
 table {
-	font-size:inherit;
-	font:100%;
+  font-size:inherit;
+  font:100%;
 }
 
 /**
@@ -44,9 +44,9 @@ code,
 kbd,
 samp,
 tt {
-	font-family:monospace;
-	*font-size:108%;
-	line-height:100%;
+  font-family:monospace;
+  *font-size:108%;
+  line-height:100%;
 }
 
 /*
@@ -103,7 +103,7 @@ a:hover, a:active {
 }
 
 #container .button {
-    background-image: url(../images/bg-button.png);
+    background-image: url(/assets/bg-button.png);
     background-repeat: repeat-x;
     background-position: 0 0;
     border: 1px solid #999;
@@ -186,7 +186,7 @@ a:hover, a:active {
 
 #header h1 a {
     display: block;
-    background: url(../images/sprite.png) 0 0 no-repeat;
+    background: url(/assets/sprite.png) 0 0 no-repeat;
     width: 520px;
     height: 86px;
     text-indent: -9999em;
@@ -230,7 +230,7 @@ a:hover, a:active {
 }
 
 #header .search-submit {
-    background: url(../images/sprite.png) 0 -360px no-repeat;
+    background: url(/assets/sprite.png) 0 -360px no-repeat;
     width: 30px;
     height: 28px;
     border: 0;
@@ -242,25 +242,25 @@ a:hover, a:active {
 }
 
 #header .search-submit:hover {
-    background: url(../images/sprite.png) 0 -390px no-repeat;
+    background: url(/assets/sprite.png) 0 -390px no-repeat;
 }
 
 /* Container
 -----------------------------------------------------------------------------*/
 
 #container {
-    background: #fdfefe url(../images/paper-edge.png) right top repeat-y;
+    background: #fdfefe url(/assets/paper-edge.png) right top repeat-y;
     margin-bottom: 40px;
 }
 
 #container-inner {
-    background: url(../images/paper-crease.png) right bottom no-repeat;
+    background: url(/assets/paper-crease.png) right bottom no-repeat;
     padding: 20px 20px 63px;
     position: relative;
 }
 
 .paperclip {
-    background: url(../images/sprite.png) 0 -260px no-repeat;
+    background: url(/assets/sprite.png) 0 -260px no-repeat;
     width: 69px;
     height: 31px;
     position: absolute;
@@ -271,14 +271,14 @@ a:hover, a:active {
 .post-job a {
     display: block;
     float: right;
-    background: url(../images/sprite.png) 0 -90px no-repeat;
+    background: url(/assets/sprite.png) 0 -90px no-repeat;
     width: 251px;
     height: 80px;
     text-indent: -9999em;
 }
 
 .post-job a:hover {
-    background: url(../images/sprite.png) 0 -170px no-repeat;
+    background: url(/assets/sprite.png) 0 -170px no-repeat;
 }
 
 #container .pagetitle {
@@ -372,11 +372,11 @@ a:hover, a:active {
 }
 
 .problem .forgot {
-    background: url(../images/sprite.png) 0 -600px no-repeat;
+    background: url(/assets/sprite.png) 0 -600px no-repeat;
 }
 
 .problem .receive {
-    background: url(../images/sprite.png) 0 -620px no-repeat;
+    background: url(/assets/sprite.png) 0 -620px no-repeat;
 }
 
 label.inner {
@@ -403,7 +403,7 @@ label.inner {
 
 .job-content .manage a {
     display: inline-block;
-    background-image: url(../images/sprite.png);
+    background-image: url(/assets/sprite.png);
     background-repeat: no-repeat;
     margin-right: 10px;
     padding-left: 22px;
@@ -433,7 +433,7 @@ label.inner {
 .social a {
     display: block;
     float: left;
-    background-image: url(../images/sprite.png);
+    background-image: url(/assets/sprite.png);
     background-repeat: no-repeat;
     margin-left: 2px;
     width: 24px;
@@ -451,7 +451,7 @@ label.inner {
 
 .job-content .menu li {
     float: none;
-    background: url(../images/hr.jpg) left bottom no-repeat;
+    background: url(/assets/hr.jpg) left bottom no-repeat;
     margin-bottom: 8px;
     padding-bottom: 10px;
 }
@@ -479,13 +479,13 @@ label.inner {
 }
 
 .apply-information {
-    background: url(../images/hr.jpg) left bottom no-repeat;
+    background: url(/assets/hr.jpg) left bottom no-repeat;
     margin-bottom: 20px;
     padding-bottom: 40px;
 }
 
 .apply-information h2 {
-    background: url(../images/title-border.png) left bottom no-repeat;
+    background: url(/assets/title-border.png) left bottom no-repeat;
     padding-bottom: 4px;
     font-family: Verdana, Geneva, sans-serif;
     text-transform: uppercase;
@@ -493,14 +493,14 @@ label.inner {
 
 .backto {
     display: block;
-    background: url(../images/sprite.png) 0 -300px no-repeat;
+    background: url(/assets/sprite.png) 0 -300px no-repeat;
     width: 151px;
     height: 24px;
     text-indent: -9999em;
 }
 
 .backto:hover {
-    background: url(../images/sprite.png) 0 -330px no-repeat;
+    background: url(/assets/sprite.png) 0 -330px no-repeat;
 }
 
 /* FAQ
@@ -511,13 +511,13 @@ label.inner {
 }
 
 .faq dt {
-    background: url(../images/icon-mark.png) left top no-repeat;
+    background: url(/assets/icon-mark.png) left top no-repeat;
     padding-left: 24px;
     margin-bottom: 5px;
 }
 
 .faq dd {
-    background: url(../images/hr.jpg) left bottom no-repeat;
+    background: url(/assets/hr.jpg) left bottom no-repeat;
     margin: 0 0 15px 0;
     padding: 0 0 15px 24px;
 }
@@ -541,7 +541,7 @@ label.inner {
 }
 
 #footer .menu .twitter {
-    background: url(../images/sprite.png) 0 -570px no-repeat;
+    background: url(/assets/sprite.png) 0 -570px no-repeat;
     border-right: 0;
     margin-right: 0;
     padding-right: 0;

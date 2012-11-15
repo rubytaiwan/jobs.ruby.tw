@@ -5,9 +5,7 @@
   <title>Ruby Jobs in Taiwan</title>
   <link rel="shortcut icon" href="/favicon.ico">
   <%= stylesheet_link_tag "application" %>
-  <%= stylesheet_link_tag "colorbox/colorbox" %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
-  <%= javascript_include_tag "rails", "jquery.formLabels1.0.js", "jquery.colorbox-min" %>
+
   <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", :title => "Ruby Jobs in Taiwan RSS feed") %>
 <script type="text/javascript">
 	$(function(){
@@ -26,31 +24,16 @@
         <h1><a href="/">RubyJobs</a></h1>
         <div class="right">
             <p class="member">
-				<% if user_signed_in? %>
-					Hi, <%= current_user.email %> 
-					<%= link_to t(:list_my_posting), jobs_path(current_user, :user_id => current_user) %> | 
-					<%= link_to t(:settings), edit_user_registration_path %> |
-					<%= link_to t(:logout), destroy_user_session_path %>
-				<% else %>
-					<%= link_to t(:signup), new_registration_path(:user) %> | 
-					<%= link_to t(:login), new_session_path(:user) %>
-				<% end %>
+              <%= render :partial => "common/usernav" %>
             </p>
-			<%= form_tag jobs_path, :id => "search-form", :class => "search", :method => :get do %>
-				<%= text_field_tag :keyword, "", :title => "Search", :class => "text" %>
-				<%= submit_tag t(:search), :disable_with => t(:submiting), :class => "search-submit" %>
-			<% end %>
+            <%= render :partial => "common/search_form" %>
         </div>
     </div>
     <div id="container">
         <div id="container-inner">
-		<% if flash[:notice] %>
-			<div class="message notice"><%= flash[:notice] %></div>
-		<% end %>
-		<% if flash[:warning] %>
-			<div class="message alert"><%= flash[:alert] %></div>
-		<% end %>
-		<%= yield %>
+          <%= render_notice %>
+          <%= render_warning %>
+          <%= yield %>
         </div>
     </div>
     <div id="footer">
@@ -69,18 +52,12 @@
     </div>
 </div>
 
-<script type="text/javascript">
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag "application" %>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-145330-14']);
-  _gaq.push(['_trackPageview']);
+  <%= yield :scripts %>
+  
+<%= render :partial => "common/google_analytics" %>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body>
 </html>
