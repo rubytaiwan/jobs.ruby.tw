@@ -28,6 +28,8 @@ gem "mobile-fu"
 
 gem 'capistrano', :group => "development"
 
+gem 'rake', :group => :test
+
 group :test, :development do
   gem "rspec"
   gem "rspec-rails"
