@@ -24,7 +24,8 @@ gem "rails_autolink"
 
 gem "settingslogic"
 gem "seo_helper"
-gem "open_graph_helper"
+gem 'open_graph_helper'
+gem 'google_plus_helper'
 
 gem 'exception_notification'
 

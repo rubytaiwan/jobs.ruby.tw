@@ -430,20 +430,36 @@ label.inner {
     top: 3.8em;
 }
 
-.social a {
-    display: block;
-    float: left;
-    background-image: url(/assets/sprite.png);
-    background-repeat: no-repeat;
-    margin-left: 2px;
-    width: 24px;
-    height: 24px;
-    text-indent: -9999em;
+.social{
+  
+   width: 170px;
+   padding: 15px 5px 5px 5px;
+   border-right: none;
 }
 
-.social .twitter { background-position: 0 -420px; }
-.social .facebook { background-position: -26px -420px; }
-.social .plurk { background-position: -52px -420px; }
+.social > div {
+  height: 20px;
+}
+
+.social > div > * {
+  display: block;
+  float: left;
+}
+
+
+.social > div {
+  height: 20px;
+}
+.social > div > * {
+  display: block;
+  float: left;
+}
+
+.social .fb-like{
+    width: 70px;
+}
+
+
 
 .job-content .job-info {
     margin: 40px 0;

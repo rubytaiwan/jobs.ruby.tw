@@ -19,12 +19,14 @@
  <% end %>
 </p>
 
-<p class="social">
+<div class="social">
 
-	<%= link_to "Tweet this job!", "http://twitter.com?status=#{@job.social_link_content}", :class => "twitter", :title => "Tweet this job!" %>
-<%= link_to "Facebook this job!", "http://www.facebook.com/sharer.php?u=#{@job.social_link_url}&t=#{@job.social_link_title}", :class => "facebook", :title => "Facebook this job!" %>
-	<%= link_to "Plurk this job!", "http://plurk.com?status=#{@job.social_link_content}", :class => "plurk", :title => "Plurk this job" %>
-</p>
+    <div class="social">
+      <div class="fb-like" data-href="<%= job_url(@job) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="segoe ui"></div>
+      <g:plusone href="<%= job_url(@job) %>" size="Medium"></g:plusone>
+    </div>
+
+</div>
 
 <%= render :partial => "job", :object => @job %>
 
