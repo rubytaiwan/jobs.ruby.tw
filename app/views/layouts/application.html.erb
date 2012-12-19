@@ -8,6 +8,10 @@
   <%= render_page_keywords_meta_tag %>
   <%= render_page_image_link_tag %>
 
+  <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
+  <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
+  <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
+  
   <link rel="shortcut icon" href="/favicon.ico">
   <%= stylesheet_link_tag "application" %>
 
