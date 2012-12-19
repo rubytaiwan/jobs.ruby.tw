@@ -29,6 +29,8 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     babosa (0.3.8)
     bcrypt-ruby (3.0.1)
@@ -73,6 +75,8 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.1.5)
+    google_plus_helper (0.0.3)
+      rails (>= 3.0)
     hashie (1.2.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -83,6 +87,7 @@ GEM
     libv8 (3.3.10.4)
     libwebsocket (0.1.5)
       addressable
+    magic_encoding (0.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -102,6 +107,7 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.5)
+    open_graph_helper (0.1.1)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -130,7 +136,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.0.1)
+    rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.12.0)
@@ -159,6 +165,8 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    seo_helper (1.0.1)
+    settingslogic (2.0.8)
     simple_oauth (0.1.9)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -203,20 +211,26 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   babosa
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
   devise
   exception_notification
+  google_plus_helper
+  magic_encoding
   mobile-fu
   mysql2
+  open_graph_helper
   rails (= 3.2.9)
   rails_autolink
   rake
   rspec
   rspec-rails
   sass-rails (~> 3.2.3)
+  seo_helper
+  settingslogic
   simplecov
   therubyracer
   uglifier (>= 1.0.3)

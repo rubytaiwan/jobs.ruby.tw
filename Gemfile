@@ -10,7 +10,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'  
+  gem 'uglifier', '>= 1.0.3'
 end
 
 # Bundle edge Rails instead:
@@ -22,6 +22,11 @@ gem 'mysql2'
 gem "babosa"
 gem "rails_autolink"
 
+gem "settingslogic"
+gem "seo_helper"
+gem 'open_graph_helper'
+gem 'google_plus_helper'
+
 gem 'exception_notification'
 
 gem "mobile-fu"
@@ -29,6 +34,12 @@ gem "mobile-fu"
 gem 'capistrano', :group => "development"
 
 gem 'rake', :group => :test
+
+group :development do
+  gem "capistrano"
+  gem "magic_encoding"
+  gem "annotate"
+end
 
 group :test, :development do
   gem "rspec"

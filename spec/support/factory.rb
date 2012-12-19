@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 def build_user(attributes={})
   user = User.new( { email: "admin@ruby.tw", password: "rubytw", password_confirmation: "rubytw" }.merge(attributes) )
   user.skip_confirmation!

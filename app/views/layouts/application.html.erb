@@ -2,11 +2,21 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Ruby Jobs in Taiwan</title>
+
+  <%= render_page_title_tag %>
+  <%= render_page_description_meta_tag %>
+  <%= render_page_keywords_meta_tag %>
+  <%= render_page_image_link_tag %>
+
+  <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
+  <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
+  <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
+  
   <link rel="shortcut icon" href="/favicon.ico">
   <%= stylesheet_link_tag "application" %>
 
   <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", :title => "Ruby Jobs in Taiwan RSS feed") %>
+
 <script type="text/javascript">
 	$(function(){
 		$.fn.formLabels();
@@ -16,7 +26,8 @@
 		})
 	});
 </script>
-  <%= csrf_meta_tag %>
+
+<%= csrf_meta_tag %>
 </head>
 <body>
 <div id="wrapper">
@@ -54,7 +65,8 @@
 
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
   <%= javascript_include_tag "application" %>
-
+  <%= render :partial => "common/facebook_js" %>
+  <%= google_plusone_javascript_include_tag(:async => true) %>
   <%= yield :scripts %>
   
 <%= render :partial => "common/google_analytics" %>
