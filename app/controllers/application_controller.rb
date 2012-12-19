@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   has_mobile_fu
 
