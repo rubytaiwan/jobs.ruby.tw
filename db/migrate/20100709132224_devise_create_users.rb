@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DeviseCreateUsers < ActiveRecord::Migration
   def self.up
     create_table(:users) do |t|
@@ -27,7 +28,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      #t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       # t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts

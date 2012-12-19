@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Searchable
   
   def searchable_by(*column_names)

@@ -1,3 +1,24 @@
+# -*- encoding : utf-8 -*-
+# == Schema Information
+#
+# Table name: jobs
+#
+#  id                :integer          not null, primary key
+#  title             :string(255)
+#  job_type          :string(255)
+#  occupation        :string(255)
+#  company_name      :string(255)
+#  location          :string(255)
+#  url               :string(255)
+#  description       :text
+#  apply_information :text
+#  deadline          :date
+#  user_id           :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  aasm_state        :string(255)
+#
+
 require 'spec_helper'
 
 describe Job do

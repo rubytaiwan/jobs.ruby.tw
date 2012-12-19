@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 puts "\n### Watching specs... ###\n"
 
 def run_all_specs
