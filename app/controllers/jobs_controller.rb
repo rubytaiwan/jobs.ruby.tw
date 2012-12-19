@@ -16,6 +16,9 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+    set_page_title "#{@job.title} | #{@job.company_name} is hiring!"
+    set_page_description @job.description
   end
 
   def new

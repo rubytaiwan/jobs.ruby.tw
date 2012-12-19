@@ -22,6 +22,7 @@ gem 'mysql2'
 gem "babosa"
 gem "rails_autolink"
 
+gem "settingslogic"
 gem "seo_helper"
 gem "open_graph_helper"
 

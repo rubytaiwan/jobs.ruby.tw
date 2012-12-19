@@ -164,6 +164,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
     seo_helper (1.0.1)
+    settingslogic (2.0.8)
     simple_oauth (0.1.9)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   seo_helper
+  settingslogic
   simplecov
   therubyracer
   uglifier (>= 1.0.3)
