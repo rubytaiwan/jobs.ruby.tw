@@ -83,6 +83,10 @@ class Job < ActiveRecord::Base
   def deadline_forever
     @deadline_forever ||= !self.deadline
   end
+
+  def owned_by?(user)
+    user && owner == user
+  end
   
   private
   
