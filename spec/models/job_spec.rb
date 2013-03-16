@@ -112,5 +112,19 @@ describe Job do
       @job.deadline.should == nil
     end
   end
+
+  describe '#owned_by?' do
+    it 'returns false if nil is passed' do
+      expect(@job.owned_by?(nil)).to be_false
+    end
+
+    it 'returns false if the passed user is not the owner' do
+      expect(@job.owned_by?(build_user(:email => 'not_me@example.com'))).to be_false
+    end
+
+    it 'returns true if the passed user is the owner' do
+      expect(@job.owned_by?(@user)).to be_true
+    end
+  end
   
 end
