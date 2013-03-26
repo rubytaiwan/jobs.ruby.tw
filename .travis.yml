@@ -1,6 +1,10 @@
 language: ruby
-before_script:
-  - .travis/setup.sh
-bundler_args: '--without development'
 rvm:
   - 1.9.3
+bundler_args: '--without development'
+before_install:
+  - gem install bundler --version '>= 1.2.0'
+before_script:
+  - cp config/database.yml.example config/database.yml
+  - RAILS_ENV=test bundle exec rake db:create
+  - RAILS_ENV=test bundle exec rake db:schema:load

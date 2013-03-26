@@ -1,5 +1,0 @@
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: jobs_test
-  username: root
