@@ -1,4 +1,4 @@
 <%= form_tag jobs_path, :id => "search-form", :class => "search", :method => :get do %>
   <%= text_field_tag :keyword, "", :title => "Search", :class => "text" %>
-  <%= submit_tag t(:search), :disable_with => t(:submiting), :class => "search-submit" %>
+  <%= submit_tag t(:search), data: { disable_with: t(:submiting) }, :class => "search-submit" %>
 <% end %>
