@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 JobsRubyTw::Application.routes.draw do
   get '/about' => 'pages#about', :as => "about"
 
@@ -6,12 +5,12 @@ JobsRubyTw::Application.routes.draw do
 
   resources :jobs do
     member do
-      put :open
-      put :close
+      patch :open
+      patch :close
     end
     collection do
       post :preview
-      put :preview
+      patch :preview
     end
   end
 
