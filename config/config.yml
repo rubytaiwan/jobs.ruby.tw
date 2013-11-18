@@ -7,6 +7,7 @@ defaults: &defaults
     - ""
   google_analytics_key: ""
   default_logo_url: "/logo.png"
+  devise_secret_key: "1a7ca42cb0af73bc6088e01f618ec57ee97cae34273c642452bec968b9eb684d3a4afe35ff366d1715aaf0aa2278fe21a1e0e7f370393befa8bd9a80bf91e765"
 
 development:
   <<: *defaults
