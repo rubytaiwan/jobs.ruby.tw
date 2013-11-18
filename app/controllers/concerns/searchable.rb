@@ -1,5 +1,5 @@
-# -*- encoding : utf-8 -*-
 module Searchable
+  extend ActiveSupport::Concern
 
   def searchable_by(*column_names)
     @search_columns = []
@@ -30,5 +30,4 @@ module Searchable
     end
     [or_frags.join(" AND " ), binds]
   end
-
 end
