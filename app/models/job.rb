@@ -47,9 +47,9 @@ class Job < ActiveRecord::Base
   before_validation :set_aasm_state, :on => :create
   before_validation :set_deadline
 
-  scope :published , where(:aasm_state => "published")
-  scope :online, published.where("deadline is NULL or deadline > ?", Date.today )
-  scope :recent, :order => "id DESC"
+  scope :published , -> { where(aasm_state: 'published') }
+  scope :online, -> { published.where("deadline is NULL or deadline > ?", Date.today) }
+  scope :recent, -> { order(:id, created_at: :desc) }
 
   def open
     self.aasm_state = "published"
