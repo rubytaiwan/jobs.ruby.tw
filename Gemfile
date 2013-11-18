@@ -35,18 +35,25 @@ gem 'exception_notification'
 
 gem 'mobile-fu'
 
-gem 'rake', :group => :test
-
 group :development do
   gem 'capistrano'
-  gem 'magic_encoding'
   gem 'annotate'
+  gem "migration_comments"
   gem 'sqlite3'
+  gem 'capybara'
+  gem 'timecop'
 end
 
 group :test, :development do
-  gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'simplecov'
-  gem 'capybara'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'database_rewinder'
 end
