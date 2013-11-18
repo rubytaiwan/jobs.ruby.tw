@@ -1,17 +1,16 @@
-# -*- encoding : utf-8 -*-
 class JobsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :find_my_job, only: [:edit, :update, :destroy, :open, :close]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_my_job, only: [:edit, :update, :destroy, :open, :close]
 
   def index
-    if params[:user_id]
-      @jobs = User.find(params[:user_id]).jobs.recent
-    elsif params[:keyword]
-      @jobs = Job.online.search(params[:keyword])
-    else
-      @jobs = Job.online.recent
-    end
+    @jobs = if params[:user_id]
+              User.find(params[:user_id]).jobs.recent
+            elsif params[:keyword]
+              Job.online.search(params[:keyword])
+            else
+              Job.online.recent
+            end
   end
 
   def show
@@ -27,7 +26,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = current_user.jobs.build(params[:job])
+    @job = current_user.jobs.build(job_params)
 
     if @job.save
       redirect_to job_path(@job)
@@ -40,7 +39,7 @@ class JobsController < ApplicationController
   end
 
   def preview
-    @job = current_user.jobs.build(params[:job])
+    @job = current_user.jobs.build(job_params)
     @job.created_at = Time.now
     @job.valid?
 
@@ -48,7 +47,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    if @job.update_attributes(params[:job])
+    if @job.update(job_params)
       redirect_to job_path(@job)
     else
       render :edit
@@ -81,4 +80,9 @@ class JobsController < ApplicationController
     @job = current_user.jobs.find(params[:id])
   end
 
+  private
+
+  def job_params
+    params.require(:job).permit(:title, :job_type, :occupation, :company_name, :location, :url, :description, :apply_information, :deadline)
+  end
 end

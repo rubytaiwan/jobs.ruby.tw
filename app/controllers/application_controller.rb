@@ -1,12 +1,11 @@
-# -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   has_mobile_fu
 
   protect_from_forgery
 
-  before_filter :set_locale
+  before_action :set_locale
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   protected
 
