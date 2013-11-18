@@ -8,10 +8,17 @@ module Searchable
     end
   end
 
+  ##
+  # FIXME
+  ##
+  # DEPRECATED: with_scope
+  # Please use ActiveRecord::Relation#scoping instead.
+  # DEPRECATED: find(:all)
+  # Please call #all directly instead
   def search(query, fields=nil, options={})
     with_scope find: { conditions: search_conditions(query, fields) } do
-        find :all, options
-      end
+      find :all, options
+    end
   end
 
   def search_conditions(query, fields=nil)
