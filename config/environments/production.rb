@@ -76,4 +76,4 @@ JobsRubyTw::Application.config.middleware.use ExceptionNotifier,
   :email_prefix => "[Ruby Taiwan Exception Notifier - Production] ",
   :sender_address => %{"notifier" <ihower@gmail.com>},
   :exception_recipients => %w{ihower@gmail.com}
-  
+

@@ -1,6 +1,6 @@
 production:
-  address: 
+  address:
   port:
-  domain: 
-  user_name: 
-  password: 
+  domain:
+  user_name:
+  password:

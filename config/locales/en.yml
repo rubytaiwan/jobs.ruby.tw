@@ -3,25 +3,25 @@ en:
   submiting: Submiting...
   search: Search
   preview: Preview
-  
+
   logout: Logout
   signup: Sign up
   login: Login
   settings: Settings
-  
+
   edit: Edit
   delete: Delete
   open: Open the job
   close: Close the job
   are_you_sure: Are you sure?
-  
+
   post_a_new_job: Post a new job
   list_my_posting: List my posting
-  
+
   faq: FAQ
   rss_feed: Subscribe to the RSS feed
   twitter: follow @RubyTaiwan on Twitter
-  
+
   job:
     posted: Posted
     title: Job Title

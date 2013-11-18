@@ -1,13 +1,13 @@
 # -*- encoding : utf-8 -*-
 module Searchable
-  
+
   def searchable_by(*column_names)
     @search_columns = []
     [column_names].flatten.each do |name|
       @search_columns << name
     end
   end
-  
+
   def search(query, fields=nil, options={})
     with_scope find: { conditions: search_conditions(query, fields) } do
         find :all, options
@@ -30,5 +30,5 @@ module Searchable
     end
     [or_frags.join(" AND " ), binds]
   end
-  
+
 end

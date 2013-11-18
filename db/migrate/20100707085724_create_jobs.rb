@@ -13,10 +13,10 @@ class CreateJobs < ActiveRecord::Migration
       t.date :deadline
 
       t.integer :user_id
-      
+
       t.timestamps
     end
-    
+
     add_index :jobs, :user_id
   end
 

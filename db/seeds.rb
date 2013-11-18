@@ -8,10 +8,10 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 user = User.create!(:email => "admin@ruby.tw", :password => "rubytw", :password_confirmation => "rubytw")
-user.confirmed_at = Time.now 
+user.confirmed_at = Time.now
 user.save
 
-job = Job.create!( :title => "Rails developer", :url => "http://ruby.tw", 
+job = Job.create!( :title => "Rails developer", :url => "http://ruby.tw",
                    :company_name => "Ruby Taiwan", :job_type => "Full-time", :occupation => "Web back-end",
                    :location => "Taipei", :user_id => 1,
                    :description => "This is awesome Ruby job!<br>The salary is also great!", :apply_information => "Please email to me" )

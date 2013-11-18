@@ -16,52 +16,52 @@
 	<%= f.label :title, t("job.title") %>
 	<%= f.text_field :title, :class => "text" %>
 	</div>
-	
+
 	<div class="field">
 	<%= f.label :company_name, t("job.company_name") %>
 	<%= f.text_field :company_name, :class => "text" %>
 	</div>
-	
+
 	<div class="field">
 	<%= f.label :url, "URL" %>
 	<%= f.text_field :url, :class => "text" %>
 	</div>
-	
+
 	<div class="field reset">
 	<%= f.label :job_type, t("job.type") %>
 		<% Job::JOB_TYPE.each do |t| %>
                         <%= f.radio_button :job_type, t %> <%= f.label :job_type, t, :value => t, :class => "inline" %>
 		<% end %>
 	</div>
-	
+
 	<div class="field reset">
 	<%= f.label :occupation, t("job.occupation") %>
 		<% Job::OCCUPATION.each do |o| %>
                         <%= f.radio_button :occupation, o %> <%= f.label :occupation, o, :value => o, :class => "inline" %>
 		<% end %>
 	</div>
-		
+
 	<div class="field">
 	<%= f.label :location, t("job.location") %>
 	<%= f.text_field :location, :class => "text" %>
 	</div>
-	
+
 	<div class="field">
 	<%= f.label :description, t("job.description") %>
 	<%= f.text_area :description, :class => "text" %>
 	</div>
-	
+
 	<div class="field">
 	<%= f.label :apply_information, t("job.apply_information") %>
 	<%= f.text_area :apply_information, :class => "text" %>
 	</div>
-	
+
 	<div class="field reset">
 		<%= f.label :deadline, t("job.deadline") %>
 		<span id="deadline_fields"><%= f.date_select :deadline %></span>
 		<%= f.check_box :deadline_forever %><label for="job_deadline_forever" class="inner"><%= t("job.deadline_forever") %></label>
 	</div>
-	
+
 	<div class="field actions">
           <%= link_to(t(:preview), "#preview", :class => "preview") %>
 	<%= f.submit t(:submit), :class => "submit button",:disable_with => t(:submiting) %>

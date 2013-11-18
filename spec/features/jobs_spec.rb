@@ -13,7 +13,7 @@ feature "View homepage" do
     page.should have_content(@job.company_name)
     page.should have_content(@job.location)
   end
-  
+
   scenario "User should see job description in job page" do
     Job.count.should == 1
     visit job_path(@job)
@@ -23,11 +23,11 @@ feature "View homepage" do
     #page.should have_content(@job.description)
     #page.should have_content(@job.apply_information)
   end
-    
+
   scenario "User could post new job" do
     login!
     visit new_job_path
-    
+
     within("#new_job") do
       fill_in "Job Title", :with => "job title"
       fill_in "Company Name", :with => "foobar"
@@ -39,12 +39,12 @@ feature "View homepage" do
       fill_in "Apply Information", :with => "apply infor."
       check "Forever"
     end
-    
+
     click_button "Submit"
-    
+
     page.should have_content("job title")
     page.should have_content("foobar")
     page.should have_content("hsinchu")
   end
-  
+
 end
