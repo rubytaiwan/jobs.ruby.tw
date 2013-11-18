@@ -1,49 +1,52 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.15'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.1'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.6'
-  gem 'coffee-rails', '~> 3.2.2'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
 
-  gem 'uglifier', '>= 1.2.3'
-end
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
 
-gem 'devise', '~>2.1.3'
+gem 'devise', '~> 3.2.1'
+
 gem 'mysql2'
 
-gem "babosa"
-gem "rails_autolink"
+gem 'babosa'
 
-gem "settingslogic"
-gem "seo_helper"
+gem 'rails_autolink'
+
+gem 'settingslogic'
+
+gem 'seo_helper'
+
 gem 'open_graph_helper'
+
 gem 'google_plus_helper'
 
 gem 'exception_notification'
 
-gem "mobile-fu"
-
-gem 'capistrano', :group => "development"
+gem 'mobile-fu'
 
 gem 'rake', :group => :test
 
 group :development do
-  gem "capistrano"
-  gem "magic_encoding"
-  gem "annotate"
-  gem "sqlite3"
+  gem 'capistrano'
+  gem 'magic_encoding'
+  gem 'annotate'
+  gem 'sqlite3'
 end
 
 group :test, :development do
-  gem "rspec"
-  gem "rspec-rails"
-  gem "simplecov"
-  gem "capybara"
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'capybara'
 end
