@@ -25,31 +25,24 @@ class Job < ActiveRecord::Base
   extend Searchable
   searchable_by :title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information
 
-  validates_presence_of :title
-  validates_presence_of :job_type
-  validates_presence_of :company_name
-  validates_presence_of :occupation
-  validates_presence_of :location
-  validates_presence_of :description
-  validates_presence_of :apply_information
-  validates_presence_of :owner
+  validates :title, :job_type, :company_name, :occupation, :location, :description, :apply_information, :owner, presence: true
 
-  validates_format_of :description, :with => /(ruby|rails)/i, :message => "Doesn't seem to be a Ruby or Rails related job"
-  JOB_TYPE = %w[Full-time Part-time Contract Internship Other]
-  OCCUPATION = ['Web back-end', 'Web front-end', 'Web-design',
-                'QA/Testing', 'Other']
+  validates :description, format: { with: /(ruby|rails)/i, message: "Doesn't seem to be a Ruby or Rails related job" }
 
-  validates_inclusion_of :job_type, :in => JOB_TYPE
-  validates_inclusion_of :occupation, :in => OCCUPATION
+  JOB_TYPE   = %w[ Full-time Part-time Contract Internship Other ]
+  OCCUPATION = %w[ Web back-end Web front-end Web-design QA/Testing Other ]
 
-  belongs_to :owner, :class_name => "User", :foreign_key => "user_id"
+  validates   :job_type, inclusion: { in: JOB_TYPE }
+  validates :occupation, inclusion: { in: OCCUPATION }
 
-  before_validation :set_aasm_state, :on => :create
+  belongs_to :owner, class_name: "User", foreign_key: "user_id"
+
+  before_validation :set_aasm_state, on: :create
   before_validation :set_deadline
 
-  scope :published , -> { where(aasm_state: 'published') }
-  scope :online, -> { published.where("deadline is NULL or deadline > ?", Date.today) }
-  scope :recent, -> { order(:id, created_at: :desc) }
+  scope :published, -> { where(aasm_state: 'published') }
+  scope    :online, -> { published.where("deadline is NULL or deadline > ?", Date.today) }
+  scope    :recent, -> { order(:id, created_at: :desc) }
 
   def open
     self.aasm_state = "published"
