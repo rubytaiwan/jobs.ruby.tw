@@ -16,16 +16,16 @@ module Searchable
   # DEPRECATED: find(:all)
   # Please call #all directly instead
   def search(query, fields=nil, options={})
-    with_scope find: { conditions: search_conditions(query, fields) } do
-      find :all, options
-    end
+    # with_scope find: { conditions: search_conditions(query, fields) } do
+    #   find :all, options
+    # end
+    where(search_conditions(query, fields)).all(options) if query.present?
   end
 
   def search_conditions(query, fields=nil)
-    return nil if query.blank?
-    fields ||= @search_columns
+    fields ||= column_names.map(&:to_sym)
     # split the query by commas as well as spaces, just in case
-    words = query.split("," ).map(&:split).flatten
+    words = query.split(",").map(&:split).flatten
     binds = {} # bind symbols
     or_frags = [] # OR fragments
     count = 1 # to keep count on the symbols and OR fragments
