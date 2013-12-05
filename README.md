@@ -1,6 +1,8 @@
 Job board for Ruby and Rails developers in Taiwan
 A free service by Ruby Taiwan http://ruby.tw
 
+[![Build Status](https://travis-ci.org/rubytaiwan/jobs.ruby.tw.png?branch=master)](https://travis-ci.org/rubytaiwan/jobs.ruby.tw) [![Code Climate](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw.png)](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw)
+
 ## Requirements
 
 * Ruby 1.9.3
