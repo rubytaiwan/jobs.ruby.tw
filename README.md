@@ -1,12 +1,12 @@
 Job board for Ruby and Rails developers in Taiwan
 A free service by Ruby Taiwan http://ruby.tw
 
-== Requirements
+## Requirements
 
 * Ruby 1.9.3
 * Bundler
 
-== How to get started?
+## How to get started?
 
 * cp config/database.yml.example config/database.yml
 * bundle
@@ -15,36 +15,36 @@ A free service by Ruby Taiwan http://ruby.tw
 * rake db:seed
 * rails server
 
-== How to run spec?
+## How to run spec?
 
 * rake spec
 
-== User Stories
+## User Stories
 
-[v] Signup as an employer
-[v] Post a job
-[v] List my jobs
-[v] Edit my job
-[v] Search jobs
-[v] Employer can close job
-[v] Not display jobs which is closed or overdue
-[v] Employer can select deadline date or click forever checkbox
-[v] Social link: Tweet this job, Facebook it, Plurk it.
-[v] RSS feed
-[v] Employer can preview job posting
-[v] Mobile interface
-[v] Auto-deployment
+[x] Signup as an employer
+[x] Post a job
+[x] List my jobs
+[x] Edit my job
+[x] Search jobs
+[x] Employer can close job
+[x] Not display jobs which is closed or overdue
+[x] Employer can select deadline date or click forever checkbox
+[x] Social link: Tweet this job, Facebook it, Plurk it.
+[x] RSS feed
+[x] Employer can preview job posting
+[x] Mobile interface
+[x] Auto-deployment
 [ ] Model JobType and Occupation
 [ ] Caching for jobs/index and jobs/show actions
 [ ] Highlight the job if employer sponsors via paypal
 
-== Employer profile
+## Employer profile
 
 * Login name
 * Password
 * Email
 
-== Job profile
+## Job profile
 
 * Job title
 * Job type: Full-time, Part-time, Contract, Internship, Other
@@ -56,7 +56,7 @@ A free service by Ruby Taiwan http://ruby.tw
 * How to Apply for this position
 * Deadline
 
-== Web Design
+## Web Design
 
 * Job index page
 * Job show page
@@ -64,7 +64,7 @@ A free service by Ruby Taiwan http://ruby.tw
 * Sign-up, Sign-in, Forget password, Resend confirmation pages
 * About page
 
-== Reference sites
+## Reference sites
 
 * http://ruby.jobamatic.com/a/jbb/find-jobs
 * http://www.railsjob.com/
