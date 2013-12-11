@@ -20,6 +20,10 @@ gem 'jquery-rails'
 
 gem 'puma', '~> 2.7.1'
 
+gem 'capistrano-puma'
+
+gem 'jbuilder'
+
 gem 'devise', '~> 3.2.2'
 
 gem 'http_accept_language', '~> 2.0.0'
@@ -49,23 +53,35 @@ gem 'mobile-fu'
 
 group :development do
   gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
   gem 'annotate'
   gem "migration_comments"
   gem 'sqlite3'
-  gem 'capybara'
-  gem 'timecop'
 end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'fabrication', '~> 2.9.3'
   gem 'ffaker'
   gem 'simplecov'
+  gem 'timecop'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
   gem 'pry-rails'
   gem 'pry-doc'
-  gem 'pry-byebug' if RUBY_VERSION =~ /2.0/
-  gem 'pry-debugger' if RUBY_VERSION =~ /1.9/
   gem 'pry-stack_explorer'
+
+  if RUBY_VERSION >= '2.0.0'
+    gem 'pry-byebug'
+  else
+    gem 'pry-debugger'
+    gem 'pry-remote'
+  end
+
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
