@@ -63,7 +63,8 @@ group :test, :development do
   gem 'simplecov'
   gem 'pry-rails'
   gem 'pry-doc'
-  gem 'pry-byebug'
+  gem 'pry-byebug' if RUBY_VERSION =~ /2.0/
+  gem 'pry-debugger' if RUBY_VERSION =~ /1.9/
   gem 'pry-stack_explorer'
   gem 'better_errors'
   gem 'binding_of_caller'
