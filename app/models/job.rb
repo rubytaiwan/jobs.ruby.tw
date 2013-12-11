@@ -19,18 +19,14 @@
 #
 
 class Job < ActiveRecord::Base
-
   attr_accessor :deadline_forever
-
-  extend Searchable
-  searchable_by :title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information
 
   validates :title, :job_type, :company_name, :occupation, :location, :description, :apply_information, :owner, presence: true
 
   validates :description, format: { with: /(ruby|rails)/i, message: "Doesn't seem to be a Ruby or Rails related job" }
 
   JOB_TYPE   = %w[ Full-time Part-time Contract Internship Other ]
-  OCCUPATION = %w[ Web back-end Web front-end Web-design QA/Testing Other ]
+  OCCUPATION = %w[ Web\ back-end Web\ front-end Web-design QA/Testing Other ]
 
   validates   :job_type, inclusion: { in: JOB_TYPE }
   validates :occupation, inclusion: { in: OCCUPATION }
