@@ -60,7 +60,7 @@ jQuery(function ($) {
     /**
      *  confirmation handler
      */
-    $('a[data-confirm],input[data-confirm]').live('click', function () {
+    $('a[data-confirm],input[data-confirm]').on('click', function () {
         var el = $(this);
         if (el.triggerAndReturn('confirm')) {
             if (!confirm(el.attr('data-confirm'))) {
@@ -73,17 +73,17 @@ jQuery(function ($) {
     /**
      * remote handlers
      */
-    $('form[data-remote]').live('submit', function (e) {
+    $('form[data-remote]').on('submit', function (e) {
         $(this).callRemote();
         e.preventDefault();
     });
 
-    $('a[data-remote],input[data-remote]').live('click', function (e) {
+    $('a[data-remote],input[data-remote]').on('click', function (e) {
         $(this).callRemote();
         e.preventDefault();
     });
 
-    $('a[data-method]:not([data-remote])').live('click', function (e){
+    $('a[data-method]:not([data-remote])').on('click', function (e){
         var link = $(this),
             href = link.attr('href'),
             method = link.attr('data-method'),
@@ -108,7 +108,7 @@ jQuery(function ($) {
     var disable_with_input_selector = 'input[data-disable-with]';
     var disable_with_form_selector = 'form[data-remote]:has(' + disable_with_input_selector + ')';
 
-    $(disable_with_form_selector).live('ajax:before', function () {
+    $(disable_with_form_selector).on('ajax:before', function () {
         $(this).find(disable_with_input_selector).each(function () {
             var input = $(this);
             input.data('enable-with', input.val())
@@ -117,7 +117,7 @@ jQuery(function ($) {
         });
     });
 
-    $(disable_with_form_selector).live('ajax:complete', function () {
+    $(disable_with_form_selector).on('ajax:complete', function () {
         $(this).find(disable_with_input_selector).each(function () {
             var input = $(this);
             input.removeAttr('disabled')

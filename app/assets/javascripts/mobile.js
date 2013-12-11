@@ -6,7 +6,7 @@ $(document).bind("mobileinit", function() {
 } );
 
 $(document).ready(function() {
-  $("a.jobpreview").live("click.preview", function(event) {
+  $("a.jobpreview").on("click.preview", function(event) {
     var $this = $(this);
     var jobform = {
       url: "/jobs/preview",
