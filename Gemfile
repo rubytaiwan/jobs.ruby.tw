@@ -1,21 +1,30 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.2'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.1'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.3.2'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'devise', '~> 3.2.1'
+gem 'puma', '~> 2.7.1'
+
+gem 'devise', '~> 3.2.2'
+
+gem 'http_accept_language', '~> 2.0.0'
+
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
 
 gem 'mysql2'
 
@@ -24,6 +33,9 @@ gem 'babosa'
 gem 'rails_autolink'
 
 gem 'settingslogic'
+
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
+gem 'meta-tags', :require => 'meta_tags'
 
 gem 'seo_helper'
 
@@ -46,7 +58,8 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'fabrication', '~> 2.9.3'
+  gem 'ffaker'
   gem 'simplecov'
   gem 'pry-rails'
   gem 'pry-doc'
@@ -57,3 +70,4 @@ group :test, :development do
   gem 'quiet_assets'
   gem 'database_rewinder'
 end
+
