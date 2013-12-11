@@ -1,5 +1,5 @@
 JobsRubyTw::Application.routes.draw do
-  get '/about' => 'pages#about', :as => "about"
+  get '/about' => 'pages#about', as: 'about'
 
   devise_for :users
 
@@ -9,10 +9,10 @@ JobsRubyTw::Application.routes.draw do
       patch :close
     end
     collection do
-      post :preview
+      post  :preview
       patch :preview
     end
   end
 
-  root "jobs#index"
+  root 'jobs#index'
 end
