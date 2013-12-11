@@ -1,0 +1,20 @@
+defaults: &defaults
+  app_name: "Ruby Jobs in Taiwan"
+  domain: "http://jobsrubytw.dev"
+  facebook_app_id:
+  facebook_secret:
+  admin_emails:
+    - ""
+  google_analytics_key: ""
+  default_logo_url: "/logo.png"
+  devise_secret_key: "run `rake secret` to generate new one"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  domain: "http://jobs.ruby.tw"

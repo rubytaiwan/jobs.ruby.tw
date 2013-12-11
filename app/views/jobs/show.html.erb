@@ -2,18 +2,18 @@
 <h1 class="jobtitle"><%= @job.title %></h1>
 <p class="date">
  <%= t("job.posted") %>: <%= @job.created_at.to_date %>
- 
+
  <% if @job.owned_by?(current_user)  %>
  	<%= t("job.deadline") %>: <%= @job.deadline || t("job.deadline_forever") %>
  	<span class="manage">
- 	<%= link_to t(:edit), edit_job_path(@job), :class => "edit" %>	
+ 	<%= link_to t(:edit), edit_job_path(@job), :class => "edit" %>
  	<% if @job.closed? %>
  		<%= link_to t(:open), open_job_path(@job), :confirm => t(:are_you_sure), :method => :put, :class => "open" %>
  	<% else %>
  		<%= link_to t(:close), close_job_path(@job), :confirm => t(:are_you_sure), :method => :put, :class => "close" %>
- 	<% end %>	
+ 	<% end %>
  	<%= link_to t(:delete), job_path(@job), :confirm => t(:are_you_sure), :method => :delete, :class => "delete" %>
- 	</span>	
+ 	</span>
  <% elsif @job.deadline %>
  	<%= t("job.deadline") %>: <%= @job.deadline %>
  <% end %>

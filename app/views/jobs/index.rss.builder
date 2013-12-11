@@ -4,7 +4,7 @@ xml.rss "version" => "2.0" do
     xml.title "Ruby Jobs in Taiwan"
     xml.link jobs_url
     xml.description "Ruby Jobs in Taiwan"
- 
+
     @jobs.each do |job|
       xml.item do
         xml.title job.title

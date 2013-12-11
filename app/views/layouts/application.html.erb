@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <%= render_page_title_tag %>
-  <%= render_page_description_meta_tag %>
-  <%= render_page_keywords_meta_tag %>
-  <%= render_page_image_link_tag %>
+    <%= render_page_title_tag %>
+    <%= render_page_description_meta_tag %>
+    <%= render_page_keywords_meta_tag %>
+    <%= render_page_image_link_tag %>
 
-  <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
-  <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
-  <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  <%= stylesheet_link_tag "application" %>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
+    <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
+    <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
 
-  <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", :title => "Ruby Jobs in Taiwan RSS feed") %>
+    <%= favicon_link_tag '/favicon.ico' %>
+    <%= stylesheet_link_tag "application" %>
 
-<script type="text/javascript">
-	$(function(){
-		$.fn.formLabels();
-		$("#search-form").submit(function(){
-			var formVal = $("form").serialize();
-			parent.$("#default div.results").html(formVal);
-		})
-	});
-</script>
-
-<%= csrf_meta_tag %>
+    <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", title: "Ruby Jobs in Taiwan RSS feed") %>
+    <%= csrf_meta_tag %>
 </head>
 <body>
 <div id="wrapper">
@@ -35,9 +26,12 @@
         <h1><a href="/">RubyJobs</a></h1>
         <div class="right">
             <p class="member">
-              <%= render :partial => "common/usernav" %>
+              <%= render "common/usernav" %>
             </p>
-            <%= render :partial => "common/search_form" %>
+            <%= search_form_for(@q, url: jobs_path, id: 'search-form',
+                         class: 'search', method: :get) do |form| %>
+              <%= render "common/search_form", form: form %>
+            <% end %>
         </div>
     </div>
     <div id="container">
@@ -53,23 +47,33 @@
             <li><%= link_to t(:rss_feed), "http://feeds.feedburner.com/rubyjobs-taiwan" %></li>
             <li class="twitter"><%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %></li>
         </ul>
-        <p class="language">Choose your language: 
-			<%= link_to "English", :controller => controller.controller_name, 
-					         :action => controller.action_name, :locale => "en" %>
-			<%= link_to "繁體中文", :controller => controller.controller_name, 
-					         :action => controller.action_name, :locale => "zh_tw" %>
+        <p class="language">Choose your language:
+			<%= link_to "English", controller: controller.controller_name,
+					         action: controller.action_name, locale: "en" %>
+			<%= link_to "繁體中文", controller: controller.controller_name,
+					         action: controller.action_name, locale: "zh_tw" %>
 	    </p>
         <address>The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a> and hosted by <a href="http://www.openfoundry.org" target="_blank">OSSF</a>.</address>
     </div>
 </div>
 
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
-  <%= javascript_include_tag "application" %>
-  <%= render :partial => "common/facebook_js" %>
-  <%= google_plusone_javascript_include_tag(:async => true) %>
-  <%= yield :scripts %>
-  
-<%= render :partial => "common/google_analytics" %>
+<%= javascript_include_tag "application" %>
+<%= render "common/facebook_js" %>
+<%= google_plusone_javascript_include_tag(async: true) %>
+
+<%= yield :scripts %>
+
+<%= render "common/google_analytics" %>
+
+<script type="text/javascript">
+$(function(){
+    $.fn.formLabels();
+    $("#search-form").on('submit', function(){
+        var formVal = $("form").serialize();
+        parent.$("#default div.results").html(formVal);
+    });
+});
+</script>
 
 </body>
 </html>

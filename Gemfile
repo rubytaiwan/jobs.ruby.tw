@@ -1,49 +1,90 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
 
-gem 'rails', '~> 3.2.12'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.2'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 2.3.2'
 
-  gem 'uglifier', '>= 1.0.3'
-end
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
-gem 'devise', '~>2.1.3'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+gem 'puma', '~> 2.7.1'
+
+gem 'capistrano-puma'
+
+gem 'jbuilder'
+
+gem 'devise', '~> 3.2.2'
+
+gem 'http_accept_language', '~> 2.0.0'
+
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
+
 gem 'mysql2'
 
-gem "babosa"
-gem "rails_autolink"
+gem 'babosa'
 
-gem "settingslogic"
-gem "seo_helper"
+gem 'rails_autolink'
+
+gem 'settingslogic'
+
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
+gem 'meta-tags', :require => 'meta_tags'
+
+gem 'seo_helper'
+
 gem 'open_graph_helper'
+
 gem 'google_plus_helper'
 
 gem 'exception_notification'
 
-gem "mobile-fu"
-
-gem 'capistrano', :group => "development"
-
-gem 'rake', :group => :test
+gem 'mobile-fu'
 
 group :development do
-  gem "capistrano"
-  gem "magic_encoding"
-  gem "annotate"
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'annotate'
+  gem "migration_comments"
+  gem 'sqlite3'
 end
 
 group :test, :development do
-  gem "rspec"
-  gem "rspec-rails"
-  gem "simplecov"
-  gem "capybara"
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'fabrication', '~> 2.9.3'
+  gem 'ffaker'
+  gem 'simplecov'
+  gem 'timecop'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+
+  if RUBY_VERSION >= '2.0.0'
+    gem 'pry-byebug'
+  else
+    gem 'pry-debugger'
+    gem 'pry-remote'
+  end
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'database_rewinder'
 end
+
