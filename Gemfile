@@ -31,8 +31,6 @@ gem 'exception_notification'
 
 gem "mobile-fu"
 
-gem 'capistrano', :group => "development"
-
 gem 'rake', :group => :test
 
 group :development do
