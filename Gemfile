@@ -37,6 +37,7 @@ group :development do
   gem "capistrano"
   gem "magic_encoding"
   gem "annotate"
+  gem 'letter_opener'
 end
 
 group :test, :development do
