@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   protected
 
   def set_locale
-    if params[:locale] && ["en", "zh_tw"].include?( params[:locale] )
+    if params[:locale] && %w(en zh_tw).include?(params[:locale])
       session[:locale] = params[:locale]
     end
 
@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found
-    render template: "pages/404", status: 404
+    render template: 'pages/404', status: 404
   end
 end
