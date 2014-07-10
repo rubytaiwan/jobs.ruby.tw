@@ -67,13 +67,12 @@ JobsRubyTw::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-   config.action_mailer.default_url_options = { :host => 'jobs.ruby.tw' }
+  config.action_mailer.default_url_options = { host: 'jobs.ruby.tw' }
 
-   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
+  config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
 end
 
 JobsRubyTw::Application.config.middleware.use ExceptionNotifier,
-  :email_prefix => "[Ruby Taiwan Exception Notifier - Production] ",
-  :sender_address => %{"notifier" <ihower@gmail.com>},
-  :exception_recipients => %w{ihower@gmail.com}
-  
+                                              email_prefix: '[Ruby Taiwan Exception Notifier - Production] ',
+                                              sender_address: %("notifier" <ihower@gmail.com>),
+                                              exception_recipients: %w(ihower@gmail.com)

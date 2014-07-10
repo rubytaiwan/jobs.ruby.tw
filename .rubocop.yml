@@ -1,0 +1,17 @@
+Style/LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MethodLength:
+  Enabled: false
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'

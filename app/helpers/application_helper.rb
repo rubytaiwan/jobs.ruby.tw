@@ -1,14 +1,10 @@
 # -*- encoding : utf-8 -*-
 module ApplicationHelper
   def render_notice
-    if flash[:notice]
-      content_tag(:div,  flash[:notice], :class => "message notice")
-    end
+    content_tag(:div,  flash[:notice], class: 'message notice') if flash[:notice]
   end
 
   def render_warning
-    if flash[:warning]
-      content_tag(:div,  flash[:alert], :class => "message alert")
-    end
+    content_tag(:div,  flash[:alert], class: 'message alert') if flash[:warning]
   end
 end
