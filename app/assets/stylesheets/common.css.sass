@@ -1,0 +1,591 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+\:focus
+  outline: 0
+
+ins
+  text-decoration: none
+
+del
+  text-decoration: line-through
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/*
+ *Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+ *Code licensed under the BSD License:
+ *http://developer.yahoo.net/yui/license.txt
+ *version: 2.6.0
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+
+body
+  font: 13px/1.231 arial,helvetica,clean,sans-serif
+  *font-size: small
+  /* for IE
+  *font: x-small
+  /* for IE in quirks mode
+
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+
+select, input, button, textarea
+  font: 99% arial,helvetica,clean,sans-serif
+
+/**
+ * To help tables remember to inherit
+
+table
+  font-size: inherit
+  font: 100%
+
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+
+pre, code, kbd, samp, tt
+  font-family: monospace
+  *font-size: 108%
+  line-height: 100%
+
+/*
+ *Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+ *Code licensed under the BSD License:
+ *http://developer.yahoo.net/yui/license.txt
+ *version: 2.7.0
+
+body
+  margin: 10px
+
+h1
+  font-size: 138.5%
+
+h2
+  font-size: 123.1%
+
+h3
+  font-size: 108%
+
+h1, h2, h3
+  margin: 1em 0
+
+h1, h2, h3, h4, h5, h6, strong, dt
+  font-weight: bold
+
+optgroup
+  font-weight: normal
+
+abbr, acronym
+  border-bottom: 1px dotted #000
+  cursor: help
+
+em
+  font-style: italic
+
+del
+  text-decoration: line-through
+
+blockquote, ul, ol, dl
+  margin: 1em
+
+ol, ul, dl
+  margin-left: 2em
+
+ol li
+  list-style: decimal outside
+
+ul li
+  list-style: disc outside
+
+dl dd
+  margin-left: 1em
+
+th, td
+  border: 1px solid #000
+  padding: .5em
+
+th
+  font-weight: bold
+  text-align: center
+
+caption
+  margin-bottom: .5em
+  text-align: center
+
+sup
+  vertical-align: super
+
+sub
+  vertical-align: sub
+
+p, fieldset, table, pre
+  margin-bottom: 1em
+
+button
+  padding: 1px
+
+input
+  &[type="checkbox"], &[type="radio"], &[type="reset"], &[type="submit"]
+    padding: 1px
+
+/* Base
+ *-----------------------------------------------------------------------------
+
+body
+  background: #f1f0e8
+  margin: 0px
+  font-family: Geneva, 'Helvetica Neue', Helvetica, Arial, 'Apple LiGothic', 'Microsoft JhengHei', sans-serif
+  color: #000
+
+a
+  &:link, &:visited
+    color: #b40e12
+    text-decoration: none
+  &:hover, &:active
+    color: #179ce1
+    text-decoration: underline
+
+.clearfix
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+  display: inline-block
+  display: block
+
+/* Hide from IE Mac \
+
+/* End hide from IE Mac
+
+#wrapper
+  margin: 0 auto
+  width: 960px
+
+#container
+  .button
+    background-image: image-url('bg-button.png')
+    background-repeat: repeat-x
+    background-position: 0 0
+    border: 1px solid #999
+    padding: 5px 10px
+    font-family: Verdana, Geneva, sans-serif
+    color: #040404
+    cursor: pointer
+    text-align: center
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    text-shadow: 0 1px 0 #fff
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1)
+    -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1)
+    &:hover
+      background-position: 0 -32px
+      border: 1px solid #999
+      color: #fff
+      text-shadow: 0 -1px 0 #000
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
+  .submit
+    padding: 4px 25px
+    font-size: 123.1%
+    font-weight: bold
+    -moz-border-radius: 15px
+    -webkit-border-radius: 15px
+    border-radius: 15px
+
+.text
+  background: #fff
+  border: 1px solid #ddd
+  border-top: 1px solid #888
+  padding: 5px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  &:focus
+    border: 1px solid #c6e2f5
+    border-top: 1px solid #1984c2
+
+.description
+  line-height: 1.5
+
+/* Menu
+ *-----------------------------------------------------------------------------
+
+.menu
+  margin: 0
+  padding: 0
+  list-style-type: none
+  li
+    margin: 0
+    padding: 0
+    list-style-type: none
+    float: left
+
+/* Header
+ *-----------------------------------------------------------------------------
+
+#header
+  margin: 30px 0 25px
+  position: relative
+  h1
+    display: inline
+    a
+      display: block
+      background: image-url('sprite.png') 0 0 no-repeat
+      width: 520px
+      height: 86px
+      text-indent: -9999em
+  .right
+    position: absolute
+    right: 0
+    top: 0
+    text-align: right
+  .member
+    margin-bottom: 20px
+    color: #696969
+  p a
+    color: #000
+  .member span
+    display: inline-block
+    padding-right: 15px
+  .search
+    position: relative
+    display: inline-block
+  .text
+    padding: 6px 5px 0 5px
+    width: 230px
+    height: 22px
+    font-size: 100%
+  .search label
+    margin: 7px 0 0 5px
+  .search-submit
+    background: image-url('sprite.png') 0 -360px no-repeat
+    width: 30px
+    height: 28px
+    border: 0
+    position: absolute
+    right: 0
+    top: 2px
+    text-indent: -9999em
+    cursor: pointer
+    &:hover
+      background: image-url('sprite.png') 0 -390px no-repeat
+
+/* Container
+ *-----------------------------------------------------------------------------
+
+#container
+  background: #fdfefe image-url('paper-edge.png') right top repeat-y
+  margin-bottom: 40px
+
+#container-inner
+  background: image-url('paper-crease.png') right bottom no-repeat
+  padding: 20px 20px 63px
+  position: relative
+
+.paperclip
+  background: image-url('sprite.png') 0 -260px no-repeat
+  width: 69px
+  height: 31px
+  position: absolute
+  left: -14px
+  top: 60px
+
+.post-job a
+  display: block
+  float: right
+  background: image-url('sprite.png') 0 -90px no-repeat
+  width: 251px
+  height: 80px
+  text-indent: -9999em
+  &:hover
+    background: image-url('sprite.png') 0 -170px no-repeat
+
+#container .pagetitle
+  border-bottom: 1px solid #e6ebec
+  margin: 1em 0 1.4em
+  padding-bottom: 0.6em
+  font-family: Verdana, Geneva, sans-serif
+  font-size: 182%
+
+/* Table
+ *-----------------------------------------------------------------------------
+
+.joblist
+  width: 100%
+  th, td
+    border: 0
+    border-bottom: 1px solid #e6ebec
+    padding: 1em 0.5em
+  th
+    border-bottom: 3px solid #d2d8d9
+    padding-bottom: 0.7em
+    font-size: 116%
+    text-align: left
+  a
+    font-weight: bold
+
+/* Form
+ *-----------------------------------------------------------------------------
+
+.form
+  position: relative
+  .field
+    padding: 0 0 20px 170px
+    position: relative
+    &.actions
+      padding: 0 0 40px 550px
+  label
+    width: 150px
+    text-align: right
+    position: absolute
+    left: 0
+    top: 6px
+    &.inline
+      position: static
+
+.reset label
+  top: 3px
+
+.form
+  input.text
+    width: 280px
+  textarea.text
+    width: 520px
+    height: 100px
+
+.problem
+  position: absolute
+  right: 0
+  top: 0
+  a
+    display: block
+    margin-bottom: 1em
+    padding-left: 28px
+    color: #969696
+    &:hover
+      color: #b40e12
+  .forgot
+    background: image-url('sprite.png') 0 -600px no-repeat
+  .receive
+    background: image-url('sprite.png') 0 -620px no-repeat
+
+label.inner
+  position: static
+
+/* Job Content
+ *-----------------------------------------------------------------------------
+
+#container .jobtitle
+  margin: 1em 0 0.5em
+  font-family: Verdana, Geneva, sans-serif
+  font-size: 182%
+
+.job-content
+  .date
+    font-weight: bold
+    color: #969696
+  .manage
+    margin-left: 25px
+    a
+      display: inline-block
+      background-image: image-url('sprite.png')
+      background-repeat: no-repeat
+      margin-right: 10px
+      padding-left: 22px
+      font-weight: 400
+      color: #969696
+      &:hover
+        color: #000
+    .edit
+      background-position: 0 -450px
+      &:hover
+        background-position: -250px -450px
+    .delete
+      background-position: 0 -480px
+      &:hover
+        background-position: -250px -480px
+    .open
+      background-position: 0 -510px
+      &:hover
+        background-position: -250px -510px
+    .close
+      background-position: 0 -540px
+      &:hover
+        background-position: -250px -540px
+  .social
+    position: absolute
+    right: 20px
+    top: 3.8em
+
+.social
+  width: 170px
+  padding: 15px 5px 5px 5px
+  border-right: none
+  > div
+    height: 20px
+    > *
+      display: block
+      float: left
+      display: block
+      float: left
+    height: 20px
+  .fb-like
+    width: 70px
+
+.job-content
+  .job-info
+    margin: 40px 0
+  .menu li
+    float: none
+    background: image-url('hr.jpg') left bottom no-repeat
+    margin-bottom: 8px
+    padding-bottom: 10px
+
+.job-info
+  .field
+    padding: 0 0 0 150px
+  .double .field
+    float: left
+    width: 210px
+  label
+    top: 0
+    width: 130px
+    font-weight: bold
+
+.job-content .menu .last
+  background: transparent
+  border: 0
+  margin: 0
+  padding: 0
+
+.apply-information
+  background: image-url('hr.jpg') left bottom no-repeat
+  margin-bottom: 20px
+  padding-bottom: 40px
+  h2
+    background: image-url('title-border.png') left bottom no-repeat
+    padding-bottom: 4px
+    font-family: Verdana, Geneva, sans-serif
+    text-transform: uppercase
+
+.backto
+  display: block
+  background: image-url('sprite.png') 0 -300px no-repeat
+  width: 151px
+  height: 24px
+  text-indent: -9999em
+  &:hover
+    background: image-url('sprite.png') 0 -330px no-repeat
+
+/* FAQ
+ *-----------------------------------------------------------------------------
+
+.faq
+  line-height: 1.5
+  dt
+    background: image-url('icon-mark.png') left top no-repeat
+    padding-left: 24px
+    margin-bottom: 5px
+  dd
+    background: image-url('hr.jpg') left bottom no-repeat
+    margin: 0 0 15px 0
+    padding: 0 0 15px 24px
+
+/* Footer
+ *-----------------------------------------------------------------------------
+
+#footer
+  position: relative
+  color: #aaa
+  .menu
+    margin-bottom: 8px
+    li
+      border-right: 1px solid #ccc
+      margin-right: 10px
+      padding-right: 9px
+    .twitter
+      background: image-url('sprite.png') 0 -570px no-repeat
+      border-right: 0
+      margin-right: 0
+      padding-right: 0
+      padding-left: 30px
+      height: 22px
+    a
+      color: #696969
+  .language a
+    color: #696969
+  .menu a:hover, .language a:hover
+    color: #000
+  address
+    position: absolute
+    right: 0
+    top: 0
+    font-style: normal
+    a
+      text-decoration: underline
+
+.faq a
+  text-decoration: underline
+
+/* Message
+ *-----------------------------------------------------------------------------
+
+.message
+  background: #eee
+  border: 1px solid #ddd
+  padding: 10px
+  font-weight: bold
+  -moz-border-radius: 15px
+  -webkit-border-radius: 15px
+  border-radius: 15px
+
+.alert
+  background: #fef6f6
+  border: 1px solid #ba1318
+
+.notice
+  background: #fbfef6
+  border: 1px solid #85ba13
+
+#error_explanation
+  background: #fef6f6
+  border: 1px solid #ba1318
+  margin-bottom: 20px
+  padding: 10px
+  -moz-border-radius: 15px
+  -webkit-border-radius: 15px
+  border-radius: 15px
+  width: 600px
