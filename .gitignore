@@ -3,6 +3,7 @@ db/*.sqlite3
 log/*.log
 config/database.yml
 config/email.yml
+config/config.yml
 .DS_Store
 coverage/*
 tmp/
