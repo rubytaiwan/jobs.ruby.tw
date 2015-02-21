@@ -34,16 +34,13 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
-  config.assets.precompile += %w( application.css application.js mobile.css mobile.js )
   config.i18n.fallbacks = true
-  config.action_mailer.default_url_options = { host: 'jobs.ruby.tw' }
+  config.action_mailer.default_url_options = { host: Setting.domain}
+  config.action_mailer.delivery_method = Setting.action_mailer.delivery_method.to_sym
+
   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-    email: {
-    email_prefix: '[Ruby Taiwan Exception Notifier - Production] ',
-    sender_address: %("notifier" <noreply@ruby.tw>),
-    exception_recipients: %w(ihower@gmail.com ryudo@ruby.tw)
-  }
+  Rails.application.config.middleware.use ExceptionNotification::Rack, email: Setting.exception_notification_mailer.symbolize_keys
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
