@@ -10,10 +10,10 @@ set :scm_verbose, true
 set :use_sudo, false
 
 set :user, 'deploy'
-set :port, '21222'
+set :port, '22'
 set :branch, 'master'
 
-server '140.109.17.62', :web, :app, :db, primary: true
+server 'rubytw.cloudapp.net', :web, :app, :db, primary: true
 set :deploy_to, "/home/#{user}/#{application}"
 
 # if you want to clean up old releases on each deploy uncomment this:
