@@ -21,7 +21,6 @@ set :scm, :git
 set :linked_files, %w{config/database.yml config/email.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :default_env, { path: "/usr/local/ruby22/bin:$PATH" }
 set :keep_releases, 3
 
 after :'deploy:publishing', :'deploy:restart'
