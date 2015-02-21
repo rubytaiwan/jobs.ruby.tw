@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
-set :application, 'lrs'
-set :repo_url, ENV['REPOURL'] || 'git@github.com:rubytaiwan/jobs.ruby.tw.git'
+set :application, 'jobs.ruby.tw'
+set :repo_url, 'git@github.com:rubytaiwan/jobs.ruby.tw.git'
 #set :branch, 'master'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
