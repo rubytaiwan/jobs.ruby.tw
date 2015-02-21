@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
-#ruby '1.9.3'
 
 gem 'rails', '~> 3.2.21'
 gem 'eventmachine', '1.0.4'
@@ -36,7 +35,8 @@ gem 'mobile-fu'
 gem 'rake', group: :test
 
 group :development do
-  gem 'capistrano', '~> 2.13'
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
   gem 'magic_encoding'
   gem 'annotate'
   gem 'letter_opener'
