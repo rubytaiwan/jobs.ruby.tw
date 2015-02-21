@@ -1,17 +1,18 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
-ruby '1.9.3'
+#ruby '1.9.3'
 
-gem 'rails', '~> 3.2.12'
-
+gem 'rails', '~> 3.2.21'
+gem 'eventmachine', '1.0.4'
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'#,   '~> 3.2.3'
+  gem 'coffee-rails'#, '~> 3.2.1'
+  gem 'libv8', '3.16.14.7'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', platforms: :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'#, '>= 1.0.3'
 end
 
 # Bundle edge Rails instead:
@@ -35,7 +36,7 @@ gem 'mobile-fu'
 gem 'rake', group: :test
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '~> 2.13'
   gem 'magic_encoding'
   gem 'annotate'
   gem 'letter_opener'
