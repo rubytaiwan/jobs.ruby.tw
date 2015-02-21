@@ -72,7 +72,7 @@ JobsRubyTw::Application.configure do
   config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
 end
 
-  config.middleware.use ExceptionNotification::Rack,
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
     email: {
       email: '[Ruby Taiwan Exception Notifier - Production] ',
       sender_address: %("notifier" <noreply@ruby.tw>),
