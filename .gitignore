@@ -6,3 +6,5 @@ config/email.yml
 .DS_Store
 coverage/*
 tmp/
+.capistrano/
+.capistrano
