@@ -1,23 +1,24 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 4.2'   #'~> 3.2.21'
 gem 'eventmachine', '1.0.4'
-group :assets do
-  gem 'sass-rails'#,   '~> 3.2.3'
-  gem 'coffee-rails'#, '~> 3.2.1'
-  gem 'libv8', '3.16.14.7'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
+gem 'sass-rails'#,   '~> 3.2.3'
+gem 'coffee-rails'#, '~> 3.2.1'
+gem 'jquery-rails'
+gem 'libv8'#, '3.16.14.7'
 
-  gem 'uglifier'#, '>= 1.0.3'
-end
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
+gem 'uglifier'#, '>= 1.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'devise', '~>2.1.3'
+gem 'devise', '~> 3.3'  #, '~>2.1.3'
+gem 'pg'
 gem 'mysql2'
 
 gem 'babosa'
@@ -35,11 +36,12 @@ gem 'mobile-fu'
 gem 'rake', group: :test
 
 group :development do
+  gem 'quiet_assets'
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
-  gem 'magic_encoding'
   gem 'annotate'
   gem 'letter_opener'
+  gem 'yaml_db'
 end
 
 group :test, :development do

@@ -22,8 +22,7 @@
 class Job < ActiveRecord::Base
   attr_accessor :deadline_forever
 
-  extend Searchable
-  searchable_by :title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information
+  SearchableColumns = [:title, :job_type, :occupation, :company_name, :url, :location, :description, :apply_information]
 
   validates_presence_of :title
   validates_presence_of :job_type
@@ -49,7 +48,15 @@ class Job < ActiveRecord::Base
 
   scope :published, -> { where(aasm_state: 'published') }
   scope :online, -> { published.where('deadline is NULL or deadline > ?', Date.today) }
-  scope :recent, order: 'id DESC'
+  scope :recent, -> {order('id DESC')}
+
+  def self.search(keyword)
+    kw = "%#{keyword.downcase}%".to_sym
+    where(
+      SearchableColumns.map{|col_name| "LOWER(#{col_name}) LIKE ? "}.join(" OR "),
+      *SearchableColumns.map{kw}
+    )
+  end
 
   def open
     self.aasm_state = 'published'

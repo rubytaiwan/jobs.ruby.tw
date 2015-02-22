@@ -1,4 +1,5 @@
-//= require rails
+//= require jquery
+//= require jquery_ujs
 
 $(document).bind("mobileinit", function() {
   $.mobile.ajaxLinksEnabled = false;
