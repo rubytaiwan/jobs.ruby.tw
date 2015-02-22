@@ -41,12 +41,14 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'annotate'
   gem 'letter_opener'
-  gem 'yaml_db'
 end
+
+gem 'yaml_db' # 暫存
 
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec-mocks'
   gem 'simplecov'
   gem 'capybara'
 end

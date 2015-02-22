@@ -250,6 +250,7 @@ DEPENDENCIES
   rails_autolink
   rake
   rspec
+  rspec-mocks
   rspec-rails
   sass-rails
   seo_helper
