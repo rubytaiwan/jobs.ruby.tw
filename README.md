@@ -8,13 +8,14 @@ A free service by Ruby Taiwan http://ruby.tw
 
 ## Requirements
 
-* Ruby 1.9.3
+* Ruby >= 1.9.3
 * Bundler
 
 ## How to get started?
 
 ```bash
 cp config/database.yml.example config/database.yml
+cp config/config.yml.example config/config.yml
 bundle
 rake db:create:all
 rake db:migrate
@@ -87,6 +88,9 @@ rake spec
 * xdite <xuite.joke@gmail.com>
 * Lawrence Lin <deduce@gmail.com>
 * TaopaiC <pctao.git@pctao.org>
+* Ryudo <ryudoawaru@gmail.com>
+
+https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors
 
 ## License
 

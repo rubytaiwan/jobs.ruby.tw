@@ -11,7 +11,7 @@
   <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
   <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
   <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
-  
+
   <link rel="shortcut icon" href="/favicon.ico">
   <%= stylesheet_link_tag "application" %>
 
@@ -53,13 +53,13 @@
             <li><%= link_to t(:rss_feed), "http://feeds.feedburner.com/rubyjobs-taiwan" %></li>
             <li class="twitter"><%= link_to t(:twitter), "http://twitter.com/rubytaiwan" %></li>
         </ul>
-        <p class="language">Choose your language: 
-			<%= link_to "English", :controller => controller.controller_name, 
+        <p class="language">Choose your language:
+			<%= link_to "English", :controller => controller.controller_name,
 					         :action => controller.action_name, :locale => "en" %>
-			<%= link_to "繁體中文", :controller => controller.controller_name, 
+			<%= link_to "繁體中文", :controller => controller.controller_name,
 					         :action => controller.action_name, :locale => "zh_tw" %>
 	    </p>
-        <address>The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a> and hosted by <a href="http://www.openfoundry.org" target="_blank">OSSF</a>.</address>
+        <address>The job board is a free service by <a href="http://ruby.tw">Ruby Taiwan</a> and hosted by <a href="http://azure.microsoft.com" target="_blank">Microsoft Azure</a>.</address>
     </div>
 </div>
 
@@ -68,7 +68,7 @@
   <%= render :partial => "common/facebook_js" %>
   <%= google_plusone_javascript_include_tag(:async => true) %>
   <%= yield :scripts %>
-  
+
 <%= render :partial => "common/google_analytics" %>
 
 </body>
