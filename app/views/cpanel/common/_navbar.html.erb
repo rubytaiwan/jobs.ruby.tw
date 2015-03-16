@@ -1,0 +1,60 @@
+<header class="cpanel_menu">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="container">
+					<div id="cpanel_logo">
+						<%= link_to root_path do %>
+							<%= image_tag("ruby_1.png", size: "50x50", style: "margin-right: 10px;") %>
+		  					<h1>Ruby Jobs</h1>
+		  				<% end %>
+					</div>
+  			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="nav navbar-nav navbar-right">
+			<% if user_signed_in? %>
+				<div class="cpanel_user">
+					<li class="dropdown profile-dropdown admin_nolist">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<%#= image %>
+							<span id="admin_user_menu">
+							<%= current_user.email %>
+							</span>
+							<b class="caret"></b>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<% if current_user.admin? %>
+								<li>
+								  	<%= link_to cpanel_dashboards_path do %>
+									<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>　管理後台
+									<% end %>
+								</li>
+							<% end %>
+							<li>
+								<%= link_to jobs_path(current_user, :user_id => current_user)  do %>
+								<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>　查詢張貼職缺
+								<% end %>
+							</li>
+							<li>
+								<%= link_to edit_user_registration_path  do %>
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>　編輯會員資料
+								<% end %>
+							</li>
+							<li>
+								<%= link_to destroy_user_session_path, :method => :delete  do %>
+								<span class="glyphicon glyphicon-off" aria-hidden="true"></span>　登出會員
+								<% end %>
+							</li>
+						</ul>
+					</li>
+				</div>
+			</div>
+			<% else %>
+				 <%= link_to t(:註冊), new_registration_path(:user) %> | 
+  				<%= link_to t(:登入), new_session_path(:user) %>
+			<% end %>
+		</div>
+	</div>
+</header>

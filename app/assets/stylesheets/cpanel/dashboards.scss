@@ -1,0 +1,37 @@
+#cpanel_logo {
+	width: 140px;
+	display: -webkit-box;
+	margin: 0 auto;
+	letter-spacing: 0.08em;
+}
+.cpanel_menu {
+	background-color: #D52828;
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+	a { color: #FFF; }
+	a:hover { color: #FFF; text-decoration: none; }
+	h1 { font-size: 26px; margin-top: 8px; }
+}
+
+.cpanel_user {
+	font-family: "微軟正黑體",Tahoma;
+	font-size: 19px;
+	margin-right: 50px;
+	margin-top: 8px;
+}
+
+#admin_user_menu {
+	a { color: #FFF; }
+	a:hover { color: #FFF; text-decoration: none; }
+	a:active { color: #FF0000; }
+	a:visited { 
+		color: #00BB00;
+		background-color: none;
+	} 
+	a:focus {
+  color: #FF0000;
+  text-decoration: none;
+	}
+}
+

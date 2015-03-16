@@ -1,0 +1,27 @@
+<p class="post-job clearfix"><%= link_to t("post_a_new_job"), new_job_path, :title => t("post_a_new_job") %></p>
+
+<table cellspacing="0" class="joblist">
+    <thead>
+	<tr>
+		<th><%= t("job.posted") %></th>
+		<th><%= t("job.title") %></th>
+		<th><%= t("job.company_name") %></th>
+		<th><%= t("job.location") %></th>
+		<th>管　理</th>
+	</tr>
+	</thead>
+	<tbody>	
+	<% @jobs.each do |job| %>
+		<tr>
+			<td><%= job.created_at.to_date %></td>
+			<td><%= link_to job.title, job_path(job) %></td>
+			<td><%= job.company_name %></td>
+			<td><%= job.location %></td>
+			<td>
+				<%= link_to "刪除" , cpanel_dashboard_path(job.id), method: :DELETE, class: 'btn_delete', data: { confirm: "確定刪除管理員權限?" } %>
+			</td>
+		</tr>
+	<% end %>
+    </tbody>
+</table>
+<span class="paperclip"></span>
