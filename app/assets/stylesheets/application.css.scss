@@ -1,0 +1,17 @@
+//= require common
+//= require colorbox/colorbox
+//= require cpanel/dashboards
+//= require menu
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.row { margin-left: 0; margin-right: 0; }
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+  border-color: #337ab7;
+  color: #FFF;
+  text-decoration: none;
+}
+a:focus {
+  color: #23527c;
+  text-decoration: none;
+}

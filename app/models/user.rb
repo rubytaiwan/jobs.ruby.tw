@@ -31,4 +31,10 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation
 
   has_many :jobs
+
+  belongs_to :role
+
+  def admin?
+    role.try(:name) == 'admin'
+  end
 end

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  namespace :cpanel do
+    resources :dashboards, only:[:index, :destroy] 
+  end
+
   get '/about' => 'pages#about', :as => 'about'
 
   devise_for :users
