@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'rails', '~> 4.2'   #'~> 3.2.21'
 gem 'eventmachine', '1.0.4'
 
@@ -19,7 +19,7 @@ gem 'uglifier'#, '>= 1.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'devise', '~> 3.3'  #, '~>2.1.3'
-#gem 'pg'
+gem 'pg'
 gem 'mysql2'
 
 gem 'babosa'
