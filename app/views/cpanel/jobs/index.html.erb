@@ -18,7 +18,7 @@
 			<td><%= job.company_name %></td>
 			<td><%= job.location %></td>
 			<td>
-				<%= link_to "刪除" , cpanel_dashboard_path(job.id), method: :DELETE, class: 'btn_delete', data: { confirm: "確定刪除管理員權限?" } %>
+				<%= link_to "刪除" , cpanel_job_path(job.id), method: :DELETE, class: 'btn_delete', data: { confirm: "確定刪除管理員權限?" } %>
 			</td>
 		</tr>
 	<% end %>

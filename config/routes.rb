@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :cpanel do
-    resources :dashboards, only:[:index, :destroy] 
+    resources :jobs, only:[:index, :destroy] 
   end
 
   get '/about' => 'pages#about', :as => 'about'

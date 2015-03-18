@@ -1,4 +1,4 @@
-class Cpanel::DashboardsController < ApplicationController
+class Cpanel::JobsController < ApplicationController
   layout 'cpanel' 
   before_action :admin_only
 
@@ -15,7 +15,7 @@ class Cpanel::DashboardsController < ApplicationController
   def destroy
     @jobs = Job.find(params[:id])
     @jobs.destroy
-    redirect_to cpanel_dashboards_path, :alert => '職缺已刪除'
+    redirect_to cpanel_jobs_path, :alert => '職缺已刪除'
   end
 
   private

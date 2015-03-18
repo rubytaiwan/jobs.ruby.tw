@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
-#gem 'sqlite3'
 gem 'rails', '~> 4.2'   #'~> 3.2.21'
 gem 'eventmachine', '1.0.4'
 
