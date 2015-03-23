@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
+
   namespace :cpanel do
-    resources :jobs, only:[:index, :destroy] 
+    resources :jobs, only:[:index, :destroy]
   end
 
   get '/about' => 'pages#about', :as => 'about'
@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   root to: 'jobs#index'
+  match '*unmatched_route', to: redirect{'/'}, via: :all
 
-#  match '*path' => 'pages#404'
 end
