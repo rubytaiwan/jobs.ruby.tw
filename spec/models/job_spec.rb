@@ -96,12 +96,12 @@ describe Job do
 
   describe '#deadline_forever' do
     it 'should be false if deadline is not nil' do
-      @job.deadline_forever.should be_false
+      @job.deadline_forever.should be_falsy
     end
 
     it 'should be true if deadline is nil' do
       @job.deadline = nil
-      @job.deadline_forever.should be_true
+      @job.deadline_forever.should be_truthy
     end
   end
 
@@ -115,15 +115,15 @@ describe Job do
 
   describe '#owned_by?' do
     it 'returns false if nil is passed' do
-      expect(@job.owned_by?(nil)).to be_false
+      expect(@job.owned_by?(nil)).to be_falsy
     end
 
     it 'returns false if the passed user is not the owner' do
-      expect(@job.owned_by?(build_user(email: 'not_me@example.com'))).to be_false
+      expect(@job.owned_by?(build_user(email: 'not_me@example.com'))).to be_falsy
     end
 
     it 'returns true if the passed user is the owner' do
-      expect(@job.owned_by?(@user)).to be_true
+      expect(@job.owned_by?(@user)).to be_truthy
     end
   end
 

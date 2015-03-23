@@ -5,3 +5,7 @@
 //= require jquery_ujs
 //= require jquery.formLabels1.0.js
 //= require jquery.colorbox-min
+//= require_tree .
+//= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require cpanel/dashboards

@@ -1,14 +1,14 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe JobsController do
+describe JobsController, type: :controller do
 
   before do
     @user = User.new
     @job = Job.new
-    @job.stub!(to_param: '123')
-    controller.stub!(:authenticate_user!)
-    controller.stub!(:current_user).and_return(@user)
+    allow(@job).to receive(:to_param).and_return('123')
+    allow(controller).to receive(:authenticate_user!)
+    allow(controller).to receive(:current_user).and_return(@user)
   end
 
   let(:current_user) { @user }
@@ -24,7 +24,7 @@ describe JobsController do
 
     context 'by keyword' do
       it 'should render successful' do
-        online_jobs = mock('jobs')
+        online_jobs = double('jobs')
         Job.should_receive(:online).and_return(online_jobs)
         online_jobs.should_receive('search').with('rails').and_return([@job])
 
@@ -37,7 +37,7 @@ describe JobsController do
 
     context 'by user' do
       it 'should render successful' do
-        user = mock('user')
+        user = double('user')
         User.should_receive(:find).with('99').and_return(user)
         user.stub_chain(:jobs, :recent).and_return([@job])
 
@@ -79,7 +79,7 @@ describe JobsController do
     end
 
     it 'should save failed and render new' do
-      post :create
+      post :create, job: { titie: '' }
 
       response.should render_template(:new)
       response.should be_success
