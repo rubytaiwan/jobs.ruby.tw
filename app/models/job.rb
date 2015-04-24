@@ -47,7 +47,7 @@ class Job < ActiveRecord::Base
   before_validation :set_deadline
 
   scope :published, -> { where(aasm_state: 'published') }
-  scope :online, -> { published.where('deadline is NULL or deadline > ?', Date.today) }
+  scope :online, -> { published.where('deadline is NULL or deadline > ?', Date.today).order('created_at') }
   scope :recent, -> {order('id DESC')}
 
   def self.search(keyword)
