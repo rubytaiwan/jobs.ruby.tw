@@ -8,7 +8,7 @@ Rails.application.config.assets.version = '1.0'
 #Rails.application.config.assets.paths << 'images/colorbox'
 Rails.application.config.assets.precompile += ['colorbox/*']
 
-Rails.application.config.assets.precompile += %w( application.css application.js mobile.css mobile.js )
+Rails.application.config.assets.precompile += %w( application.css application.js mobile.css mobile.js backend.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
