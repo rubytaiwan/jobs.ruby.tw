@@ -36,6 +36,8 @@ gem 'mobile-fu'
 
 gem 'rake', group: :test
 
+gem 'utf8-cleaner'
+
 group :development do
   gem 'quiet_assets'
   gem 'capistrano',  '~> 3.1'
