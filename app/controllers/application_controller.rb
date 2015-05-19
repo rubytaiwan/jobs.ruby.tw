@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
-  before_filter :force_tablet_html 
-
+  has_mobile_fu
 
   protect_from_forgery
 
@@ -9,10 +8,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActionController::RoutingError, with: :not_found
-
-  def force_tablet_html
-    session[:tablet_view] = false
-  end
 
 
   def not_found
@@ -32,6 +27,4 @@ class ApplicationController < ActionController::Base
   def render_not_found
     render template: 'pages/404', status: 404
   end
-
-
 end
