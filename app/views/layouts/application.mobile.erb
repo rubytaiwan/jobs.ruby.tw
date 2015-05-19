@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <%= stylesheet_link_tag "http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" %>
-  <%= stylesheet_link_tag "mobile.css" %>
+  <%= stylesheet_link_tag 'mobile' , media: 'all', 'data-turbolinks-track' => true%>
 
   <!-- loads jquery mobile here first, or layout will flicker -->
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js" %>
