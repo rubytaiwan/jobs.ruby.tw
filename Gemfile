@@ -20,7 +20,7 @@ gem 'uglifier'#, '>= 1.0.3'
 gem 'devise', '~> 3.3'  #, '~>2.1.3'
 gem 'pg'
 gem 'mysql2'
-gem 'sqlite3'
+
 
 gem 'babosa'
 gem 'rails_autolink'
