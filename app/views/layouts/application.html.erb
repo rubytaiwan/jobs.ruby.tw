@@ -13,7 +13,7 @@
   <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
 
   <link rel="shortcut icon" href="/favicon.ico">
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", :title => "Ruby Jobs in Taiwan RSS feed") %>
 

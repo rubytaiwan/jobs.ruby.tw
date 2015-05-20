@@ -21,6 +21,7 @@ gem 'devise', '~> 3.3'  #, '~>2.1.3'
 gem 'pg'
 gem 'mysql2'
 
+
 gem 'babosa'
 gem 'rails_autolink'
 
@@ -34,6 +35,8 @@ gem 'exception_notification'
 gem 'mobile-fu'
 
 gem 'rake', group: :test
+
+gem 'utf8-cleaner'
 
 group :development do
   gem 'quiet_assets'

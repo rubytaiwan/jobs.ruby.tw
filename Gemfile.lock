@@ -216,6 +216,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    utf8-cleaner (0.0.9)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -259,4 +260,5 @@ DEPENDENCIES
   simplecov
   therubyracer
   uglifier
+  utf8-cleaner
   yaml_db
