@@ -19,7 +19,6 @@ gem 'uglifier'#, '>= 1.0.3'
 
 gem 'devise', '~> 3.3'  #, '~>2.1.3'
 gem 'pg'
-gem 'mysql2'
 
 
 gem 'babosa'
@@ -46,7 +45,6 @@ group :development do
   gem 'letter_opener'
 end
 
-gem 'yaml_db' # 暫存
 
 group :test, :development do
   gem 'rspec'
