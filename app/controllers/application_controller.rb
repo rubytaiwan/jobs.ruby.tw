@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
-  
-  has_mobile_fu
+
 
   protect_from_forgery
 
@@ -9,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActionController::RoutingError, with: :not_found
-  
+
 
   def not_found
     render text: 'Not found'
