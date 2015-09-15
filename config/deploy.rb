@@ -11,7 +11,6 @@ set :repo_url, 'git@github.com:rubytaiwan/jobs.ruby.tw.git'
 #set :flowdock_project_name, settings['flowdock']['project_name']
 #set :flowdock_deploy_tags, settings['flowdock']['deploy_tags']
 
-set :deploy_to, '/home/deploy/jobs.ruby.tw'
 set :scm, :git
 
 # set :format, :pretty

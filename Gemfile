@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
-gem 'rails', '4.2.2'   #'~> 3.2.21'
+gem 'rails', '4.2.3'   #'~> 3.2.21'
 gem 'eventmachine', '1.0.4'
 
 gem 'sass-rails'#,   '~> 3.2.3'
