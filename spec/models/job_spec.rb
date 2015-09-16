@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-describe Job do
-
+RSpec.describe Job do
   before do
     @user = build_user
     @job = build_job(owner: @user)

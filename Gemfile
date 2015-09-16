@@ -34,7 +34,7 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails"
+  gem "rspec-rails", ">= 3.3"
   gem "simplecov"
   gem "capybara"
 end

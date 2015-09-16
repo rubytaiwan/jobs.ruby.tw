@@ -10,3 +10,4 @@ tmp/
 .capistrano/
 .capistrano
 db/data.yml
+spec/examples.txt

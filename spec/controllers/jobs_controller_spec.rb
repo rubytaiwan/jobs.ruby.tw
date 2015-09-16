@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe JobsController, type: :controller do
+RSpec.describe JobsController, type: :controller do
 
   before do
     @user = User.new

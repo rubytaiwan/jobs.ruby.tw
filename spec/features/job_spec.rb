@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'View individual job pages' do
+RSpec.feature 'View individual job pages' do
   background do
     @job = build_job
   end

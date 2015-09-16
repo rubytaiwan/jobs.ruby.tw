@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'View homepage' do
+RSpec.feature 'View homepage' do
   background do
     @user = build_user
     @job = build_job(owner: @user)
