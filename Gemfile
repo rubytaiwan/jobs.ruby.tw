@@ -42,6 +42,8 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'annotate'
   gem 'letter_opener'
+  gem "spring"
+  gem "spring-commands-rspec"
 end
 
 
