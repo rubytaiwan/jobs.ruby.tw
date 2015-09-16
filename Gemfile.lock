@@ -154,10 +154,6 @@ GEM
     ref (1.0.5)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rspec (3.2.0)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.1)
@@ -242,9 +238,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.3)
   rails_autolink
-  rake
-  rspec
-  rspec-mocks
   rspec-rails
   sass-rails
   seo_helper
