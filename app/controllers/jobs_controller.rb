@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :find_my_job, only: [:edit, :update, :destroy, :open, :close]

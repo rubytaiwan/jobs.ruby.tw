@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 def login!
   visit '/users/sign_in'
   within('#new_user') do

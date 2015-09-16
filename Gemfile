@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
 gem 'rails', '4.2.3'   #'~> 3.2.21'
 gem 'eventmachine', '1.0.4'

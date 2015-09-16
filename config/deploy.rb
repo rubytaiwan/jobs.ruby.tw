@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 set :application, 'jobs.ruby.tw'
 set :repo_url, 'git@github.com:rubytaiwan/jobs.ruby.tw.git'
 #set :branch, 'master'

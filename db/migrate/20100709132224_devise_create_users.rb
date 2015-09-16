@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 class DeviseCreateUsers < ActiveRecord::Migration
   def self.up
     create_table(:users) do |t|
