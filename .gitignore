@@ -10,4 +10,3 @@ tmp/
 .capistrano/
 .capistrano
 db/data.yml
-bin

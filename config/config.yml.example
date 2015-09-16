@@ -1,0 +1,30 @@
+defaults: &defaults
+  app_name: Ruby Jobs in Taiwan
+  domain: http://jobsrubytw.dev
+  mail_from: noreply@ruby.tw
+  default_logo_url: /logo.png
+  google_analytics_key:
+  action_mailer:
+    delivery_method: sendmail
+  facebook_app_id:
+  facebook_secret:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  domain:
+  action_mailer:
+    delivery_method: :smtp
+    perform_deliveries: true
+    raise_delivery_errors: true
+  admin_emails:
+  exception_notification_mailer:
+    email_prefix:
+    sender_address:
+    exception_recipients:
+
