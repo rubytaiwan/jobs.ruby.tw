@@ -13,20 +13,14 @@ A free service by Ruby Taiwan http://ruby.tw
 
 ## How to get started?
 
-```bash
-cp config/database.yml.example config/database.yml
-cp config/config.yml.example config/config.yml
-bundle
-rake db:create:all
-rake db:migrate
-rake db:seed
-rails server
+```
+bin/setup
 ```
 
 ## How to run spec?
 
 ```bash
-rake spec
+bin/rspec
 ```
 
 ## User Stories
