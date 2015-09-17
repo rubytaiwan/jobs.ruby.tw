@@ -66,11 +66,11 @@ class Job < ActiveRecord::Base
   end
 
   def deadline_forever
-    @deadline_forever ||= !deadline
+    !deadline
   end
 
   def owned_by?(user)
-    user && owner == user
+    !!(user && owner == user)
   end
 
   private
