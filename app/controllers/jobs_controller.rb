@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :find_my_job, only: [:edit, :update, :destroy, :open, :close]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_my_job, only: [:edit, :update, :destroy, :open, :close]
 
   def index
     if params[:user_id]

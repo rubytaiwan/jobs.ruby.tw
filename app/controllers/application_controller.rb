@@ -1,13 +1,10 @@
 class ApplicationController < ActionController::Base
-
-
   protect_from_forgery
 
-  before_filter :set_locale
+  before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActionController::RoutingError, with: :not_found
-
 
   def not_found
     render text: 'Not found'
