@@ -33,6 +33,10 @@ group :development do
   gem "spring-commands-rspec"
 end
 
+group :test do
+  gem "shoulda-matchers", require: false
+end
+
 group :test, :development do
   gem "rspec-rails", ">= 3.3"
   gem "simplecov"

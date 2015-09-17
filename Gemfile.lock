@@ -180,6 +180,8 @@ GEM
       tilt (~> 1.1)
     seo_helper (1.0.2)
     settingslogic (2.0.9)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -242,6 +244,7 @@ DEPENDENCIES
   sass-rails
   seo_helper
   settingslogic
+  shoulda-matchers
   simplecov
   spring
   spring-commands-rspec
