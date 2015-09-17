@@ -1,23 +1,3 @@
-# == Schema Information
-#
-# Table name: jobs
-#
-#  id                :integer          not null, primary key
-#  title             :string(255)
-#  job_type          :string(255)
-#  occupation        :string(255)
-#  company_name      :string(255)
-#  location          :string(255)
-#  url               :string(255)
-#  description       :text
-#  apply_information :text
-#  deadline          :date
-#  user_id           :integer
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  aasm_state        :string(255)
-#
-
 class Job < ActiveRecord::Base
   attr_accessor :deadline_forever
 
@@ -86,11 +66,11 @@ class Job < ActiveRecord::Base
   end
 
   def deadline_forever
-    @deadline_forever ||= !deadline
+    !deadline
   end
 
   def owned_by?(user)
-    user && owner == user
+    !!(user && owner == user)
   end
 
   private

@@ -1,28 +1,31 @@
 require 'rails_helper'
 
 RSpec.feature 'View homepage' do
-  background do
-    @user = build_user
-    @job = build_job(owner: @user)
-  end
+  let(:user) { create(:user) }
 
   scenario 'User should see job title in homepage' do
+    job = create(:job, owner: user)
+
     visit root_path
-    expect(page).to have_content(@job.title)
-    expect(page).to have_content(@job.company_name)
-    expect(page).to have_content(@job.location)
+
+    expect(page).to have_content(job.title)
+    expect(page).to have_content(job.company_name)
+    expect(page).to have_content(job.location)
   end
 
   scenario 'User should see job description in job page' do
-    allow(Job).to receive(:count).and_return 1
-    visit job_path(@job)
-    expect(page).to have_content(@job.job_type)
-    expect(page).to have_content(@job.occupation)
-    expect(page).to have_content(@job.url)
+    job = create(:job, owner: user)
+
+    visit job_path(job)
+
+    expect(page).to have_content(job.job_type)
+    expect(page).to have_content(job.occupation)
+    expect(page).to have_content(job.url)
   end
 
   scenario 'User could post new job' do
-    login!
+    sign_in_as(user)
+
     visit new_job_path
 
     within('#new_job') do
@@ -43,5 +46,4 @@ RSpec.feature 'View homepage' do
     expect(page).to have_content('foobar')
     expect(page).to have_content('hsinchu')
   end
-
 end

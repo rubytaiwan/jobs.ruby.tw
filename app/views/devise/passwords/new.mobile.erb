@@ -4,11 +4,9 @@
   </header>
 
   <div data-role="content">
-    <%= render :partial => "devise/shared/flash", :object => flash %>
-
     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
       <%= devise_error_messages! %>
-    
+
       <p>
         <%= f.label :email %><br/>
       	<%= f.text_field :email %>
@@ -17,9 +15,9 @@
       <p>
     	<%= f.submit "Send me reset password instructions" %>
       </p>
-    
+
     <% end %>
-    
+
     <%= render :partial => "devise/shared/links" %>
   </div>
 </div>

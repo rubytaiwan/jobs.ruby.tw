@@ -22,6 +22,7 @@ gem "open_graph_helper"
 gem "google_plus_helper"
 gem "exception_notification"
 gem "utf8-cleaner"
+gem "rails_utils"
 
 group :development do
   gem "quiet_assets"
@@ -31,10 +32,16 @@ group :development do
   gem "letter_opener"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "pry-rails"
+end
+
+group :test do
+  gem "shoulda-matchers", require: false
 end
 
 group :test, :development do
   gem "rspec-rails", ">= 3.3"
   gem "simplecov"
   gem "capybara"
+  gem "factory_girl_rails"
 end
