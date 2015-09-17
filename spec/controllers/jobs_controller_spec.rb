@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe JobsController, type: :controller do
-
+RSpec.describe JobsController do
   before do
     @user = User.new
     @job = Job.new
@@ -156,5 +155,4 @@ RSpec.describe JobsController, type: :controller do
       expect(response).to be_redirect
     end
   end
-
 end
