@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 SeoHelper.configure do |config|
   config.skip_blank               = false
   config.site_name = Setting.app_name

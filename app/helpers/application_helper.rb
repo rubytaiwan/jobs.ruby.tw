@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module ApplicationHelper
   def render_notice
     content_tag(:div,  flash[:notice], class: 'message notice') if flash[:notice]

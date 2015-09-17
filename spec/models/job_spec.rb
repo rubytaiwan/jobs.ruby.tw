@@ -1,28 +1,6 @@
-# -*- encoding : utf-8 -*-
-# == Schema Information
-#
-# Table name: jobs
-#
-#  id                :integer          not null, primary key
-#  title             :string(255)
-#  job_type          :string(255)
-#  occupation        :string(255)
-#  company_name      :string(255)
-#  location          :string(255)
-#  url               :string(255)
-#  description       :text
-#  apply_information :text
-#  deadline          :date
-#  user_id           :integer
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  aasm_state        :string(255)
-#
+require 'rails_helper'
 
-require 'spec_helper'
-
-describe Job do
-
+RSpec.describe Job do
   before do
     @user = build_user
     @job = build_job(owner: @user)
@@ -30,13 +8,13 @@ describe Job do
 
   describe '#search' do
     it 'could be searched by keyword' do
-      Job.search('ruby').should == [@job]
+      expect(Job.search('ruby')).to eq [@job]
     end
   end
 
   describe '#aasm_state' do
     it 'should be published by default' do
-      @job.aasm_state.should == 'published'
+      expect(@job.aasm_state).to eq 'published'
     end
   end
 
@@ -45,19 +23,19 @@ describe Job do
       @job.aasm_state = 'closed'
 
       @job.open
-      @job.aasm_state.should == 'published'
+      expect(@job.aasm_state).to eq 'published'
     end
   end
 
   describe 'closed?' do
     it 'should return true if aasm_state is closed' do
       @job.aasm_state = 'closed'
-      @job.closed?.should == true
+      expect(@job.closed?).to eq true
     end
 
     it 'should return false if aasm_state is published' do
       @job.aasm_state = 'published'
-      @job.closed?.should == false
+      expect(@job.closed?).to eq false
     end
   end
 
@@ -66,42 +44,42 @@ describe Job do
       @job.aasm_state = 'published'
 
       @job.close
-      @job.aasm_state.should == 'closed'
+      expect(@job.aasm_state).to eq 'closed'
     end
   end
 
   describe '#to_param' do
     it 'should return downcase id-title-company' do
-      @job.to_param.should == "#{@job.id}-rails-developer-ruby-taiwan"
+      expect(@job.to_param).to eq "#{@job.id}-rails-developer-ruby-taiwan"
     end
   end
 
   describe '#social_link_url' do
     it 'should return domain with to_param' do
-      @job.social_link_url.should == "http%3A%2F%2Fjobs.ruby.tw%2Fjobs%2F#{@job.to_param}"
+      expect(@job.social_link_url).to eq "http%3A%2F%2Fjobs.ruby.tw%2Fjobs%2F#{@job.to_param}"
     end
   end
 
   describe '#social_link_title' do
     it 'should return escaped title' do
-      @job.social_link_title.should == 'Rails+developer'
+      expect(@job.social_link_title).to eq 'Rails+developer'
     end
   end
 
   describe '#social_link_content' do
     it 'should return social_link_title and social_link_url' do
-      @job.social_link_content.should == "Rails+developer http%3A%2F%2Fjobs.ruby.tw%2Fjobs%2F#{@job.to_param}"
+      expect(@job.social_link_content).to eq "Rails+developer http%3A%2F%2Fjobs.ruby.tw%2Fjobs%2F#{@job.to_param}"
     end
   end
 
   describe '#deadline_forever' do
     it 'should be false if deadline is not nil' do
-      @job.deadline_forever.should be_falsy
+      expect(@job.deadline_forever).to be_falsy
     end
 
     it 'should be true if deadline is nil' do
       @job.deadline = nil
-      @job.deadline_forever.should be_truthy
+      expect(@job.deadline_forever).to be_truthy
     end
   end
 
@@ -109,7 +87,7 @@ describe Job do
     it 'should setup deadline to nil is deadline_forever is 1' do
       @job.deadline_forever = '1'
       @job.save!
-      @job.deadline.should eq nil
+      expect(@job.deadline).to eq nil
     end
   end
 

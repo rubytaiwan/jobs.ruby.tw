@@ -4,7 +4,7 @@ Job board for Ruby and Rails developers in Taiwan
 
 A free service by Ruby Taiwan http://ruby.tw
 
-[![Build Status](https://travis-ci.org/rubytaiwan/jobs.ruby.tw.png?branch=master)](https://travis-ci.org/rubytaiwan/jobs.ruby.tw) [![Code Climate](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw.png)](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw)
+[![Build Status](https://travis-ci.org/rubytaiwan/jobs.ruby.tw.svg?branch=master)](https://travis-ci.org/rubytaiwan/jobs.ruby.tw) [![Code Climate](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw.svg)](https://codeclimate.com/github/rubytaiwan/jobs.ruby.tw)
 
 ## Requirements
 
@@ -13,20 +13,14 @@ A free service by Ruby Taiwan http://ruby.tw
 
 ## How to get started?
 
-```bash
-cp config/database.yml.example config/database.yml
-cp config/config.yml.example config/config.yml
-bundle
-rake db:create:all
-rake db:migrate
-rake db:seed
-rails server
+```
+bin/setup
 ```
 
 ## How to run spec?
 
 ```bash
-rake spec
+bin/rspec
 ```
 
 ## User Stories

@@ -1,55 +1,40 @@
-# -*- encoding : utf-8 -*-
-source 'https://rubygems.org'
-gem 'rails', '4.2.3'   #'~> 3.2.21'
-gem 'eventmachine', '1.0.4'
+source "https://rubygems.org"
 
-gem 'sass-rails'#,   '~> 3.2.3'
-gem 'coffee-rails'#, '~> 3.2.1'
-gem 'jquery-rails'
-gem 'libv8'#, '3.16.14.7'
-gem 'bootstrap-sass'
+gem "rails", "4.2.3"
+gem "pg"
+gem "eventmachine", "1.0.4"
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem "sass-rails"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "bootstrap-sass"
 
-gem 'uglifier'#, '>= 1.0.3'
+gem "libv8"
+gem "therubyracer", platforms: :ruby
+gem "uglifier"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'devise', '~> 3.3'  #, '~>2.1.3'
-gem 'pg'
-
-
-gem 'babosa'
-gem 'rails_autolink'
-
-gem 'settingslogic'
-gem 'seo_helper'
-gem 'open_graph_helper'
-gem 'google_plus_helper'
-
-gem 'exception_notification'
-
-#gem 'mobile-fu'
-
-gem 'rake', group: :test
-
-gem 'utf8-cleaner'
+gem "devise", "~> 3.3"
+gem "babosa"
+gem "rails_autolink"
+gem "settingslogic"
+gem "seo_helper"
+gem "open_graph_helper"
+gem "google_plus_helper"
+gem "exception_notification"
+gem "utf8-cleaner"
 
 group :development do
-  gem 'quiet_assets'
-  gem 'capistrano',  '~> 3.1'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'annotate'
-  gem 'letter_opener'
+  gem "quiet_assets"
+  gem "capistrano",  "~> 3.1"
+  gem "capistrano-rails", "~> 1.1"
+  gem "annotate"
+  gem "letter_opener"
+  gem "spring"
+  gem "spring-commands-rspec"
 end
 
-
 group :test, :development do
-  gem 'rspec'
-  gem 'rspec-rails'
-  gem 'rspec-mocks'
-  gem 'simplecov'
-  gem 'capybara'
+  gem "rspec-rails", ">= 3.3"
+  gem "simplecov"
+  gem "capybara"
 end
