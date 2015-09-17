@@ -79,9 +79,9 @@ bin/rspec
 
 ## Contributors
 
-See [full list of contributors](https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors)
+See [full list of contributors](https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors).
 
 ## License
 
 * The code is licensed under the [MIT License](/LICENSE)
-* The images (any files inside `/app/assets/images`) are copyright.
+* The images (any files inside `/app/assets/images`) are copyright
