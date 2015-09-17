@@ -18,4 +18,7 @@ FactoryGirl.define do
 
     owner
   end
+
+  factory :role do
+  end
 end

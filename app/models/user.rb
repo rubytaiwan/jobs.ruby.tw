@@ -11,7 +11,5 @@ class User < ActiveRecord::Base
 
   belongs_to :role
 
-  def admin?
-    role.try(:name) == 'admin'
-  end
+  delegate :admin?, to: :role, allow_nil: true
 end
