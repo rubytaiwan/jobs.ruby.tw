@@ -22,6 +22,7 @@ gem "open_graph_helper"
 gem "google_plus_helper"
 gem "exception_notification"
 gem "utf8-cleaner"
+gem "rails_utils"
 
 group :development do
   gem "quiet_assets"
