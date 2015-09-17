@@ -88,5 +88,5 @@ https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors
 
 ## License
 
-* The code is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
+* The code is licensed under the [MIT License](/LICENSE)
 * The images (any files inside `/app/assets/images`) are copyright.
