@@ -78,13 +78,7 @@ bin/rspec
 
 ## Contributors
 
-* ihower <ihower@gmail.com>
-* xdite <xuite.joke@gmail.com>
-* Lawrence Lin <deduce@gmail.com>
-* TaopaiC <pctao.git@pctao.org>
-* Ryudo <ryudoawaru@gmail.com>
-
-https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors
+See [full list of contributors](https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors)
 
 ## License
 
