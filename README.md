@@ -8,8 +8,9 @@ A free service by Ruby Taiwan http://ruby.tw
 
 ## Requirements
 
-* Ruby >= 1.9.3
+* Ruby >= 2.1
 * Bundler
+* PostgreSQL
 
 ## How to get started?
 
@@ -25,19 +26,19 @@ bin/rspec
 
 ## User Stories
 
-- [v] Signup as an employer
-- [v] Post a job
-- [v] List my jobs
-- [v] Edit my job
-- [v] Search jobs
-- [v] Employer can close job
-- [v] Not display jobs which is closed or overdue
-- [v] Employer can select deadline date or click forever checkbox
-- [v] Social link: Tweet this job, Facebook it, Plurk it.
-- [v] RSS feed
-- [v] Employer can preview job posting
-- [v] Mobile interface
-- [v] Auto-deployment
+- [x] Signup as an employer
+- [x] Post a job
+- [x] List my jobs
+- [x] Edit my job
+- [x] Search jobs
+- [x] Employer can close job
+- [x] Not display jobs which is closed or overdue
+- [x] Employer can select deadline date or click forever checkbox
+- [x] Social link: Tweet this job, Facebook it, Plurk it.
+- [x] RSS feed
+- [x] Employer can preview job posting
+- [x] Mobile interface
+- [x] Auto-deployment
 - [ ] Model JobType and Occupation
 - [ ] Caching for jobs/index and jobs/show actions
 - [ ] Highlight the job if employer sponsors via paypal
@@ -78,15 +79,9 @@ bin/rspec
 
 ## Contributors
 
-* ihower <ihower@gmail.com>
-* xdite <xuite.joke@gmail.com>
-* Lawrence Lin <deduce@gmail.com>
-* TaopaiC <pctao.git@pctao.org>
-* Ryudo <ryudoawaru@gmail.com>
-
-https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors
+See [full list of contributors](https://github.com/rubytaiwan/jobs.ruby.tw/graphs/contributors).
 
 ## License
 
-* The code is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
-* The images (any files inside `/app/assets/images`) are copyright.
+* The code is licensed under the [MIT License](/LICENSE)
+* The images (any files inside `/app/assets/images`) are copyright
