@@ -89,6 +89,11 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     execjs (2.5.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     google_plus_helper (0.0.3)
@@ -231,6 +236,7 @@ DEPENDENCIES
   devise (~> 3.3)
   eventmachine (= 1.0.4)
   exception_notification
+  factory_girl_rails
   google_plus_helper
   jquery-rails
   letter_opener
