@@ -227,7 +227,8 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    utf8-cleaner (0.0.9)
+    utf8-cleaner (0.1.1)
+      activesupport
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
