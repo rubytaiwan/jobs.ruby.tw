@@ -4,7 +4,7 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
 
-    after :create, &:confirm!
+    after :create, &:confirm
   end
 
   factory :job do
