@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "4.2.3"
+gem "rails", "4.2.10"
 gem "pg"
 gem "eventmachine", "1.0.4"
 
@@ -9,8 +9,6 @@ gem "coffee-rails"
 gem "jquery-rails"
 gem "bootstrap-sass"
 
-gem "libv8"
-gem "therubyracer", platforms: :ruby
 gem "uglifier"
 
 gem "devise", "~> 3.3"
