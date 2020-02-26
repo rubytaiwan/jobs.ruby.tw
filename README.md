@@ -1,5 +1,3 @@
-[![Pull Request Status](http://issuestats.com/github/rubytaiwan/jobs.ruby.tw/badge/pr?style=flat)](https://github.com/rubytaiwan/jobs.ruby.tw/pulls) [![Issue Status](http://issuestats.com/github/rubytaiwan/jobs.ruby.tw/badge/issue?style=flat)](https://github.com/rubytaiwan/jobs.ruby.tw/issues)
-
 # jobs.ruby.tw
 
 Job board for Ruby and Rails developers in Taiwan
