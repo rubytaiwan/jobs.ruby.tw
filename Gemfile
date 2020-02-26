@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "4.2.10"
+gem "rails", "4.2.11.1"
 gem "pg"
 gem "eventmachine", "1.0.4"
 
