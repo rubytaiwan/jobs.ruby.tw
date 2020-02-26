@@ -8,10 +8,7 @@ before_script:
   - bin/rake db:test:prepare
 rvm:
   - 2.3
-  - 2.5
 matrix:
-  allow_failures:
-    - rvm: 2.0
   fast_finish: true
 addons:
   postgresql: 9.6
