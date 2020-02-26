@@ -8,9 +8,7 @@ before_script:
 rvm:
   - 2.3
   - 2.5
-  - ruby-head
 matrix:
   allow_failures:
     - rvm: 2.0
-    - rvm: ruby-head
   fast_finish: true
