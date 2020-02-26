@@ -4,7 +4,7 @@ gem "rails", "4.2.10"
 gem "pg"
 gem "eventmachine", "1.0.4"
 
-gem "sass-rails"
+gem "sassc-rails"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "bootstrap-sass"
