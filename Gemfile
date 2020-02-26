@@ -11,7 +11,7 @@ gem "bootstrap-sass"
 
 gem "uglifier"
 
-gem "devise", "~> 3.3"
+gem "devise", "~> 4.7"
 gem "babosa"
 gem "rails_autolink"
 gem "settingslogic"
