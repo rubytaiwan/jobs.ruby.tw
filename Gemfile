@@ -1,8 +1,16 @@
+# Rails 4 needs bundler 1.X
+# gem install bundler:1.17.3
+# bundle _1.17.3_ install
 source "https://rubygems.org"
 
-gem "rails", "4.2.11.1"
-gem "pg"
-gem "eventmachine", "1.0.4"
+gem "rails", "4.2.11.3"
+
+# Need setup manifest.js for sprockets v4
+gem 'sprockets', '~> 3.7.2'
+
+gem 'bigdecimal', '1.3.5'
+
+gem "pg", "0.21.0" # Rails 4
 
 gem "sassc-rails"
 gem "coffee-rails"
@@ -24,8 +32,8 @@ gem "rails_utils"
 
 group :development do
   gem "quiet_assets"
-  gem "capistrano",  "~> 3.1"
-  gem "capistrano-rails", "~> 1.1"
+  gem "capistrano"
+  gem "capistrano-rails"
   gem "annotate"
   gem "letter_opener"
   gem "spring"
@@ -38,7 +46,7 @@ group :test do
 end
 
 group :test, :development do
-  gem "rspec-rails", ">= 3.3"
+  gem "rspec-rails"
   gem "simplecov"
   gem "capybara"
   gem "factory_girl_rails"
