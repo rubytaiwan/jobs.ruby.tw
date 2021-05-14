@@ -10,7 +10,7 @@ gem 'sprockets', '~> 3.7.2'
 
 gem 'bigdecimal', '1.3.5' # Workaround for Ruby 2.7
 
-gem "pg", "0.21.0" # Rails 4
+gem 'mysql2'
 
 gem "sassc-rails"
 gem "jquery-rails"
