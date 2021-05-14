@@ -70,14 +70,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    coderay (1.1.3)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.8.0)
@@ -101,8 +93,6 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    google_plus_helper (0.0.3)
-      rails (>= 3.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.4.0)
@@ -118,7 +108,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    method_source (1.0.0)
     mini_mime (1.1.0)
     mini_portile2 (2.5.1)
     minitest (5.14.4)
@@ -131,14 +120,7 @@ GEM
     open_graph_helper (0.2.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
-    pry (0.14.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    pry-rails (0.3.9)
-      pry (>= 0.10.4)
     public_suffix (4.0.6)
-    quiet_assets (1.1.0)
-      railties (>= 3.1, < 5.0)
     racc (1.5.2)
     rack (1.6.13)
     rack-test (0.6.3)
@@ -212,8 +194,6 @@ GEM
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.3)
     spring (2.1.1)
-    spring-commands-rspec (1.0.4)
-      spring (>= 0.9.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -229,8 +209,6 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     utf8-cleaner (1.0.0)
       activesupport
     warden (1.2.7)
@@ -249,17 +227,13 @@ DEPENDENCIES
   capistrano
   capistrano-rails
   capybara
-  coffee-rails
   devise (>= 4.7.1)
   exception_notification
   factory_girl_rails
-  google_plus_helper
   jquery-rails
   letter_opener
   open_graph_helper
   pg (= 0.21.0)
-  pry-rails
-  quiet_assets
   rails (= 4.2.11.3)
   rails_autolink
   rails_utils
@@ -270,9 +244,7 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   spring
-  spring-commands-rspec
   sprockets (~> 3.7.2)
-  uglifier
   utf8-cleaner
 
 BUNDLED WITH
