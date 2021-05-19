@@ -5,10 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
-  <%= render_page_title_tag %>
-  <%= render_page_description_meta_tag %>
-  <%= render_page_keywords_meta_tag %>
-  <%= render_page_image_link_tag %>
+  <title><%= @page_title || "Ruby Jobs in Taiwan" %></title>
+  <meta name="description" content="<%= @page_description || "Job board for  Ruby and Rails developers in Taiwan" %>">
+  <meta name="keywords" content="Ruby, Rails, Taiwan, Job, Rails Developer">
+  <link rel="image_src" content="<%=Rails.application.secrets.domain + Rails.application.secrets.default_logo_url%>" />
+
 
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
