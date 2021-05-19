@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
   belongs_to :role
 
   delegate :admin?, to: :role, allow_nil: true
+  
+  before_validation :check_role
+
+  def check_role
+    unless self.role
+      self.role = Role.find_by(name: "member") || Role.create!(name: "member")
+    end
+  end
 end
