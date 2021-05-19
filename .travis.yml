@@ -6,6 +6,8 @@ before_script:
   - mysql -e 'CREATE DATABASE jobs_ruby_tw_test;' -u root
   - bin/setup
   - bin/rake db:test:prepare
+node_js:
+  - 15.11.0
 rvm:
   - 2.7.2
 matrix:
