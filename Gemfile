@@ -1,22 +1,37 @@
-# Rails 4 needs bundler 1.X
-# gem install bundler:1.17.3
-# bundle _1.17.3_ install
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "4.2.11.3"
 ruby '2.7.2'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
 # Need setup manifest.js for sprockets v4
 gem 'sprockets', '~> 3.7.2'
 
-gem 'bigdecimal', '1.3.5' # Workaround for Ruby 2.7
+# Use Puma as the app server
+gem 'puma', '~> 5.0'
 
 gem 'mysql2'
 
+gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 5.0'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
 gem "sassc-rails"
 gem "jquery-rails"
 gem "bootstrap-sass"
 
+gem 'jbuilder', '~> 2.7'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use Active Model has_secure_password
+
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.4', require: false
 gem "devise", ">= 4.7.1"
 gem "babosa"
 gem "rails_autolink"
@@ -28,15 +43,26 @@ gem "utf8-cleaner"
 gem "rails_utils"
 
 group :development do
-  gem "capistrano"
-  gem "capistrano-rails"
+  # gem "capistrano"
+  # gem "capistrano-rails"
   gem "annotate"
   gem "letter_opener"
   gem "spring"
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 4.1.0'
+  # Display performance information such as SQL time and flame graphs for each request in your browser.
+  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'listen', '~> 3.3'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :test do
   gem "shoulda-matchers", require: false
+  # Adds support for Capybara system testing and selenium driver
+  gem 'selenium-webdriver'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
 end
 
 group :test, :development do
@@ -45,3 +71,6 @@ group :test, :development do
   gem "capybara"
   gem "factory_girl_rails"
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
