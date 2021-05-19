@@ -3,17 +3,16 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <%= render_page_title_tag %>
-  <%= render_page_description_meta_tag %>
-  <%= render_page_keywords_meta_tag %>
-  <%= render_page_image_link_tag %>
+  <title><%= @page_title || "Ruby Jobs in Taiwan" %></title>
+  <meta name="description" content="<%= @page_description || "Job board for  Ruby and Rails developers in Taiwan" %>">
+  <meta name="keywords" content="Ruby, Rails, Taiwan, Job, Rails Developer">
+  <link rel="image_src" content="<%=Rails.application.secrets.domain + Rails.application.secrets.default_logo_url%>" />
 
-  <meta property="og:title" content="<%= page_title || SeoHelper.configuration.site_name %>"/>
-  <meta property="og:description" content="<%= page_description || SeoHelper.configuration.default_page_description %>"/>
-  <meta property="og:image:url" content="<%= page_image || SeoHelper.configuration.default_page_image %>"/>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
   <link rel="shortcut icon" href="/favicon.ico">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <%= auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rubyjobs-taiwan", :title => "Ruby Jobs in Taiwan RSS feed") %>
 
@@ -27,7 +26,8 @@
 	});
 </script>
 
-<%= csrf_meta_tag %>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 </head>
 <body>
 <div id="wrapper">

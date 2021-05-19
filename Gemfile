@@ -35,7 +35,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "devise", ">= 4.7.1"
 gem "babosa"
 gem "rails_autolink"
-gem "seo_helper"
 gem "open_graph_helper"
 gem "exception_notification"
 gem "utf8-cleaner"
