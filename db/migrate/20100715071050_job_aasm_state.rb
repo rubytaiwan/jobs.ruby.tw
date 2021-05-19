@@ -1,4 +1,4 @@
-class JobAasmState < ActiveRecord::Migration
+class JobAasmState < ActiveRecord::Migration[6.1]
   def self.up
     add_column :jobs, :aasm_state, :string
   end

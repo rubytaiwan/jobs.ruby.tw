@@ -1,4 +1,4 @@
-class CreateJobs < ActiveRecord::Migration
+class CreateJobs < ActiveRecord::Migration[6.1]
   def self.up
     create_table :jobs do |t|
       t.string :title
