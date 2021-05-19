@@ -4,6 +4,7 @@
 source "https://rubygems.org"
 
 gem "rails", "4.2.11.3"
+ruby '2.7.2'
 
 # Need setup manifest.js for sprockets v4
 gem 'sprockets', '~> 3.7.2'
