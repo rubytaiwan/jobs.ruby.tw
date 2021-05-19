@@ -69,7 +69,7 @@ group :test, :development do
   gem "rspec-rails"
   gem "simplecov"
   gem "capybara"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
