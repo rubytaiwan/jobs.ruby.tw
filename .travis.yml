@@ -7,7 +7,7 @@ before_script:
   - bin/setup
   - bin/rake db:test:prepare
 rvm:
-  - 2.7
+  - 2.7.2
 matrix:
   fast_finish: true
 services:
