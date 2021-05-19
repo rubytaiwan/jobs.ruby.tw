@@ -32,11 +32,11 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
   config.i18n.fallbacks = true
-  config.action_mailer.default_url_options = { host: Setting.domain}
-  config.action_mailer.delivery_method = Setting.action_mailer.delivery_method.to_sym
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.domain}
+  config.action_mailer.delivery_method = Rails.application.secrets.action_mailer.delivery_method.to_sym
 
-  config.action_mailer.smtp_settings = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
-  Rails.application.config.middleware.use ExceptionNotification::Rack, email: Setting.exception_notification_mailer.symbolize_keys
+  config.action_mailer.smtp_Rails.application.secretss = YAML.load(File.read("#{Rails.root}/config/email.yml"))[Rails.env].symbolize_keys
+  Rails.application.config.middleware.use ExceptionNotification::Rack, email: Rails.application.secrets.exception_notification_mailer.symbolize_keys
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
